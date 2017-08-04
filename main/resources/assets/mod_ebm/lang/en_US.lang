@@ -1,0 +1,371 @@
+command.ebmnews=Eccentric Biomes News: 
+command.ebmbug=Eccentric Biomes Bug Tracker: 
+command.ebmsupport=§5Support MCE: §r
+command.ebmwiki=Eccentric Biomes Wiki: 
+
+container.mChest=Manchineel Chest
+container.mChestDouble=Large Manchineel Chest
+container.deadChest=Deadwood Chest
+container.deadChestDouble=Large Deadwood Chest
+container.mauveChest=Mauvewood Chest
+container.mauveChestDouble=Large Mauvewood Chest
+
+itemGroup.ecb=§5Eccentric Biomes§r
+
+entity.mod_ebm.Erython.name=Erython
+
+tile.BlueDirt.name=Blue Dirt
+tile.BlueFarmland.name=Blue Farmland
+tile.FlameStone.name=Flamestone
+tile.FlameStoneDe.name=Deactivated Flamestone
+tile.FlameStoneMobs.name=Flamestone
+tile.FlameStonePlayers.name=Flamestone
+tile.USFarmland.name=Unstompable Farmland
+tile.BoneBlock.name=Bone Block
+tile.DeadGrass.name=Dead Grass
+tile.DeadDirt.name=Dead Dirt
+tile.DymusBlock.name=Dymus Block
+tile.AutilBlock.name=Autil Block
+tile.AutilBlockFull.name=Full Autil Block
+tile.AutilRod.name=Autil Rod
+tile.AmethystCrust.name=Amethyst Crust
+tile.AmethystDirt.name=Amethyst Dirt
+tile.honeycomb.name=Honeycomb
+tile.shadowHoneycomb.name=Shadow Honeycomb
+tile.beeswax.name=Beeswax
+tile.crystalHoneyBlock.name=Crystallized Honey
+
+tile.beehive.name=Beehive
+tile.fireGrass.name=Fire Grass
+
+tile.mLadder.name=Manchineel Ladder
+tile.deadLadder.name=Deadwood Ladder
+tile.mauveLadder.name=Mauvewood Ladder
+
+tile.mTDoor.name=Manchineel Trapdoor
+tile.deadTDoor.name=Deadwood Trapdoor
+tile.mauveTDoor.name=Mauvewood Trapdoor
+
+tile.mSTDoor.name=Manchineel Secret Trapdoor
+tile.deadSTDoor.name=Deadwood Secret Trapdoor
+tile.mauveSTDoor.name=Mauvewood Secret Trapdoor
+
+tile.mPlate.name=Manchineel Pressure Plate
+tile.deadPlate.name=Deadwood Pressure Plate
+tile.mauvePlate.name=Mauvewood Pressure Plate
+
+tile.mLever.name=Manchineel Lever
+tile.deadLever.name=Deadwood Lever
+tile.mauveLever.name=Mauvewood Lever
+
+tile.mButton.name=Manchineel Button
+tile.deadButton.name=Deadwood Button
+tile.mauveButton.name=Mauvewood Button
+
+tile.mWorkbench.name=Manchineel Crafting Table
+tile.deadWorkbench.name=Deadwood Crafting Table
+tile.mauveWorkbench.name=Mauvewood Crafting Table
+
+tile.unAutilBricks.name=Autil Bricks
+tile.unAutilBrickStairs.name=Autil Brick Stairs
+tile.unAutilBrickPressurePlate.name=Autil Brick Pressure Plate
+tile.unAutilBrickSlab.0.name=Autil Brick Slab
+tile.unAutilBrickSlab.1.name=Autil Brick Slab
+tile.unAutilBrickSlab.2.name=Autil Brick Slab
+tile.unAutilBrickSlab.3.name=Autil Brick Slab
+tile.unAutilBrickSlab.4.name=Autil Brick Slab
+tile.unAutilBrickSlab.8.name=Autil Brick Slab
+tile.unAutilBrickSlabDouble.name=Autil Brick Double Slab
+tile.unAutilRod.name=Autil Rod
+tile.unAutilRod.0.name=Autil Rod
+tile.unAutilRod.1.name=Autil Rod
+tile.unAutilRod.2.name=Autil Rod
+tile.unAutilRod.3.name=Autil Rod
+tile.unAutilRod.4.name=Autil Rod
+tile.unAutilRod.8.name=Autil Rod
+
+tile.DymusBricks.name=Dymus Bricks
+tile.DymusOrnate.name=Ornate Dymus Block
+tile.DymusPillar.name=Dymus Pillar
+tile.dymusChisel.name=Chiseled Dymus Block
+tile.AutilBricks.name=Autil Bricks
+tile.AutilOrnate.name=Ornate Autil Block
+tile.AutilPillar.name=Autil Pillar
+tile.autilChisel.name=Chiseled Autil Block
+tile.AmethystBricks.name=Amethyst Bricks
+tile.AmethystOrnate.name=Ornate Amethyst
+tile.AmethystPillar.name=Amethyst Pillar
+tile.amethystChisel.name=Chiseled Amethyst Block
+tile.BeeswaxBricks.name=Beeswax Bricks
+tile.BeeswaxOrnate.name=Ornate Beeswax
+tile.BeeswaxPillar.name=Beeswax Pillar
+tile.beeswaxChisel.name=Chiseled Beeswax
+
+tile.DymusStairs.name=Dymus Stairs
+tile.DymusBrickStairs.name=Dymus Brick Stairs
+tile.DymusOrnateStairs.name=Ornate Dymus Stairs
+tile.dymusChiselStairs.name=Chiseled Dymus Stairs
+tile.AutilStairs.name=Autil Stairs
+tile.AutilBrickStairs.name=Autil Brick Stairs
+tile.AutilOrnateStairs.name=Ornate Autil Stairs
+tile.autilChiselStairs.name=Chiseled Autil Stairs
+tile.mWoodStairs.name=Manchineel Wood Stairs
+tile.deadWoodStairs.name=Deadwood Stairs
+tile.mauvewoodStairs.name=Mauvewood Stairs
+tile.AmethystStairs.name=Amethyst Stairs
+tile.AmethystBrickStairs.name=Amethyst Brick Stairs
+tile.AmethystOrnateStairs.name=Ornate Amethyst Stairs
+tile.amethystChiselStairs.name=Chiseled Amethyst Stairs
+tile.BoneStairs.name=Bone Stairs
+tile.BeeswaxStairs.name=Beeswax Stairs
+tile.BeeswaxBrickStairs.name=Beeswax Brick Stairs
+tile.BeeswaxOrnateStairs.name=Ornate Beeswax Stairs
+tile.beeswaxChiselStairs.name=Chiseled Beeswax Stairs
+
+tile.GlassLog.name=Glass Log
+tile.BoneLog.name=Bone Log
+tile.mLog.name=Manchineel Log
+tile.deadLog.name=Deadwood Log
+tile.MauvewoodLog.name=Mauvewood Log
+
+tile.mPlanks.name=Manchineel Wooden Planks
+tile.deadPlanks.name=Deadwood Planks
+tile.mauvePlanks.name=Mauvewood Planks
+
+tile.mChest.name=Manchineel Chest
+tile.mChestTrapped.name=Manchineel Trapped Chest
+
+tile.deadChest.name=Deadwood Chest
+tile.deadChestTrapped.name=Deadwood Trapped Chest
+
+tile.mauveChest.name=Mauvewood Chest
+tile.mauveChestTrapped.name=Mauvewood Trapped Chest
+
+tile.mFence.name=Manchineel Fence
+tile.deadFence.name=Deadwood Fence
+tile.mauveFence.name=Mauvewood Fence
+
+tile.mGate.name=Manchineel Fence Gate
+tile.deadGate.name=Deadwood Fence Gate
+tile.mauveGate.name=Mauvewood Fence Gate
+
+tile.leaves_glass.name=Glass Leaves
+tile.leaves_m.name=Manchineel Leaves
+tile.leaves_mauvewood.name=Mauvewood Leaves
+
+tile.GlassSapling.name=Glass Sapling
+tile.BoneSapling.name=Bone Sapling
+tile.mSapling.name=Manchineel Sapling
+tile.MauvewoodSapling.name=Mauvewood Sapling
+
+tile.mWoodSlab.0.name=Manchineel Wood Slab
+tile.mWoodSlab.1.name=Manchineel Wood Slab
+tile.mWoodSlab.2.name=Manchineel Wood Slab
+tile.mWoodSlab.3.name=Manchineel Wood Slab
+tile.mWoodSlab.4.name=Manchineel Wood Slab
+tile.mWoodSlab.8.name=Manchineel Wood Slab
+tile.mWoodSlabDouble.name=Manchineel Double Wood Slab
+
+tile.deadWoodSlab.0.name=Deadwood Slab
+tile.deadWoodSlab.1.name=Deadwood Slab
+tile.deadWoodSlab.2.name=Deadwood Slab
+tile.deadWoodSlab.3.name=Deadwood Slab
+tile.deadWoodSlab.4.name=Deadwood Slab
+tile.deadWoodSlab.8.name=Deadwood Slab
+tile.deadWoodSlabDouble.name=Deadwood Double Slab
+
+tile.mauvewoodSlab.0.name=Mauvewood Slab
+tile.mauvewoodSlab.1.name=Mauvewood Slab
+tile.mauvewoodSlab.2.name=Mauvewood Slab
+tile.mauvewoodSlab.3.name=Mauvewood Slab
+tile.mauvewoodSlab.4.name=Mauvewood Slab
+tile.mauvewoodSlab.8.name=Mauvewood Slab
+tile.mauvewoodSlabDouble.name=Mauvewood Double Slab
+
+tile.DymusSlab.0.name=Dymus Slab
+tile.DymusSlab.1.name=Dymus Slab
+tile.DymusSlab.2.name=Dymus Slab
+tile.DymusSlab.3.name=Dymus Slab
+tile.DymusSlab.4.name=Dymus Slab
+tile.DymusSlab.8.name=Dymus Slab
+tile.DymusSlabDouble.name=Dymus Double Slab
+
+tile.DymusBrickSlab.0.name=Dymus Brick Slab
+tile.DymusBrickSlab.1.name=Dymus Brick Slab
+tile.DymusBrickSlab.2.name=Dymus Brick Slab
+tile.DymusBrickSlab.3.name=Dymus Brick Slab
+tile.DymusBrickSlab.4.name=Dymus Brick Slab
+tile.DymusBrickSlab.8.name=Dymus Brick Slab
+tile.DymusBrickSlabDouble.name=Dymus Brick Double Slab
+
+tile.DymusOrnateSlab.0.name=Ornate Dymus Slab
+tile.DymusOrnateSlab.1.name=Ornate Dymus Slab
+tile.DymusOrnateSlab.2.name=Ornate Dymus Slab
+tile.DymusOrnateSlab.3.name=Ornate Dymus Slab
+tile.DymusOrnateSlab.4.name=Ornate Dymus Slab
+tile.DymusOrnateSlab.8.name=Ornate Dymus Slab
+tile.DymusOrnateSlabDouble.name=Ornate Dymus Double Slab
+
+tile.dymusChiselSlab.0.name=Chiseled Dymus Slab
+tile.dymusChiselSlab.1.name=Chiseled Dymus Slab
+tile.dymusChiselSlab.2.name=Chiseled Dymus Slab
+tile.dymusChiselSlab.3.name=Chiseled Dymus Slab
+tile.dymusChiselSlab.4.name=Chiseled Dymus Slab
+tile.dymusChiselSlab.8.name=Chiseled Dymus Slab
+tile.dymusChiselSlabDouble.name=Chiseled Dymus Double Slab
+
+tile.AutilSlab.0.name=Autil Slab
+tile.AutilSlab.1.name=Autil Slab
+tile.AutilSlab.2.name=Autil Slab
+tile.AutilSlab.3.name=Autil Slab
+tile.AutilSlab.4.name=Autil Slab
+tile.AutilSlab.8.name=Autil Slab
+tile.AutilSlabDouble.name=Autil Double Slab
+
+tile.AutilBrickSlab.name=Autil Brick Slab
+tile.AutilBrickSlab.0.name=Autil Brick Slab
+tile.AutilBrickSlab.1.name=Autil Brick Slab
+tile.AutilBrickSlab.2.name=Autil Brick Slab
+tile.AutilBrickSlab.3.name=Autil Brick Slab
+tile.AutilBrickSlab.4.name=Autil Brick Slab
+tile.AutilBrickSlab.8.name=Autil Brick Slab
+tile.AutilBrickSlabDouble.name=Autil Brick Double Slab
+
+tile.AutilOrnateSlab.0.name=Ornate Autil Slab
+tile.AutilOrnateSlab.1.name=Ornate Autil Slab
+tile.AutilOrnateSlab.2.name=Ornate Autil Slab
+tile.AutilOrnateSlab.3.name=Ornate Autil Slab
+tile.AutilOrnateSlab.4.name=Ornate Autil Slab
+tile.AutilOrnateSlab.8.name=Ornate Autil Slab
+tile.AutilOrnateSlabDouble.name=Ornate Autil Double Slab
+
+tile.autilChiselSlab.0.name=Chiseled Autil Slab
+tile.autilChiselSlab.1.name=Chiseled Autil Slab
+tile.autilChiselSlab.2.name=Chiseled Autil Slab
+tile.autilChiselSlab.3.name=Chiseled Autil Slab
+tile.autilChiselSlab.4.name=Chiseled Autil Slab
+tile.autilChiselSlab.8.name=Chiseled Autil Slab
+tile.autilChiselSlabDouble.name=Chiseled Autil Double Slab
+
+tile.AmethystSlab.0.name=Amethyst Slab
+tile.AmethystSlab.1.name=Amethyst Slab
+tile.AmethystSlab.2.name=Amethyst Slab
+tile.AmethystSlab.3.name=Amethyst Slab
+tile.AmethystSlab.4.name=Amethyst Slab
+tile.AmethystSlab.8.name=Amethyst Slab
+tile.AmethystSlabDouble.name=Amethyst Double Slab
+
+tile.AmethystBrickSlab.name=Amethyst Brick Slab
+tile.AmethystBrickSlab.0.name=Amethyst Brick Slab
+tile.AmethystBrickSlab.1.name=Amethyst Brick Slab
+tile.AmethystBrickSlab.2.name=Amethyst Brick Slab
+tile.AmethystBrickSlab.3.name=Amethyst Brick Slab
+tile.AmethystBrickSlab.4.name=Amethyst Brick Slab
+tile.AmethystBrickSlab.8.name=Amethyst Brick Slab
+tile.AmethystBrickSlabDouble.name=Amethyst Brick Double Slab
+
+tile.AmethystOrnateSlab.0.name=Ornate Amethyst Slab
+tile.AmethystOrnateSlab.1.name=Ornate Amethyst Slab
+tile.AmethystOrnateSlab.2.name=Ornate Amethyst Slab
+tile.AmethystOrnateSlab.3.name=Ornate Amethyst Slab
+tile.AmethystOrnateSlab.4.name=Ornate Amethyst Slab
+tile.AmethystOrnateSlab.8.name=Ornate Amethyst Slab
+tile.AmethystOrnateSlabDouble.name=Ornate Amethyst Double Slab
+
+tile.amethystChiselSlab.0.name=Chiseled Amethyst Slab
+tile.amethystChiselSlab.1.name=Chiseled Amethyst Slab
+tile.amethystChiselSlab.2.name=Chiseled Amethyst Slab
+tile.amethystChiselSlab.3.name=Chiseled Amethyst Slab
+tile.amethystChiselSlab.4.name=Chiseled Amethyst Slab
+tile.amethystChiselSlab.8.name=Chiseled Amethyst Slab
+tile.amethystChiselSlabDouble.name=Chiseled Amethyst Double Slab
+
+tile.BoneSlab.0.name=Bone Slab
+tile.BoneSlab.1.name=Bone Slab
+tile.BoneSlab.2.name=Bone Slab
+tile.BoneSlab.3.name=Bone Slab
+tile.BoneSlab.4.name=Bone Slab
+tile.BoneSlab.8.name=Bone Slab
+tile.BoneSlabDouble.name=Bone Double Slab
+
+tile.BeeswaxSlab.0.name=Beeswax Slab
+tile.BeeswaxSlab.1.name=Beeswax Slab
+tile.BeeswaxSlab.2.name=Beeswax Slab
+tile.BeeswaxSlab.3.name=Beeswax Slab
+tile.BeeswaxSlab.4.name=Beeswax Slab
+tile.BeeswaxSlab.8.name=Beeswax Slab
+tile.BeeswaxSlabDouble.name=Beeswax Double Slab
+
+tile.BeeswaxBrickSlab.name=Beeswax Brick Slab
+tile.BeeswaxBrickSlab.0.name=Beeswax Brick Slab
+tile.BeeswaxBrickSlab.1.name=Beeswax Brick Slab
+tile.BeeswaxBrickSlab.2.name=Beeswax Brick Slab
+tile.BeeswaxBrickSlab.3.name=Beeswax Brick Slab
+tile.BeeswaxBrickSlab.4.name=Beeswax Brick Slab
+tile.BeeswaxBrickSlab.8.name=Beeswax Brick Slab
+tile.BeeswaxBrickSlabDouble.name=Beeswax Brick Double Slab
+
+tile.BeeswaxOrnateSlab.0.name=Ornate Beeswax Slab
+tile.BeeswaxOrnateSlab.1.name=Ornate Beeswax Slab
+tile.BeeswaxOrnateSlab.2.name=Ornate Beeswax Slab
+tile.BeeswaxOrnateSlab.3.name=Ornate Beeswax Slab
+tile.BeeswaxOrnateSlab.4.name=Ornate Beeswax Slab
+tile.BeeswaxOrnateSlab.8.name=Ornate Beeswax Slab
+tile.BeeswaxOrnateSlabDouble.name=Ornate Beeswax Double Slab
+
+tile.beeswaxChiselSlab.0.name=Chiseled Beeswax Slab
+tile.beeswaxChiselSlab.1.name=Chiseled Beeswax Slab
+tile.beeswaxChiselSlab.2.name=Chiseled Beeswax Slab
+tile.beeswaxChiselSlab.3.name=Chiseled Beeswax Slab
+tile.beeswaxChiselSlab.4.name=Chiseled Beeswax Slab
+tile.beeswaxChiselSlab.8.name=Chiseled Beeswax Slab
+tile.beeswaxChiselSlabDouble.name=Chiseled Beeswax Double Slab
+
+tile.mTorch.name=Manchineel Torch
+tile.deadTorch.name=Deadwood Torch
+tile.mauveTorch.name=Mauvewood Torch
+
+tile.mTorchRed.name=Manchineel Redstone Torch
+tile.deadTorchRed.name=Deadwood Redstone Torch
+tile.mauveTorchRed.name=Mauvewood Redstone Torch
+
+tile.mTorchRedOff.name=Manchineel Redstone Torch (Off)
+tile.deadTorchRedOff.name=Deadwood Redstone Torch (Off)
+tile.mauveTorchRedOff.name=Mauvewood Redstone Torch (Off)
+
+tile.PyreFlower.name=Pyre Flower
+
+tile.mDoor.name=Manchineel Door
+tile.deadDoor.name=Deadwood Door
+tile.mauveDoor.name=Mauvewood Door
+
+item.mDoorItem.name=Manchineel Door
+item.deadDoorItem.name=Deadwood Door
+item.mauveDoorItem.name=Mauvewood Door
+
+item.mStick.name=Manchineel Stick
+item.deadStick.name=Deadwood Stick
+item.mauveStick.name=Mauvewood Stick
+
+item.DymusPowder.name=Dymus Powder
+item.DymusBar.name=Dymus Bar
+item.Dust.name=Dust
+item.Autil.name=Autil
+item.ECube.name=Erython Cube
+item.AmethystGrit.name=Amethyst Grit
+item.honey.name=Honey
+item.crystalHoney.name=Crystallized Honey
+item.bee.name=Bee
+item.stinger.name=Stinger
+item.pyreCrystal.name=Pyre Crystal
+item.FireSeed.name=Fire Seed
+
+item.cd_hskele.name=Music Disc
+
+item.EBMWrench.name=Eccentric Biomes Wrench
+item.GlassShard.name=Glass Shard
+item.ErythonBattleAxe.name=Erython Battle Axe
+item.stingerSword.name=Sting Sword
+item.fireSword.name=Pyre Sword
+
+item.InvsItem.name=Invisible Item (For Void Achievement)

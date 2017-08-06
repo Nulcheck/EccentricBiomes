@@ -439,6 +439,7 @@ public class mod_ebm {
 	public static boolean spawnHive;
 	public static boolean spawnOcher;
 	public static boolean spawnShadowHive;
+	public static boolean spawnSlimy;
 
 	// IDs
 	public static int idHighLands;
@@ -458,6 +459,7 @@ public class mod_ebm {
 	public static int idHive;
 	public static int idOcher;
 	public static int idShadowHive;
+	public static int idSlimy;
 
 	//TODO: Preinit
 	@Mod.EventHandler
@@ -484,6 +486,7 @@ public class mod_ebm {
 		spawnHive = config.get("Biomes", "Hive", true).getBoolean();
 		spawnOcher = config.get("Biomes", "Ocher", true).getBoolean();
 		spawnShadowHive = config.get("Biomes", "ShadowHive", true).getBoolean();
+		spawnSlimy = config.get("Biomes", "Slimy", true).getBoolean();
 
 		// IDs
 		idHighLands = config.get("Biome ids", "HighLands", 200).getInt();
@@ -503,6 +506,7 @@ public class mod_ebm {
 		idHive = config.get("Biome ids", "Hive", 214).getInt();
 		idOcher = config.get("Biome ids", "Ocher", 215).getInt();
 		idShadowHive = config.get("Biome ids", "ShadowHive", 216).getInt();
+		idSlimy = config.get("Biome ids", "Slimy", 217).getInt();
 
 		config.save();
 		log.info("Loaded config.");

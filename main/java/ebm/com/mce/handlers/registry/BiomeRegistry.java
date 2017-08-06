@@ -16,21 +16,20 @@ import ebm.com.mce.gen.biomes.Hive;
 import ebm.com.mce.gen.biomes.ObsidianForest;
 import ebm.com.mce.gen.biomes.Ocher;
 import ebm.com.mce.gen.biomes.ShadowHive;
+import ebm.com.mce.gen.biomes.Slimy;
 import ebm.com.mce.gen.biomes.SnowyDesert;
 import ebm.com.mce.gen.biomes.Void;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
-import sun.security.krb5.Config;
-import sun.security.krb5.KrbException;
 
 public class BiomeRegistry {
 	public void main() {
 		initBiome();
 		try {
 			registerBiome();
-		} catch (KrbException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -52,6 +51,7 @@ public class BiomeRegistry {
 	public static BiomeGenBase Hive;
 	public static BiomeGenBase Ocher;
 	public static BiomeGenBase ShadowHive;
+	public static BiomeGenBase Slimy;
 
 	public static void initBiome() {
 		HighLand = new HighLand(mod_ebm.idHighLands, mod_ebm.spawnHighLands);
@@ -71,9 +71,10 @@ public class BiomeRegistry {
 		Hive = new Hive(mod_ebm.idHive, mod_ebm.spawnHive);
 		Ocher = new Ocher(mod_ebm.idOcher, mod_ebm.spawnOcher);
 		ShadowHive = new ShadowHive(mod_ebm.idShadowHive, mod_ebm.spawnShadowHive);
+		Slimy = new Slimy(mod_ebm.idSlimy, mod_ebm.spawnSlimy);
 	}
 
-	public static void registerBiome() throws KrbException {
+	public static void registerBiome() throws Exception {
 		if (mod_ebm.spawnHighLands == true)
 			BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(HighLand, 10));
 		if (mod_ebm.spawnDeathForest == true)
@@ -104,8 +105,9 @@ public class BiomeRegistry {
 			BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(Hive, 10));
 		if (mod_ebm.spawnOcher == true)
 			BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(Ocher, 10));
-		if (mod_ebm.spawnShadowHive == true){
+		if (mod_ebm.spawnShadowHive == true)
 			BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(ShadowHive, 10));
-		}
+		if (mod_ebm.spawnSlimy == true)
+			BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(Slimy, 100));
 	}
 }

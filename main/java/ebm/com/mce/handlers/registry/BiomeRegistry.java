@@ -105,7 +105,7 @@ public class BiomeRegistry {
 		if (mod_ebm.spawnOcher == true)
 			BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(Ocher, 10));
 		if (mod_ebm.spawnShadowHive == true){
-			BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(ShadowHive, 100));
+			BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(ShadowHive, 10));
 		}
 	}
 }

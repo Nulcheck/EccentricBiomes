@@ -100,6 +100,7 @@ import ebm.com.mce.handlers.registry.BiomeRegistry;
 import ebm.com.mce.handlers.registry.BlockRegistry;
 import ebm.com.mce.handlers.registry.ItemRegistry;
 import ebm.com.mce.handlers.registry.MobRegistry;
+import ebm.com.mce.items.FireSeeds;
 import ebm.com.mce.items.ItemTool.GlassShard;
 import ebm.com.mce.items.ItemTool.Sword;
 import ebm.com.mce.items.ModItems.ErythonCube;
@@ -108,6 +109,7 @@ import ebm.com.mce.items.doors.ManchineelDoorItem;
 import ebm.com.mce.items.doors.MauvewoodDoorItem;
 import ebm.com.mce.items.records.DiscHskele;
 import ebm.com.mce.other.ECBTab;
+import ebm.com.mce.util.updater.CheckVersion;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPressurePlate.Sensitivity;
 import net.minecraft.block.material.Material;
@@ -117,7 +119,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemFood;
-import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
 import net.minecraftforge.common.MinecraftForge;
@@ -1199,7 +1200,7 @@ public class mod_ebm {
 				.setTextureName("mod_ebm:cd_happy_skeleton").setCreativeTab(tab);
 
 		// Seeds
-		fireSeed = new ItemSeeds(pyreFlower, flameStone).setTextureName("mod_ebm:seeds_fire")
+		fireSeed = new FireSeeds(pyreFlower, flameStone).setTextureName("mod_ebm:seeds_fire")
 				.setUnlocalizedName("FireSeed").setCreativeTab(tab);
 
 		// Tools / Weapons

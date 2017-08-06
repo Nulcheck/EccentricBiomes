@@ -6,16 +6,14 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ebm.com.mce.common.mod_ebm;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockFarmland;
-import net.minecraft.block.BlockPotato;
+import net.minecraft.block.BlockCrops;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
-public class PyreFlower extends BlockPotato {
+public class PyreFlower extends BlockCrops {
 	private IIcon[] iconArray;
 
 	public PyreFlower() {
@@ -40,11 +38,9 @@ public class PyreFlower extends BlockPotato {
 		return 1;
 	}
 
+	@Override
 	protected boolean canPlaceBlockOn(Block block) {
-		if (block == mod_ebm.flameStone)
-			return true;
-		else
-			return false;
+		return block == mod_ebm.flameStone;
 	}
 
 	protected Item func_149866_i() {

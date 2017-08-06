@@ -1,4 +1,4 @@
-package ebm.com.mce.common;
+package ebm.com.mce.util.updater;
 
 public class CheckVersion {
 	public CheckVersion() {

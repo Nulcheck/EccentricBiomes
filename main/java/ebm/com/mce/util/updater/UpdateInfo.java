@@ -1,4 +1,4 @@
-package ebm.com.mce.common;
+package ebm.com.mce.util.updater;
 
 import java.io.InputStream;
 import java.net.URL;

@@ -100,6 +100,8 @@ import ebm.com.mce.handlers.registry.BiomeRegistry;
 import ebm.com.mce.handlers.registry.BlockRegistry;
 import ebm.com.mce.handlers.registry.ItemRegistry;
 import ebm.com.mce.handlers.registry.MobRegistry;
+import ebm.com.mce.handlers.registry.OreDictionaryRegistry;
+import ebm.com.mce.handlers.registry.TileEntityRegistry;
 import ebm.com.mce.items.FireSeeds;
 import ebm.com.mce.items.ItemTool.GlassShard;
 import ebm.com.mce.items.ItemTool.Sword;
@@ -1258,7 +1260,8 @@ public class mod_ebm {
 	@Mod.EventHandler
 	public static void load(FMLInitializationEvent e) {
 		gameRegistry();
-		oreDictionary();
+		OreDictionaryRegistry.oreDictionary();
+		TileEntityRegistry.tileEntityRegistry();
 		proxy.registerRenders();
 	}
 
@@ -1281,136 +1284,6 @@ public class mod_ebm {
 
 		AchRegistry.registerAch();
 		AchRegistry.nameAch();
-	}
-
-	public static void oreDictionary() {
-		// Flamestone
-		OreDictionary.registerOre("flameStone", new ItemStack(flameStone));
-		OreDictionary.registerOre("flameStone", new ItemStack(flameStoneDeactivated));
-		OreDictionary.registerOre("flameStone", new ItemStack(flameStoneBurnMobs));
-		OreDictionary.registerOre("flameStone", new ItemStack(flameStoneBurnPlayers));
-
-		// Dymus
-		OreDictionary.registerOre("dymusFancy", new ItemStack(dymusBricks));
-		OreDictionary.registerOre("dymusFancy", new ItemStack(dymusOrnate));
-		OreDictionary.registerOre("dymusFancy", new ItemStack(dymusPillar));
-		//
-		OreDictionary.registerOre("dymusSlab", new ItemStack(dymusSlab));
-		OreDictionary.registerOre("dymusSlab", new ItemStack(dymusBrickSlab));
-		OreDictionary.registerOre("dymusSlab", new ItemStack(dymusOrnateSlab));
-		//
-		OreDictionary.registerOre("dymusStair", new ItemStack(dymusStairs));
-		OreDictionary.registerOre("dymusStair", new ItemStack(dymusBrickStairs));
-		OreDictionary.registerOre("dymusStair", new ItemStack(dymusOrnateStairs));
-
-		// Autil
-		OreDictionary.registerOre("autilFancy", new ItemStack(autilBricks));
-		OreDictionary.registerOre("autilFancy", new ItemStack(autilOrnate));
-		OreDictionary.registerOre("autilFancy", new ItemStack(autilPillar));
-		//
-		OreDictionary.registerOre("autilSlab", new ItemStack(autilSlab));
-		OreDictionary.registerOre("autilSlab", new ItemStack(autilBrickSlab));
-		OreDictionary.registerOre("autilSlab", new ItemStack(autilOrnateSlab));
-		//
-		OreDictionary.registerOre("autilStair", new ItemStack(autilStairs));
-		OreDictionary.registerOre("autilStair", new ItemStack(autilBrickStairs));
-		OreDictionary.registerOre("autilStair", new ItemStack(autilOrnateStairs));
-
-		// Logs
-		OreDictionary.registerOre("logGlass", new ItemStack(glassLog));
-		OreDictionary.registerOre("logBone", new ItemStack(boneLog));
-		OreDictionary.registerOre("logWood", new ItemStack(mLog));
-		OreDictionary.registerOre("logWood", new ItemStack(deadLog));
-		OreDictionary.registerOre("logWood", new ItemStack(mauvewoodLog));
-
-		// Planks
-		OreDictionary.registerOre("plankWood", new ItemStack(mPlanks));
-		OreDictionary.registerOre("plankWood", new ItemStack(deadPlanks));
-		OreDictionary.registerOre("plankWood", new ItemStack(mauvePlanks));
-
-		// Trapdoors
-		OreDictionary.registerOre("trapdoor", new ItemStack(mTDoor));
-		OreDictionary.registerOre("trapdoor", new ItemStack(deadTDoor));
-		OreDictionary.registerOre("trapdoor", new ItemStack(mauveTDoor));
-
-		// Secret Trapdoors
-		OreDictionary.registerOre("secretTrapdoor", new ItemStack(mSTDoor));
-		OreDictionary.registerOre("secretTrapdoor", new ItemStack(deadSTDoor));
-		OreDictionary.registerOre("secretTrapdoor", new ItemStack(mauveSTDoor));
-
-		// Chests
-		OreDictionary.registerOre("blockChest", new ItemStack(mChest));
-		OreDictionary.registerOre("blockChest", new ItemStack(deadChest));
-		OreDictionary.registerOre("blockChest", new ItemStack(mauveChest));
-		OreDictionary.registerOre("trappedChest", new ItemStack(mChestTrapped));
-		OreDictionary.registerOre("trappedChest", new ItemStack(deadChestTrapped));
-		OreDictionary.registerOre("trappedChest", new ItemStack(mauveChestTrapped));
-
-		// Door Items
-		OreDictionary.registerOre("doorWood", new ItemStack(mDoorItem));
-		OreDictionary.registerOre("doorWood", new ItemStack(deadDoorItem));
-		OreDictionary.registerOre("doorWood", new ItemStack(mauvewoodDoorItem));
-
-		// Fences
-		OreDictionary.registerOre("fenceWood", new ItemStack(mFence));
-		OreDictionary.registerOre("fenceWood", new ItemStack(deadFence));
-		OreDictionary.registerOre("fenceWood", new ItemStack(mauveFence));
-
-		// Fences Gates
-		OreDictionary.registerOre("fenceWood", new ItemStack(mFenceGate));
-		OreDictionary.registerOre("fenceWood", new ItemStack(deadFenceGate));
-		OreDictionary.registerOre("fenceWood", new ItemStack(mauveFenceGate));
-
-		// Wooden Slabs
-		OreDictionary.registerOre("slabWood", new ItemStack(mWoodSlab));
-		OreDictionary.registerOre("slabWood", new ItemStack(deadWoodSlab));
-		OreDictionary.registerOre("slabWood", new ItemStack(mauvewoodSlab));
-
-		// Wooden Stairs
-		OreDictionary.registerOre("stairWood", new ItemStack(mWoodStairs));
-		OreDictionary.registerOre("stairWood", new ItemStack(deadWoodStairs));
-		OreDictionary.registerOre("stairWood", new ItemStack(mauvewoodStairs));
-
-		// Leaves
-		OreDictionary.registerOre("treeLeaves", new ItemStack(glassLeaves));
-		OreDictionary.registerOre("treeLeaves", new ItemStack(mLeaves));
-		OreDictionary.registerOre("treeLeaves", new ItemStack(mauvewoodLeaves));
-
-		// Sapling
-		OreDictionary.registerOre("treeSapling", new ItemStack(glassSapling));
-		OreDictionary.registerOre("treeSapling", new ItemStack(boneSapling));
-		OreDictionary.registerOre("treeSapling", new ItemStack(mSapling));
-		OreDictionary.registerOre("treeSapling", new ItemStack(mauvewoodSapling));
-
-		// Sticks
-		OreDictionary.registerOre("stickWood", new ItemStack(mStick));
-		OreDictionary.registerOre("stickWood", new ItemStack(deadStick));
-		OreDictionary.registerOre("stickWood", new ItemStack(mauveStick));
-
-		// Ingots
-		OreDictionary.registerOre("ingotDymus", new ItemStack(dymusBar));
-
-		// Dusts
-		OreDictionary.registerOre("dustDymus", new ItemStack(dymusPowder));
-		OreDictionary.registerOre("dust", new ItemStack(dust));
-		OreDictionary.registerOre("dustAutil", new ItemStack(autil));
-
-		// Foods
-		OreDictionary.registerOre("foodHoney", new ItemStack(honey));
-		OreDictionary.registerOre("foodCrystalHoney", new ItemStack(crystalHoney));
-
-		// Other
-		// Blocks
-		OreDictionary.registerOre("blockDymus", new ItemStack(dymusBlock));
-		OreDictionary.registerOre("blockAutil", new ItemStack(autilBlock));
-		OreDictionary.registerOre("blockBone", new ItemStack(boneBlock));
-		OreDictionary.registerOre("blockHoneycomb", new ItemStack(honeycomb));
-		OreDictionary.registerOre("blockBeeswax", new ItemStack(beeswax));
-		OreDictionary.registerOre("blockCrystalHoney", new ItemStack(crystalHoneyBlock));
-
-		// Items
-		OreDictionary.registerOre("bee", new ItemStack(bee));
-		OreDictionary.registerOre("stinger", new ItemStack(stinger));
 	}
 
 	@Mod.EventHandler

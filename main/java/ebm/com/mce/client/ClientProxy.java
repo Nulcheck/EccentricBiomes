@@ -9,6 +9,7 @@ import ebm.com.mce.client.render.block.chest.ClientRenderManchineelChest;
 import ebm.com.mce.client.render.block.chest.ClientRenderMauvewoodChest;
 import ebm.com.mce.client.render.item.ItemRenderErythonCube;
 import ebm.com.mce.client.render.item.block.ItemRenderBeehive;
+import ebm.com.mce.client.render.item.block.ItemRenderSlimeSpike;
 import ebm.com.mce.client.render.item.block.chest.ItemDeadwoodChestRender;
 import ebm.com.mce.client.render.item.block.chest.ItemManchineelChestRender;
 import ebm.com.mce.client.render.item.block.chest.ItemMauvewoodChestRender;
@@ -17,12 +18,14 @@ import ebm.com.mce.common.mod_ebm;
 import ebm.com.mce.entity.fx.EntityErythonFX;
 import ebm.com.mce.entity.mobs.EntityErython;
 import ebm.com.mce.entity.tile.block.TileEntityBeehive;
+import ebm.com.mce.entity.tile.block.TileEntitySlimeSpike;
 import ebm.com.mce.entity.tile.block.chest.TileEntityDeadwoodChest;
 import ebm.com.mce.entity.tile.block.chest.TileEntityManchineelChest;
 import ebm.com.mce.entity.tile.block.chest.TileEntityMauvewoodChest;
 import ebm.com.mce.entity.tile.item.TileEntityErythonCube;
 import ebm.com.mce.models.mobs.ModelErython;
 import ebm.com.mce.render.block.RenderBeehive;
+import ebm.com.mce.render.block.RenderSlimeSpike;
 import ebm.com.mce.render.item.RenderErythonCube;
 import ebm.com.mce.render.mobs.RenderErython;
 import net.minecraft.client.Minecraft;
@@ -43,6 +46,10 @@ public class ClientProxy extends CommonProxy {
 		// Blocks
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBeehive.class, new RenderBeehive());
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(mod_ebm.beehive), new ItemRenderBeehive());
+
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySlimeSpike.class, new RenderSlimeSpike());
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(mod_ebm.slimeSpike),
+				new ItemRenderSlimeSpike());
 
 		// Chests
 		// Manchineel

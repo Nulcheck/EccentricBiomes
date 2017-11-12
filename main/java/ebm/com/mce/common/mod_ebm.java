@@ -63,6 +63,7 @@ import ebm.com.mce.blocks.ModSlabs;
 import ebm.com.mce.blocks.ModStairs;
 import ebm.com.mce.blocks.ModTorch;
 import ebm.com.mce.blocks.ModTrapdoor;
+import ebm.com.mce.blocks.SlimyGrass;
 import ebm.com.mce.blocks.chest.DeadwoodChest;
 import ebm.com.mce.blocks.chest.ManchineelChest;
 import ebm.com.mce.blocks.chest.MauvewoodChest;
@@ -72,6 +73,7 @@ import ebm.com.mce.blocks.doors.ManchineelDoor;
 import ebm.com.mce.blocks.doors.MauvewoodDoor;
 import ebm.com.mce.blocks.plants.Beehive;
 import ebm.com.mce.blocks.plants.ModGrass;
+import ebm.com.mce.blocks.plants.SlimeSpike;
 import ebm.com.mce.blocks.saplings.BoneSapling;
 import ebm.com.mce.blocks.saplings.GlassSapling;
 import ebm.com.mce.blocks.saplings.MauvewoodSapling;
@@ -121,12 +123,10 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemFood;
-import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.oredict.OreDictionary;
 
 @Mod(modid = mod_ebm.modid, name = mod_ebm.name, version = mod_ebm.version)
 public class mod_ebm {
@@ -169,6 +169,7 @@ public class mod_ebm {
 	public static Block beeswax;
 	public static Block crystalHoneyBlock;
 	public static Block shadowHoneycomb;
+	public static Block slimyGrass;
 
 	// Fancy shit
 	public static Block dymusBricks;
@@ -194,6 +195,7 @@ public class mod_ebm {
 	// Flowers?
 	public static Block beehive;
 	public static Block fireGrass;
+	public static Block slimeSpike;
 
 	// Unbreakable
 	public static Block unAutilBricks;
@@ -463,7 +465,7 @@ public class mod_ebm {
 	public static int idShadowHive;
 	public static int idSlimy;
 
-	//TODO: Preinit
+	// TODO: Preinit
 	@Mod.EventHandler
 	public static void preInit(FMLPreInitializationEvent e) {
 		networkWrapper = NetworkRegistry.INSTANCE.newSimpleChannel(modid);
@@ -590,12 +592,18 @@ public class mod_ebm {
 				.setBlockTextureName("mod_ebm:honeycomb_shadow").setStepSound(Block.soundTypeStone).setHardness(0.9f)
 				.setResistance(1.2f).setCreativeTab(tab);
 
-		// Plants
+		slimyGrass = new SlimyGrass().setBlockName("slimeGrass").setBlockTextureName("mod_ebm:slime_grass")
+				.setHardness(0.6f).setStepSound(Block.soundTypeGrass).setCreativeTab(tab);
+
+		// TODO: Plants
 		beehive = new Beehive(Material.ground).setBlockName("beehive").setHardness(0.2f).setCreativeTab(tab)
 				.setStepSound(Block.soundTypeStone).setBlockTextureName("stone").setLightOpacity(1);
 
 		fireGrass = new ModGrass().setBlockName("fireGrass").setHardness(0.05f).setCreativeTab(tab)
 				.setStepSound(Block.soundTypeGrass).setBlockTextureName("mod_ebm:grass_fire").setLightLevel(1f);
+
+		slimeSpike = new SlimeSpike(Material.ground).setBlockName("slimeSpike").setHardness(0.1f).setCreativeTab(tab)
+				.setStepSound(Block.soundTypeGravel).setBlockTextureName("mod_ebm:slime_grass").setLightOpacity(1);
 
 		// Crops
 		pyreFlower = new PyreFlower().setBlockName("PyreFlower").setBlockTextureName("mod_ebm:flower_pyre")

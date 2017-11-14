@@ -34,6 +34,8 @@ tile.honeycomb.name=Honeycomb
 tile.shadowHoneycomb.name=Shadow Honeycomb
 tile.beeswax.name=Beeswax
 tile.crystalHoneyBlock.name=Crystallized Honey
+tile.slimeSpike.name=Slime Spike
+tile.slimeGlass.name=Slimy Grass
 
 tile.beehive.name=Beehive
 tile.fireGrass.name=Fire Grass

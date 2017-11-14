@@ -6,6 +6,7 @@ import ebm.com.mce.items.blocks.ItemFlameStone;
 import ebm.com.mce.items.blocks.ItemFlameStoneDeactivated;
 import ebm.com.mce.items.blocks.ItemFlameStoneMobs;
 import ebm.com.mce.items.blocks.ItemFlameStonePlayers;
+import ebm.com.mce.items.blocks.ItemSlimeSpike;
 import ebm.com.mce.items.blocks.unbreak.ItemunAutilBrickPressurePlate;
 import ebm.com.mce.items.blocks.unbreak.ItemunAutilBrickStairs;
 import ebm.com.mce.items.blocks.unbreak.ItemunAutilBricks;
@@ -271,7 +272,7 @@ public class BlockRegistry {
 		//TODO: Plants
 		GameRegistry.registerBlock(mod_ebm.beehive, "beehive");
 		GameRegistry.registerBlock(mod_ebm.fireGrass, "fireGrass");
-		GameRegistry.registerBlock(mod_ebm.slimeSpike, "slimeSpike");
+		GameRegistry.registerBlock(mod_ebm.slimeSpike, ItemSlimeSpike.class, "slimeSpike");
 
 		// Crops
 		GameRegistry.registerBlock(mod_ebm.pyreFlower, "PyreFlower");

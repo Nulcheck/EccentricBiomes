@@ -9,8 +9,11 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.IItemRenderer;
 
 public class ItemRenderSlimeSpike implements IItemRenderer {
-	public static final ResourceLocation texture = new ResourceLocation("mod_ebm",
-			"/textures/models/slime_spike.png".substring(1));
+	public static final ResourceLocation textureGreen = new ResourceLocation("mod_ebm",
+			"/textures/models/slime_spike_green.png".substring(1));
+
+	public static final ResourceLocation textureBlue = new ResourceLocation("mod_ebm",
+			"/textures/models/slime_spike_blue.png".substring(1));
 	private ModelSlimeSpike model;
 
 	public ItemRenderSlimeSpike() {
@@ -34,65 +37,132 @@ public class ItemRenderSlimeSpike implements IItemRenderer {
 	 */
 
 	public void renderItem(IItemRenderer.ItemRenderType type, ItemStack stack, Object... data) {
+		int meta = stack.getItemDamage();
+
 		switch (type) {
 		case INVENTORY: {
-			GL11.glPushMatrix();
-			GL11.glTranslatef(.3f, 1.5f, .3f);
-			GL11.glRotatef(180f, 0f, 0f, 1f);
-			GL11.glScalef(.1f, .1f, .1f);
+			switch (meta) {
+			case 0:
+				GL11.glPushMatrix();
+				GL11.glTranslatef(.3f, 1.5f, .3f);
+				GL11.glRotatef(180f, 0f, 0f, 1f);
+				GL11.glScalef(.1f, .1f, .1f);
 
-			Minecraft.getMinecraft().renderEngine.bindTexture(texture);
-			model.renderModel(.625f);
-			GL11.glPopMatrix();
-			break;
+				Minecraft.getMinecraft().renderEngine.bindTexture(textureGreen);
+				model.renderModel(.625f);
+				GL11.glPopMatrix();
+				break;
+			case 1:
+				GL11.glPushMatrix();
+				GL11.glTranslatef(.3f, 1.5f, .3f);
+				GL11.glRotatef(180f, 0f, 0f, 1f);
+				GL11.glScalef(.1f, .1f, .1f);
+
+				Minecraft.getMinecraft().renderEngine.bindTexture(textureBlue);
+				model.renderModel(.625f);
+				GL11.glPopMatrix();
+				break;
+			}
 		}
 
 		case ENTITY: {
-			GL11.glPushMatrix();
-			GL11.glTranslatef(0f, 1.2f, 0f);
-			GL11.glRotatef(180f, 0f, 0f, 1f);
-			GL11.glScalef(.1f, .1f, .1f);
+			switch (meta) {
+			case 0:
+				GL11.glPushMatrix();
+				GL11.glTranslatef(.3f, 1.5f, .3f);
+				GL11.glRotatef(180f, 0f, 0f, 1f);
+				GL11.glScalef(.1f, .1f, .1f);
 
-			Minecraft.getMinecraft().renderEngine.bindTexture(texture);
-			model.renderModel(.625f);
-			GL11.glPopMatrix();
-			break;
+				Minecraft.getMinecraft().renderEngine.bindTexture(textureGreen);
+				model.renderModel(.625f);
+				GL11.glPopMatrix();
+				break;
+			case 1:
+				GL11.glPushMatrix();
+				GL11.glTranslatef(.3f, 1.5f, .3f);
+				GL11.glRotatef(180f, 0f, 0f, 1f);
+				GL11.glScalef(.1f, .1f, .1f);
+
+				Minecraft.getMinecraft().renderEngine.bindTexture(textureBlue);
+				model.renderModel(.625f);
+				GL11.glPopMatrix();
+				break;
+			}
 		}
 
 		case EQUIPPED: {
-			GL11.glPushMatrix();
-			GL11.glTranslatef(.7f, 1.7f, .7f);
-			GL11.glRotatef(180f, 0f, 0f, 1f);
-			GL11.glScalef(.1f, .1f, .1f);
+			switch (meta) {
+			case 0:
+				GL11.glPushMatrix();
+				GL11.glTranslatef(.3f, 1.5f, .3f);
+				GL11.glRotatef(180f, 0f, 0f, 1f);
+				GL11.glScalef(.1f, .1f, .1f);
 
-			Minecraft.getMinecraft().renderEngine.bindTexture(texture);
-			model.renderModel(.625f);
-			GL11.glPopMatrix();
-			break;
+				Minecraft.getMinecraft().renderEngine.bindTexture(textureGreen);
+				model.renderModel(.625f);
+				GL11.glPopMatrix();
+				break;
+			case 1:
+				GL11.glPushMatrix();
+				GL11.glTranslatef(.3f, 1.5f, .3f);
+				GL11.glRotatef(180f, 0f, 0f, 1f);
+				GL11.glScalef(.1f, .1f, .1f);
+
+				Minecraft.getMinecraft().renderEngine.bindTexture(textureBlue);
+				model.renderModel(.625f);
+				GL11.glPopMatrix();
+				break;
+			}
 		}
 
 		case EQUIPPED_FIRST_PERSON: {
-			GL11.glPushMatrix();
-			GL11.glTranslatef(1.5f, 1.8f, .6f);
-			GL11.glRotatef(180f, 0f, 0f, 1f);
-			GL11.glScalef(.1f, .1f, .1f);
+			switch (meta) {
+			case 0:
+				GL11.glPushMatrix();
+				GL11.glTranslatef(.3f, 1.5f, .3f);
+				GL11.glRotatef(180f, 0f, 0f, 1f);
+				GL11.glScalef(.1f, .1f, .1f);
 
-			Minecraft.getMinecraft().renderEngine.bindTexture(texture);
-			model.renderModel(.625f);
-			GL11.glPopMatrix();
-			break;
+				Minecraft.getMinecraft().renderEngine.bindTexture(textureGreen);
+				model.renderModel(.625f);
+				GL11.glPopMatrix();
+				break;
+			case 1:
+				GL11.glPushMatrix();
+				GL11.glTranslatef(.3f, 1.5f, .3f);
+				GL11.glRotatef(180f, 0f, 0f, 1f);
+				GL11.glScalef(.1f, .1f, .1f);
+
+				Minecraft.getMinecraft().renderEngine.bindTexture(textureBlue);
+				model.renderModel(.625f);
+				GL11.glPopMatrix();
+				break;
+			}
 		}
 
 		default: {
-			GL11.glPushMatrix();
-			GL11.glTranslatef(0f, 1.2f, 0f);
-			GL11.glRotatef(180f, 0f, 0f, 1f);
-			GL11.glScalef(.1f, .1f, .1f);
+			switch (meta) {
+			case 0:
+				GL11.glPushMatrix();
+				GL11.glTranslatef(.3f, 1.5f, .3f);
+				GL11.glRotatef(180f, 0f, 0f, 1f);
+				GL11.glScalef(.1f, .1f, .1f);
 
-			Minecraft.getMinecraft().renderEngine.bindTexture(texture);
-			model.renderModel(.0625f);
-			GL11.glPopMatrix();
-			break;
+				Minecraft.getMinecraft().renderEngine.bindTexture(textureGreen);
+				model.renderModel(.625f);
+				GL11.glPopMatrix();
+				break;
+			case 1:
+				GL11.glPushMatrix();
+				GL11.glTranslatef(.3f, 1.5f, .3f);
+				GL11.glRotatef(180f, 0f, 0f, 1f);
+				GL11.glScalef(.1f, .1f, .1f);
+
+				Minecraft.getMinecraft().renderEngine.bindTexture(textureBlue);
+				model.renderModel(.625f);
+				GL11.glPopMatrix();
+				break;
+			}
 		}
 		}
 	}

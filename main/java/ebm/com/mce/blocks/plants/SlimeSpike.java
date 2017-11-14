@@ -2,18 +2,24 @@ package ebm.com.mce.blocks.plants;
 
 import static net.minecraftforge.common.EnumPlantType.Plains;
 
+import java.util.List;
 import java.util.Random;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import ebm.com.mce.common.mod_ebm;
 import ebm.com.mce.entity.tile.block.TileEntitySlimeSpike;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
@@ -29,6 +35,16 @@ public class SlimeSpike extends BlockContainer implements IPlantable {
 	public TileEntity createNewTileEntity(World world, int meta) {
 		return new TileEntitySlimeSpike();
 	}
+
+	@SideOnly(Side.CLIENT)
+	public void getSubBlocks(Item item, CreativeTabs tab, List list) {
+		list.add(new ItemStack(item, 1, 0)); // Green
+		list.add(new ItemStack(item, 1, 1)); // Blue
+	}
+	
+	/*public IIcon getIcon(int side, int meta) {
+	    return mod_ebm.slimeSpike.getIcon(side, meta);
+	}*/
 
 	public boolean isOpaqueCube() {
 		return false;

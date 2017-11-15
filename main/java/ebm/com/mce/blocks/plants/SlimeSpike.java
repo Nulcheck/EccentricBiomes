@@ -59,7 +59,7 @@ public class SlimeSpike extends BlockContainer implements IPlantable {
 	}
 
 	public int quantityDropped(Random rand) {
-		return 1 + rand.nextInt(2);
+		return 1 + rand.nextInt(1);
 	}
 
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World world, int x, int y, int z) {

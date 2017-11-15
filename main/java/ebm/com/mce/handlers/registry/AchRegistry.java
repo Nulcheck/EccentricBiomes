@@ -26,6 +26,7 @@ public class AchRegistry {
 	public static Achievement hive;
 	public static Achievement ocher;
 	public static Achievement shadowHive;
+	public static Achievement slimy;
 
 	public static AchievementPage modPage;
 
@@ -81,9 +82,12 @@ public class AchRegistry {
 		shadowHive = new Achievement("achievement.shadowHive", "shadowHive", 6, 0,
 				new ItemStack(mod_ebm.shadowHoneycomb), null).registerStat();
 
+		slimy = new Achievement("achievement.slimy", "slimy", 7, 0, Item.getItemFromBlock(mod_ebm.slimeSpike), null)
+				.registerStat();
+
 		modPage = new AchievementPage("\u00A75Eccentric Biomes", highLands, deathForest, obsidianForest, glassLand,
 				arctic, snowyDesert, flamage, Void, fertile, bone, deadLand, autilField, amethyst, amethystGrove, hive,
-				ocher, shadowHive);
+				ocher, shadowHive, slimy);
 		AchievementPage.registerAchievementPage(modPage);
 	}
 
@@ -144,8 +148,11 @@ public class AchRegistry {
 
 		addName("ocher", "en_US", "Orange!");
 		addDesc("ocher", "en_US", "You're an apple!");
-		
+
 		addName("shadowHive", "en_US", "Black Bees?");
 		addDesc("shadowHive", "en_US", "So dark, how do they see?");
+		
+		addName("slimy", "en_US", "Slime!");
+		addDesc("slimy", "en_US", "Ew, it's slippery here.");
 	}
 }

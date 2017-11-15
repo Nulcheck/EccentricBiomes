@@ -3,7 +3,7 @@ package ebm.com.mce.gen.biomes;
 import java.util.Random;
 
 import ebm.com.mce.common.mod_ebm;
-import ebm.com.mce.gen.biomes.dec.WorldGenBeehive;
+import ebm.com.mce.gen.biomes.dec.WorldGenGrass;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -14,20 +14,25 @@ public class Slimy extends BiomeGenBase {
 		super(id, spawn);
 		this.setHeight(height_PartiallySubmerged);
 		this.setTemperatureRainfall(.5f, .3f);
+		this.spawnableCreatureList.clear();
+		this.spawnableMonsterList.clear();
 		this.spawnableCreatureList.add(new BiomeGenBase.SpawnListEntry(EntitySlime.class, 1, 2, 4));
+		this.spawnableMonsterList.add(new BiomeGenBase.SpawnListEntry(EntitySlime.class, 1, 2, 4));
 		this.theBiomeDecorator.grassPerChunk = 3;
 		this.theBiomeDecorator.treesPerChunk = -999;
+		this.theBiomeDecorator.flowersPerChunk = -999;
 		this.theBiomeDecorator.generateLakes = false;
 
 		this.topBlock = mod_ebm.slimyGrass;
 		this.fillerBlock = Blocks.dirt;
 		this.biomeName = "Slimy";
-		this.waterColorMultiplier = 14745518;
+		this.waterColorMultiplier = 42222;
 		this.color = 12380500;
 	}
 
 	public int getBiomeGrassColor(int x, int y, int z) {
-		return 12380500;
+		double d0 = plantNoise.func_151601_a((double) x * 0.0225D, (double) z * 0.0225D);
+		return d0 < -0.1D ? 12380500 : 42222;
 	}
 
 	public int getModdedBiomeFoliageColor(int original) {
@@ -39,6 +44,7 @@ public class Slimy extends BiomeGenBase {
 	}
 
 	public WorldGenerator getRandomWorldGenForGrass(Random ran) {
-		return ran.nextInt(1) == 0 ? new WorldGenBeehive(mod_ebm.slimeSpike) : new WorldGenBeehive(mod_ebm.slimeSpike);
+		return ran.nextInt(4) == 0 ? new WorldGenGrass(mod_ebm.slimeSpike, 1)
+				: new WorldGenGrass(mod_ebm.slimeSpike, 0);
 	}
 }

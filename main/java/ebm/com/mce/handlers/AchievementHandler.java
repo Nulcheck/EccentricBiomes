@@ -24,6 +24,7 @@ public class AchievementHandler {
 	public static String hive = "Hive";
 	public static String ocher = "Ocher";
 	public static String shadowHive = "Shadow Hive";
+	public static String slimy = "Slimy";
 
 	@SubscribeEvent
 	public void biomeAchievements(PlayerTickEvent e) {
@@ -96,6 +97,10 @@ public class AchievementHandler {
 
 		else if (e.player.worldObj.getBiomeGenForCoords(px, pz).biomeName == shadowHive) {
 			e.player.addStat(AchRegistry.shadowHive, 1);
+		}
+
+		else if (e.player.worldObj.getBiomeGenForCoords(px, pz).biomeName == slimy) {
+			e.player.addStat(AchRegistry.slimy, 1);
 		}
 	}
 }

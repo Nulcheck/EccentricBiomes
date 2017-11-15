@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class WorldGenSpikes extends WorldGenerator {
-	public static Block blockA;
+	public Block blockA;
 
 	public boolean generate(World world, Random rand, int x, int y, int z) {
 		while (world.isAirBlock(x, y, z) && y > 2) {

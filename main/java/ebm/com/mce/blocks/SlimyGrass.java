@@ -7,20 +7,14 @@ import org.apache.logging.log4j.Logger;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import ebm.com.mce.common.mod_ebm;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockBush;
-import net.minecraft.block.BlockDoublePlant;
-import net.minecraft.block.BlockFlower;
-import net.minecraft.block.BlockMushroom;
-import net.minecraft.block.BlockSapling;
-import net.minecraft.block.BlockTallGrass;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.IIcon;
+import net.minecraft.world.ColorizerGrass;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IPlantable;
@@ -38,7 +32,7 @@ public class SlimyGrass extends Block implements IGrowable {
 
 	public SlimyGrass() {
 		super(Material.grass);
-		this.slipperiness = 0.8f;
+		this.slipperiness = 0.85f;
 		this.setTickRandomly(true);
 	}
 
@@ -76,6 +70,41 @@ public class SlimyGrass extends Block implements IGrowable {
 	}
 
 	@SideOnly(Side.CLIENT)
+	public int getBlockColor() {
+		double d0 = 0.5D;
+		double d1 = 1.0D;
+		return ColorizerGrass.getGrassColor(d0, d1);
+	}
+
+	@SideOnly(Side.CLIENT)
+	public int getRenderColor(int i) {
+		return this.getBlockColor();
+	}
+
+	/**
+	 * Returns a integer with hex for 0xrrggbb with this color multiplied
+	 * against the blocks color. Note only called when first determining what to
+	 * render.
+	 */
+	@SideOnly(Side.CLIENT)
+	public int colorMultiplier(IBlockAccess block, int x, int y, int z) {
+		int l = 0;
+		int i1 = 0;
+		int j1 = 0;
+
+		for (int k1 = -1; k1 <= 1; ++k1) {
+			for (int l1 = -1; l1 <= 1; ++l1) {
+				int i2 = block.getBiomeGenForCoords(x + l1, z + k1).getBiomeGrassColor(x + l1, y, z + k1);
+				l += (i2 & 16711680) >> 16;
+				i1 += (i2 & 65280) >> 8;
+				j1 += i2 & 255;
+			}
+		}
+
+		return (l / 9 & 255) << 16 | (i1 / 9 & 255) << 8 | j1 / 9 & 255;
+	}
+
+	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister icon) {
 		this.blockIcon = icon.registerIcon("mod_ebm:slime_grass_side");
 		this.top = icon.registerIcon("mod_ebm:slime_grass_top");
@@ -98,8 +127,7 @@ public class SlimyGrass extends Block implements IGrowable {
 					j1 += (rand.nextInt(3) - 1) * rand.nextInt(3) / 2;
 					k1 += rand.nextInt(3) - 1;
 
-					if (world.getBlock(i1, j1 - 1, k1) == Blocks.dirt
-							&& !world.getBlock(i1, j1, k1).isNormalCube()) {
+					if (world.getBlock(i1, j1 - 1, k1) == Blocks.dirt && !world.getBlock(i1, j1, k1).isNormalCube()) {
 						++l1;
 						continue;
 					}

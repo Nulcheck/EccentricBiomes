@@ -3,7 +3,7 @@ package ebm.com.mce.gen.biomes;
 import java.util.Random;
 
 import ebm.com.mce.common.mod_ebm;
-import ebm.com.mce.gen.biomes.dec.WorldGenBeehive;
+import ebm.com.mce.gen.biomes.dec.WorldGenGrass;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
@@ -40,6 +40,6 @@ public class ShadowHive extends BiomeGenBase {
 	}
 
 	public WorldGenerator getRandomWorldGenForGrass(Random ran) {
-		return ran.nextInt(1) == 0 ? new WorldGenBeehive(mod_ebm.beehive) : new WorldGenBeehive(mod_ebm.beehive);
+		return ran.nextInt(1) == 0 ? new WorldGenGrass(mod_ebm.beehive, 0) : new WorldGenGrass(mod_ebm.beehive, 0);
 	}
 }

@@ -7,8 +7,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class WorldGenGrass extends WorldGenerator {
-	public static Block block;
-	public static int meta;
+	public Block block;
+	public int meta;
 
 	public WorldGenGrass(Block block, int meta) {
 		this.block = block;

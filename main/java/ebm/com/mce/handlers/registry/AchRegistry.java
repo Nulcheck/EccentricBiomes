@@ -95,7 +95,7 @@ public class AchRegistry {
 				.registerStat();
 
 		// TODO: Dimensions
-		crimsonDim = new Achievement("achievement.crimsonDim", "crimsonDim", 0, 2,
+		crimsonDim = new Achievement("achievement.crimsonDim", "crimsonDim", -1, 2,
 				Item.getItemFromBlock(mod_ebm.crimsonPortal), null).registerStat().setSpecial();
 
 		// Dimensional Biomes

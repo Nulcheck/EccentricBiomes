@@ -49,6 +49,12 @@ public class OtherEvents {
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
 				e.entityPlayer.inventory.consumeInventoryItem(mod_ebm.pyreCrystal);
 			}
+			
+			if (e.entityPlayer.getHeldItem() != null && e.entityPlayer.getHeldItem().getItem() == mod_ebm.pyreCrystal
+					&& e.world.getBlock(e.x, e.y, e.z) == mod_ebm.crimsonObsidian) {
+				e.world.setBlock(e.x, e.y + 1, e.z, mod_ebm.crimsonFire);
+				e.world.scheduleBlockUpdate(e.x, e.y, e.z, mod_ebm.crimsonFire, 1);
+			}
 		}
 	}
 
@@ -115,8 +121,8 @@ public class OtherEvents {
 	@SubscribeEvent
 	public void doubleSlabDrops(BlockEvent.HarvestDropsEvent e) {
 		Block block = e.block;
-		
-		if(block == mod_ebm.honeycomb){
+
+		if (block == mod_ebm.honeycomb) {
 			e.drops.add(new ItemStack(mod_ebm.honey, 2));
 			e.drops.remove(0);
 		}

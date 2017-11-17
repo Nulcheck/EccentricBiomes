@@ -50,8 +50,9 @@ public class ProcessPacketClientSide {
 				 * foundEntityHerdAnimal.setScaleFactor(bbis.readFloat());
 				 * foundEntityHerdAnimal.setRearing(bbis.readBoolean());
 				 * foundEntityHerdAnimal.setRearingCounter(bbis.readInt()); //
-				 * DEBUG System.out.println("Is rearing = "
-				 * +foundEntityHerdAnimal .isRearing()); }
+				 * DEBUG
+				 * System.out.println("Is rearing = "+foundEntityHerdAnimal
+				 * .isRearing()); }
 				 */
 
 			}

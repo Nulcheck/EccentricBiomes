@@ -60,6 +60,14 @@ public class BlockRegistry {
 		GameRegistry.registerBlock(mod_ebm.beeswax, "beeswax");
 		GameRegistry.registerBlock(mod_ebm.crystalHoneyBlock, "crystalHoneyBlock");
 		GameRegistry.registerBlock(mod_ebm.slimyGrass, "slimeGrass");
+		GameRegistry.registerBlock(mod_ebm.crimsonObsidian, "redObsidian");
+		GameRegistry.registerBlock(mod_ebm.crimsonStone, "crimsonStone");
+
+		// Fires
+		GameRegistry.registerBlock(mod_ebm.crimsonFire, "crimsonFire");
+
+		// Portals
+		GameRegistry.registerBlock(mod_ebm.crimsonPortal, "crimsonPortal");
 
 		// Planks
 		GameRegistry.registerBlock(mod_ebm.mPlanks, "mPlanks");
@@ -269,7 +277,7 @@ public class BlockRegistry {
 		GameRegistry.registerBlock(mod_ebm.mauvewoodSapling, "MauvewoodSapling");
 		// GameRegistry.registerBlock(mod_ebm.boneSapling, "BoneSapling");
 
-		//TODO: Plants
+		// TODO: Plants
 		GameRegistry.registerBlock(mod_ebm.beehive, "beehive");
 		GameRegistry.registerBlock(mod_ebm.fireGrass, "fireGrass");
 		GameRegistry.registerBlock(mod_ebm.slimeSpike, ItemSlimeSpike.class, "slimeSpike");

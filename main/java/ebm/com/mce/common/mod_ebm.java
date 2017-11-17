@@ -68,12 +68,14 @@ import ebm.com.mce.blocks.chest.DeadwoodChest;
 import ebm.com.mce.blocks.chest.ManchineelChest;
 import ebm.com.mce.blocks.chest.MauvewoodChest;
 import ebm.com.mce.blocks.crops.PyreFlower;
+import ebm.com.mce.blocks.dimensional.crimson.CrimsonFire;
 import ebm.com.mce.blocks.doors.DeadwoodDoor;
 import ebm.com.mce.blocks.doors.ManchineelDoor;
 import ebm.com.mce.blocks.doors.MauvewoodDoor;
 import ebm.com.mce.blocks.plants.Beehive;
 import ebm.com.mce.blocks.plants.ModGrass;
 import ebm.com.mce.blocks.plants.SlimeSpike;
+import ebm.com.mce.blocks.portals.CrimsonPortal;
 import ebm.com.mce.blocks.saplings.BoneSapling;
 import ebm.com.mce.blocks.saplings.GlassSapling;
 import ebm.com.mce.blocks.saplings.MauvewoodSapling;
@@ -91,6 +93,7 @@ import ebm.com.mce.events.HoeEvent;
 import ebm.com.mce.events.OtherEvents;
 import ebm.com.mce.handlers.AchievementHandler;
 import ebm.com.mce.handlers.ChestHookHandler;
+import ebm.com.mce.handlers.DimensionHandler;
 import ebm.com.mce.handlers.GUIHandler;
 import ebm.com.mce.handlers.PlayerHandler;
 import ebm.com.mce.handlers.packets.ClientPacketHandler;
@@ -170,6 +173,8 @@ public class mod_ebm {
 	public static Block crystalHoneyBlock;
 	public static Block shadowHoneycomb;
 	public static Block slimyGrass;
+	public static Block crimsonObsidian;
+	public static Block crimsonStone;
 
 	// Fancy shit
 	public static Block dymusBricks;
@@ -196,6 +201,12 @@ public class mod_ebm {
 	public static Block beehive;
 	public static Block fireGrass;
 	public static Block slimeSpike;
+
+	// Portals
+	public static Block crimsonPortal;
+
+	// Fires
+	public static CrimsonFire crimsonFire;
 
 	// Unbreakable
 	public static Block unAutilBricks;
@@ -444,6 +455,7 @@ public class mod_ebm {
 	public static boolean spawnOcher;
 	public static boolean spawnShadowHive;
 	public static boolean spawnSlimy;
+	public static boolean spawnCrimsonObsidian;
 
 	// IDs
 	public static int idHighLands;
@@ -464,6 +476,10 @@ public class mod_ebm {
 	public static int idOcher;
 	public static int idShadowHive;
 	public static int idSlimy;
+	public static int idCrimsonObsidian;
+
+	// Dimension IDs
+	public static int crimsonId;
 
 	// TODO: Preinit
 	@Mod.EventHandler
@@ -471,6 +487,9 @@ public class mod_ebm {
 		networkWrapper = NetworkRegistry.INSTANCE.newSimpleChannel(modid);
 		Configuration config = new Configuration(e.getSuggestedConfigurationFile());
 		config.load();
+
+		// Dimension
+		crimsonId = config.get("Dimension ids", "Crimson", 10).getInt();
 
 		// Spawnage
 		spawnHighLands = config.get("Biomes", "Highlands", true).getBoolean();
@@ -491,6 +510,7 @@ public class mod_ebm {
 		spawnOcher = config.get("Biomes", "Ocher", true).getBoolean();
 		spawnShadowHive = config.get("Biomes", "ShadowHive", true).getBoolean();
 		spawnSlimy = config.get("Biomes", "Slimy", true).getBoolean();
+		spawnCrimsonObsidian = config.get("Biomes", "CrimsonObsidian", true).getBoolean();
 
 		// IDs
 		idHighLands = config.get("Biome ids", "HighLands", 200).getInt();
@@ -511,6 +531,7 @@ public class mod_ebm {
 		idOcher = config.get("Biome ids", "Ocher", 215).getInt();
 		idShadowHive = config.get("Biome ids", "ShadowHive", 216).getInt();
 		idSlimy = config.get("Biome ids", "Slimy", 217).getInt();
+		idCrimsonObsidian = config.get("Biome ids", "CrimsonObsidian", 218).getInt();
 
 		config.save();
 		log.info("Loaded config.");
@@ -594,6 +615,20 @@ public class mod_ebm {
 
 		slimyGrass = new SlimyGrass().setBlockName("slimeGrass").setBlockTextureName("mod_ebm:slime_grass")
 				.setHardness(0.6f).setStepSound(Block.soundTypeGrass).setCreativeTab(tab);
+
+		crimsonObsidian = new ModBlocks(Material.ground).setBlockName("redObsidian")
+				.setBlockTextureName("mod_ebm:crimson_obsidian").setHardness(50f).setResistance(2000f)
+				.setStepSound(Block.soundTypeStone).setCreativeTab(tab);
+
+		crimsonStone = new ModBlocks(Material.rock).setBlockName("crimsonStone")
+				.setBlockTextureName("mod_ebm:crimson_stone").setHardness(1.5f).setResistance(10f)
+				.setStepSound(Block.soundTypeStone).setCreativeTab(tab);
+
+		// Fires
+		crimsonFire = new CrimsonFire(Material.ground);
+
+		// Portals
+		crimsonPortal = new CrimsonPortal().setBlockName("crimsonPortal").setBlockUnbreakable();
 
 		// TODO: Plants
 		beehive = new Beehive(Material.ground).setBlockName("beehive").setHardness(0.2f).setCreativeTab(tab)
@@ -797,7 +832,7 @@ public class mod_ebm {
 		unAutilRod = new AutilRod(Material.ground).setBlockName("unAutilRod").setBlockTextureName("mod_ebm:autil_block")
 				.setBlockUnbreakable().setStepSound(Block.soundTypeStone).setCreativeTab(tab).setLightLevel(0.9375F);
 
-		// Fancy Shit
+		//TODO: Fancy Shit
 		// Dymus
 		dymusBricks = new ModBlocks(Material.ground).setBlockName("DymusBricks")
 				.setBlockTextureName("mod_ebm:dymus_bricks").setHardness(3f).setResistance(3f)
@@ -864,7 +899,7 @@ public class mod_ebm {
 				.setBlockTextureName("mod_ebm:beeswax_chisel").setHardness(0.5f).setResistance(1f)
 				.setStepSound(Block.soundTypeGravel).setCreativeTab(tab);
 
-		// Slabs
+		//TODO: Slabs
 		// Wooden
 		mWoodSlab = new ModSlabs(false, Material.wood).setBlockName("mWoodSlab").setBlockTextureName("mod_ebm:planks_m")
 				.setHardness(2f).setResistance(5f).setStepSound(Block.soundTypeWood).setCreativeTab(tab);
@@ -1030,7 +1065,7 @@ public class mod_ebm {
 				.setBlockTextureName("mod_ebm:beeswax_chisel").setHardness(0.5f).setResistance(1f)
 				.setStepSound(Block.soundTypeStone);
 
-		// Stairs
+		//TODO: Stairs
 		// Wooden
 		mWoodStairs = new ModStairs(mPlanks, 0).setBlockName("mWoodStairs").setBlockTextureName("mod_ebm:planks_m")
 				.setHardness(3f).setResistance(5f).setStepSound(Block.soundTypeWood).setCreativeTab(tab);
@@ -1289,6 +1324,8 @@ public class mod_ebm {
 
 		ItemRecipeHandler.registerCrafting();
 		ItemRecipeHandler.registerSmelting();
+
+		DimensionHandler.mainRegistry();
 
 		AchRegistry.registerAch();
 		AchRegistry.nameAch();

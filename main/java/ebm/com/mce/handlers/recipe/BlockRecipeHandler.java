@@ -304,6 +304,10 @@ public class BlockRecipeHandler {
 
 		GameRegistry.addRecipe(new ItemStack(mod_ebm.beeswaxChiselStairs, 4), "*  ", "** ", "***", '*',
 				new ItemStack(mod_ebm.beeswaxChisel));
+
+		GameRegistry.addRecipe(new ItemStack(mod_ebm.crimsonObsidian, 1), "rer", " o ", "rpr", 'r',
+				new ItemStack(Items.dye, 1, 1), 'o', new ItemStack(Blocks.obsidian), 'e',
+				new ItemStack(mod_ebm.erythonCube), 'p', new ItemStack(mod_ebm.pyreCrystal));
 	}
 
 	public static void registerSmelting() {

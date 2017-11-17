@@ -8,13 +8,15 @@ import ebm.com.mce.common.mod_ebm;
 
 public class ClientPacketHandler extends ServerPacketHandler {
 	@SubscribeEvent
-	public void onClientPacket(ClientCustomPacketEvent event) throws IOException {
+	public void onClientPacket(ClientCustomPacketEvent event)
+			throws IOException {
 		channelName = event.packet.channel();
 		if (channelName.equals(mod_ebm.networkChannelName)) {
 			// DEBUG
 			System.out.println("Client received packet from server");
 
-			ProcessPacketClientSide.processPacketOnClient(event.packet.payload(), event.packet.getTarget());
+			ProcessPacketClientSide.processPacketOnClient(
+					event.packet.payload(), event.packet.getTarget());
 		}
 	}
 }

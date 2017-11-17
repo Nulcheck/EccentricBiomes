@@ -19,6 +19,7 @@ import ebm.com.mce.gen.biomes.ShadowHive;
 import ebm.com.mce.gen.biomes.Slimy;
 import ebm.com.mce.gen.biomes.SnowyDesert;
 import ebm.com.mce.gen.biomes.Void;
+import ebm.com.mce.gen.biomes.dimensional.CrimsonObsidian;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
@@ -53,6 +54,9 @@ public class BiomeRegistry {
 	public static BiomeGenBase ShadowHive;
 	public static BiomeGenBase Slimy;
 
+	// Dimensional
+	public static BiomeGenBase CrimsonObsidian;
+
 	public static void initBiome() {
 		HighLand = new HighLand(mod_ebm.idHighLands, mod_ebm.spawnHighLands);
 		DeathForest = new DeathForest(mod_ebm.idDeathForest, mod_ebm.spawnDeathForest);
@@ -72,6 +76,9 @@ public class BiomeRegistry {
 		Ocher = new Ocher(mod_ebm.idOcher, mod_ebm.spawnOcher);
 		ShadowHive = new ShadowHive(mod_ebm.idShadowHive, mod_ebm.spawnShadowHive);
 		Slimy = new Slimy(mod_ebm.idSlimy, mod_ebm.spawnSlimy);
+
+		// Dimensional
+		CrimsonObsidian = new CrimsonObsidian(mod_ebm.idCrimsonObsidian);
 	}
 
 	public static void registerBiome() throws Exception {

@@ -139,7 +139,7 @@ public class mod_ebm {
 
 	public static final String modid = "mod_ebm";
 	public static final String name = "Eccentric Biomes";
-	public static final String version = "1.7";
+	public static final String version = "1.8";
 
 	public static final String networkChannelName = "ECB";
 	public static FMLEventChannel channel;

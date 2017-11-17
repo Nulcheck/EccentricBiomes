@@ -2,7 +2,7 @@ package ebm.com.mce.handlers.dimension.renders;
 
 import org.lwjgl.opengl.GL11;
 
-import cpw.mods.fml.relauncher.ReflectionHelper;
+import cpw.mods.fml.common.ObfuscationReflectionHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
@@ -16,14 +16,14 @@ import net.minecraft.util.Vec3;
 import net.minecraftforge.client.IRenderHandler;
 
 public class SkyRenderCrimson extends IRenderHandler {
-	private int starGLCallList;
-	private int glSkyList;
-	private int glSkyList2;
+	public int starGLCallList;
+	public int glSkyList;
+	public int glSkyList2;
 
 	public SkyRenderCrimson() {
 		RenderGlobal render = Minecraft.getMinecraft().renderGlobal;
-		this.glSkyList2 = (this.glSkyList = (this.starGLCallList = ReflectionHelper.getPrivateValue(RenderGlobal.class,
-				render, "starGLCallList")) + 1) + 1;
+		this.glSkyList2 = (this.glSkyList = (this.starGLCallList = ObfuscationReflectionHelper
+				.getPrivateValue(RenderGlobal.class, render, "starGLCallList", "field_72772_v")) + 1) + 1;
 	}
 
 	@Override

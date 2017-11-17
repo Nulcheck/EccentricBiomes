@@ -25,7 +25,8 @@ import net.minecraftforge.event.terraingen.WorldTypeEvent;
 
 public class WorldChunkManagerCrimson extends WorldChunkManager {
 	public static ArrayList<BiomeGenBase> allowBiomes = new ArrayList<BiomeGenBase>(
-			Arrays.asList(BiomeRegistry.CrimsonObsidian));
+			Arrays.asList(BiomeRegistry.CrimsonObsidian, BiomeRegistry.CrimsonPlains, BiomeRegistry.CrimsonForest,
+					BiomeRegistry.CrimsonMountains));
 	private GenLayer genBiomes;
 	private GenLayer biomeIndexLayer;
 	private BiomeCache biomeCache;

@@ -1,7 +1,9 @@
 package ebm.com.mce.handlers;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.gameevent.PlayerEvent;
 import cpw.mods.fml.common.gameevent.TickEvent.PlayerTickEvent;
+import ebm.com.mce.common.mod_ebm;
 import ebm.com.mce.handlers.registry.AchRegistry;
 import net.minecraft.util.MathHelper;
 
@@ -25,6 +27,14 @@ public class AchievementHandler {
 	public static String ocher = "Ocher";
 	public static String shadowHive = "Shadow Hive";
 	public static String slimy = "Slimy";
+
+	// Dimensional Biomes
+	public static String crimsonObsidian = "Crimson Obsidian Field";
+	public static String crimsonPlains = "Crimson Plains";
+	public static String crimsonForest = "Crimson Forest";
+	public static String crimsonMountains = "Crimson Mountains";
+
+	// Dimensions
 
 	@SubscribeEvent
 	public void biomeAchievements(PlayerTickEvent e) {
@@ -101,6 +111,31 @@ public class AchievementHandler {
 
 		else if (e.player.worldObj.getBiomeGenForCoords(px, pz).biomeName == slimy) {
 			e.player.addStat(AchRegistry.slimy, 1);
+		}
+
+		// Dimensional Biomes
+		else if (e.player.worldObj.getBiomeGenForCoords(px, pz).biomeName == crimsonObsidian) {
+			e.player.addStat(AchRegistry.crimsonObsidian, 1);
+		}
+
+		else if (e.player.worldObj.getBiomeGenForCoords(px, pz).biomeName == crimsonPlains) {
+			e.player.addStat(AchRegistry.crimsonPlains, 1);
+		}
+
+		else if (e.player.worldObj.getBiomeGenForCoords(px, pz).biomeName == crimsonForest) {
+			e.player.addStat(AchRegistry.crimsonForest, 1);
+		}
+
+		else if (e.player.worldObj.getBiomeGenForCoords(px, pz).biomeName == crimsonMountains) {
+			e.player.addStat(AchRegistry.crimsonMountains, 1);
+		}
+	}
+
+	// TODO: Dimensions
+	@SubscribeEvent
+	public void onDimension(PlayerEvent.PlayerChangedDimensionEvent e) {
+		if (e.toDim == mod_ebm.crimsonId) {
+			e.player.addStat(AchRegistry.crimsonDim, 1);
 		}
 	}
 }

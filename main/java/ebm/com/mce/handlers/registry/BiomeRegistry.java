@@ -19,7 +19,10 @@ import ebm.com.mce.gen.biomes.ShadowHive;
 import ebm.com.mce.gen.biomes.Slimy;
 import ebm.com.mce.gen.biomes.SnowyDesert;
 import ebm.com.mce.gen.biomes.Void;
+import ebm.com.mce.gen.biomes.dimensional.CrimsonForest;
+import ebm.com.mce.gen.biomes.dimensional.CrimsonMountains;
 import ebm.com.mce.gen.biomes.dimensional.CrimsonObsidian;
+import ebm.com.mce.gen.biomes.dimensional.CrimsonPlains;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
@@ -56,6 +59,9 @@ public class BiomeRegistry {
 
 	// Dimensional
 	public static BiomeGenBase CrimsonObsidian;
+	public static BiomeGenBase CrimsonPlains;
+	public static BiomeGenBase CrimsonForest;
+	public static BiomeGenBase CrimsonMountains;
 
 	public static void initBiome() {
 		HighLand = new HighLand(mod_ebm.idHighLands, mod_ebm.spawnHighLands);
@@ -79,6 +85,9 @@ public class BiomeRegistry {
 
 		// Dimensional
 		CrimsonObsidian = new CrimsonObsidian(mod_ebm.idCrimsonObsidian);
+		CrimsonPlains = new CrimsonPlains(mod_ebm.idCrimsonPlains);
+		CrimsonForest = new CrimsonForest(mod_ebm.idCrimsonForest);
+		CrimsonMountains = new CrimsonMountains(mod_ebm.idCrimsonMountains);
 	}
 
 	public static void registerBiome() throws Exception {

@@ -1,34 +1,26 @@
 package ebm.com.mce.gen.biomes.dimensional;
 
-import java.util.Random;
-
-import ebm.com.mce.common.mod_ebm;
-import ebm.com.mce.gen.biomes.dec.WorldGenSuperSmallSpikes;
 import ebm.com.mce.handlers.dimension.biomes.CrimsonBiomes;
 import net.minecraft.init.Blocks;
-import net.minecraft.world.World;
 
-public class CrimsonObsidian extends CrimsonBiomes {
-	public WorldGenSuperSmallSpikes genSpikes = new WorldGenSuperSmallSpikes();
-
-	public CrimsonObsidian(int id) {
+public class CrimsonMountains extends CrimsonBiomes {
+	public CrimsonMountains(int id) {
 		super(id);
-		this.setHeight(height_Default);
+		this.setHeight(height_MidHills);
 		this.setDisableRain();
 		this.spawnableCaveCreatureList.clear();
 		this.spawnableCreatureList.clear();
 		this.spawnableWaterCreatureList.clear();
 		this.spawnableMonsterList.clear();
 		this.theBiomeDecorator.generateLakes = false;
-		this.theBiomeDecorator.grassPerChunk = 3;
+		this.theBiomeDecorator.grassPerChunk = 2;
 		this.theBiomeDecorator.flowersPerChunk = -999;
 		this.theBiomeDecorator.mushroomsPerChunk = -999;
 		this.theBiomeDecorator.treesPerChunk = -999;
-		this.genSpikes = new WorldGenSuperSmallSpikes();
 
 		this.topBlock = Blocks.grass;
 		this.fillerBlock = Blocks.dirt;
-		this.biomeName = "Crimson Obsidian Field";
+		this.biomeName = "Crimson Mountains";
 		this.color = 16735067;
 	}
 
@@ -43,19 +35,5 @@ public class CrimsonObsidian extends CrimsonBiomes {
 	public int getBiomeGrassColor(int x, int y, int z) {
 		double d0 = plantNoise.func_151601_a((double) x * 0.0225D, (double) z * 0.0225D);
 		return d0 < -0.1D ? 16735067 : 15877959;
-	}
-
-	public void decorate(World world, Random rand, int i, int j) {
-		int k, m, n;
-		this.genSpikes.blockA = mod_ebm.crimsonObsidian;
-
-		m = i + rand.nextInt(16) + 1;
-		n = j + rand.nextInt(16) + 1;
-
-		for (k = 0; k < 3; ++k) {
-			this.genSpikes.generate(world, rand, m, world.getHeightValue(m, n), n);
-		}
-
-		super.decorate(world, rand, i, j);
 	}
 }

@@ -455,7 +455,6 @@ public class mod_ebm {
 	public static boolean spawnOcher;
 	public static boolean spawnShadowHive;
 	public static boolean spawnSlimy;
-	public static boolean spawnCrimsonObsidian;
 
 	// IDs
 	public static int idHighLands;
@@ -476,7 +475,12 @@ public class mod_ebm {
 	public static int idOcher;
 	public static int idShadowHive;
 	public static int idSlimy;
+
+	// Dimensional Biome IDs
 	public static int idCrimsonObsidian;
+	public static int idCrimsonPlains;
+	public static int idCrimsonForest;
+	public static int idCrimsonMountains;
 
 	// Dimension IDs
 	public static int crimsonId;
@@ -489,7 +493,7 @@ public class mod_ebm {
 		config.load();
 
 		// Dimension
-		crimsonId = config.get("Dimension ids", "Crimson", 10).getInt();
+		crimsonId = config.get("Dimension ids", "Crimson", 100).getInt();
 
 		// Spawnage
 		spawnHighLands = config.get("Biomes", "Highlands", true).getBoolean();
@@ -510,7 +514,6 @@ public class mod_ebm {
 		spawnOcher = config.get("Biomes", "Ocher", true).getBoolean();
 		spawnShadowHive = config.get("Biomes", "ShadowHive", true).getBoolean();
 		spawnSlimy = config.get("Biomes", "Slimy", true).getBoolean();
-		spawnCrimsonObsidian = config.get("Biomes", "CrimsonObsidian", true).getBoolean();
 
 		// IDs
 		idHighLands = config.get("Biome ids", "HighLands", 200).getInt();
@@ -531,7 +534,12 @@ public class mod_ebm {
 		idOcher = config.get("Biome ids", "Ocher", 215).getInt();
 		idShadowHive = config.get("Biome ids", "ShadowHive", 216).getInt();
 		idSlimy = config.get("Biome ids", "Slimy", 217).getInt();
-		idCrimsonObsidian = config.get("Biome ids", "CrimsonObsidian", 218).getInt();
+
+		// Biome Dimension IDs
+		idCrimsonObsidian = config.get("Dimension Biome ids", "CrimsonObsidian", 218).getInt();
+		idCrimsonPlains = config.get("Dimension Biome ids", "CrimsonPlains", 219).getInt();
+		idCrimsonForest = config.get("Dimension Biome ids", "CrimsonForest", 220).getInt();
+		idCrimsonMountains = config.get("Dimension Biome ids", "CrimsonMountains", 221).getInt();
 
 		config.save();
 		log.info("Loaded config.");
@@ -832,7 +840,7 @@ public class mod_ebm {
 		unAutilRod = new AutilRod(Material.ground).setBlockName("unAutilRod").setBlockTextureName("mod_ebm:autil_block")
 				.setBlockUnbreakable().setStepSound(Block.soundTypeStone).setCreativeTab(tab).setLightLevel(0.9375F);
 
-		//TODO: Fancy Shit
+		// TODO: Fancy Shit
 		// Dymus
 		dymusBricks = new ModBlocks(Material.ground).setBlockName("DymusBricks")
 				.setBlockTextureName("mod_ebm:dymus_bricks").setHardness(3f).setResistance(3f)
@@ -899,7 +907,7 @@ public class mod_ebm {
 				.setBlockTextureName("mod_ebm:beeswax_chisel").setHardness(0.5f).setResistance(1f)
 				.setStepSound(Block.soundTypeGravel).setCreativeTab(tab);
 
-		//TODO: Slabs
+		// TODO: Slabs
 		// Wooden
 		mWoodSlab = new ModSlabs(false, Material.wood).setBlockName("mWoodSlab").setBlockTextureName("mod_ebm:planks_m")
 				.setHardness(2f).setResistance(5f).setStepSound(Block.soundTypeWood).setCreativeTab(tab);
@@ -1065,7 +1073,7 @@ public class mod_ebm {
 				.setBlockTextureName("mod_ebm:beeswax_chisel").setHardness(0.5f).setResistance(1f)
 				.setStepSound(Block.soundTypeStone);
 
-		//TODO: Stairs
+		// TODO: Stairs
 		// Wooden
 		mWoodStairs = new ModStairs(mPlanks, 0).setBlockName("mWoodStairs").setBlockTextureName("mod_ebm:planks_m")
 				.setHardness(3f).setResistance(5f).setStepSound(Block.soundTypeWood).setCreativeTab(tab);

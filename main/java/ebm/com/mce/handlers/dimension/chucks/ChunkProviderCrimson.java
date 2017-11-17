@@ -11,6 +11,7 @@ import java.util.Random;
 
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import ebm.com.mce.common.mod_ebm;
+import ebm.com.mce.gen.biomes.dec.WorldGenModLake;
 import ebm.com.mce.handlers.dimension.biomes.CrimsonBiomes;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
@@ -166,9 +167,9 @@ public class ChunkProviderCrimson implements IChunkProvider {
 								if ((d15 += d16) > 0.0D) {
 									block[j3 += short1] = mod_ebm.crimsonStone;
 								} else if (k2 * 8 + l2 < b0) {
-									block[j3 += short1] = null; // Water
+									block[j3 += short1] = Blocks.lava; // Water
 								} else {
-									block[j3 += short1] = null; // Air
+									block[j3 += short1] = Blocks.air; // Air
 								}
 							}
 
@@ -376,12 +377,12 @@ public class ChunkProviderCrimson implements IChunkProvider {
 		int l1;
 		int i2;
 
-		// Water Lakes
+		// Water (Lava now) Lakes
 		if (!flag && this.rand.nextInt(4) == 0 && TerrainGen.populate(chunk, worldObj, rand, x, z, flag, LAKE)) {
 			k1 = k + this.rand.nextInt(16) + 8;
 			l1 = this.rand.nextInt(256);
 			i2 = l + this.rand.nextInt(16) + 8;
-			(new WorldGenLakes(Blocks.air)).generate(this.worldObj, this.rand, k1, l1, i2);
+			(new WorldGenModLake(Blocks.lava, mod_ebm.crimsonStone)).generate(this.worldObj, this.rand, k1, l1, i2);
 		}
 
 		// Lava Lakes (Underground)
@@ -391,7 +392,7 @@ public class ChunkProviderCrimson implements IChunkProvider {
 			i2 = l + this.rand.nextInt(16) + 8;
 
 			if (l1 < 63 || this.rand.nextInt(10) == 0) {
-				(new WorldGenLakes(Blocks.obsidian)).generate(this.worldObj, this.rand, k1, l1, i2);
+				(new WorldGenModLake(Blocks.lava, mod_ebm.crimsonStone)).generate(this.worldObj, this.rand, k1, l1, i2);
 			}
 		}
 

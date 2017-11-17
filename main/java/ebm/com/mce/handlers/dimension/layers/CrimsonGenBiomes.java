@@ -11,7 +11,8 @@ import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
 
 public class CrimsonGenBiomes extends GenLayer {
-	public static BiomeGenBase[] allowBiomes = { BiomeRegistry.CrimsonObsidian };
+	public static BiomeGenBase[] allowBiomes = { BiomeRegistry.CrimsonObsidian, BiomeRegistry.CrimsonPlains,
+			BiomeRegistry.CrimsonForest, BiomeRegistry.CrimsonMountains };
 	private List<BiomeEntry>[] biomes = new ArrayList[BiomeManager.BiomeType.values().length];
 
 	public CrimsonGenBiomes(long seed) {

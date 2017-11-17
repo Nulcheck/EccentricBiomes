@@ -4,6 +4,10 @@ import java.util.Random;
 
 import ebm.com.mce.common.mod_ebm;
 import ebm.com.mce.gen.trees.WorldGenDeadTree;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.init.Blocks;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -42,7 +46,7 @@ public class DeadLand extends BiomeGenBase {
 	public int getModdedBiomeFoliageColor(int color) {
 		return 8218460;
 	}
-	
+
 	public int getSkyColorByTemp(float f) {
 		return 8218460;
 	}

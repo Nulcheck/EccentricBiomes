@@ -28,6 +28,15 @@ public class AchRegistry {
 	public static Achievement shadowHive;
 	public static Achievement slimy;
 
+	// Dimensional Biomes
+	public static Achievement crimsonObsidian;
+	public static Achievement crimsonPlains;
+	public static Achievement crimsonForest;
+	public static Achievement crimsonMountains;
+
+	// Dimensions
+	public static Achievement crimsonDim;
+
 	public static AchievementPage modPage;
 
 	public static void registerAch() {
@@ -85,9 +94,27 @@ public class AchRegistry {
 		slimy = new Achievement("achievement.slimy", "slimy", 7, 0, Item.getItemFromBlock(mod_ebm.slimeSpike), null)
 				.registerStat();
 
+		// TODO: Dimensions
+		crimsonDim = new Achievement("achievement.crimsonDim", "crimsonDim", 0, 2,
+				Item.getItemFromBlock(mod_ebm.crimsonPortal), null).registerStat().setSpecial();
+
+		// Dimensional Biomes
+		crimsonObsidian = new Achievement("achievement.crimsonObsidian", "crimsonObsidian", 1, 2,
+				Item.getItemFromBlock(mod_ebm.crimsonObsidian), crimsonDim).registerStat();
+
+		crimsonPlains = new Achievement("achievement.crimsonPlains", "crimsonPlains", 2, 2,
+				Item.getItemFromBlock(Blocks.grass), crimsonDim).registerStat();
+
+		crimsonForest = new Achievement("achievement.crimsonForest", "crimsonForest", 3, 2,
+				Item.getItemFromBlock(mod_ebm.mLog), crimsonDim).registerStat();
+
+		crimsonMountains = new Achievement("achievement.crimsonMountains", "crimsonMountains", 4, 2,
+				Item.getItemFromBlock(mod_ebm.crimsonStone), crimsonDim).registerStat();
+
+		// Reg
 		modPage = new AchievementPage("\u00A75Eccentric Biomes", highLands, deathForest, obsidianForest, glassLand,
 				arctic, snowyDesert, flamage, Void, fertile, bone, deadLand, autilField, amethyst, amethystGrove, hive,
-				ocher, shadowHive, slimy);
+				ocher, shadowHive, slimy, crimsonDim, crimsonObsidian, crimsonPlains, crimsonForest, crimsonMountains);
 		AchievementPage.registerAchievementPage(modPage);
 	}
 
@@ -99,6 +126,7 @@ public class AchRegistry {
 		LanguageRegistry.instance().addStringLocalization("achievement." + ach + ".desc", lang, desc);
 	}
 
+	// TODO: Naming
 	public static void nameAch() {
 		// Achievements
 		addName("highLands", "en_US", "Super High Lands");
@@ -151,8 +179,25 @@ public class AchRegistry {
 
 		addName("shadowHive", "en_US", "Black Bees?");
 		addDesc("shadowHive", "en_US", "So dark, how do they see?");
-		
+
 		addName("slimy", "en_US", "Slime!");
 		addDesc("slimy", "en_US", "Ew, it's slippery here.");
+
+		// TODO: Dimensional Biomes
+		addName("crimsonObsidian", "en_US", "Red Obsidian");
+		addDesc("crimsonObsidian", "en_US", "Field of red obsidian spikes.");
+
+		addName("crimsonPlains", "en_US", "Crimson Plains");
+		addDesc("crimsonPlains", "en_US", "The wide open crimson plains.");
+
+		addName("crimsonForest", "en_US", "Red Forest");
+		addDesc("crimsonForest", "en_US", "The red forest of death. Again.");
+
+		addName("crimsonMountains", "en_US", "Crimson Peaks");
+		addDesc("crimsonMountains", "en_US", "No snow up here.. Still red.");
+
+		// Dimensions
+		addName("crimsonDim", "en_US", "Welcome to Death!");
+		addDesc("crimsonDim", "en_US", "Oh what fresh hell is this?");
 	}
 }

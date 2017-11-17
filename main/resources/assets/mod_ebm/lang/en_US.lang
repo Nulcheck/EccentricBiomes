@@ -36,6 +36,10 @@ tile.beeswax.name=Beeswax
 tile.crystalHoneyBlock.name=Crystallized Honey
 tile.slimeSpike.name=Slime Spike
 tile.slimeGlass.name=Slimy Grass
+tile.redObsidian.name=Crimson Obsidian
+tile.crimsonStone.name=Crimson Stone
+tile.crimsonFire.name=Crimson Fire
+tile.crimsonPortal.name=Crimson Portal
 
 tile.beehive.name=Beehive
 tile.fireGrass.name=Fire Grass

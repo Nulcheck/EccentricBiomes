@@ -35,7 +35,7 @@ import ebm.com.mce.items.slabs.ItemSlabunAutilBricks;
 
 public class BlockRegistry {
 	public static void registerBlocks() {
-		// Other
+		// TODO: Other
 		GameRegistry.registerBlock(mod_ebm.blueDirt, "BlueDirt");
 		GameRegistry.registerBlock(mod_ebm.blueFarmland, "BlueFarmland");
 		GameRegistry.registerBlock(mod_ebm.flameStone, ItemFlameStone.class, mod_ebm.flameStone.getUnlocalizedName());
@@ -47,6 +47,7 @@ public class BlockRegistry {
 				mod_ebm.flameStoneBurnPlayers.getUnlocalizedName());
 		GameRegistry.registerBlock(mod_ebm.unstompableFarmland, "USFarmland");
 		GameRegistry.registerBlock(mod_ebm.boneBlock, "BoneBlock");
+		GameRegistry.registerBlock(mod_ebm.bloodBoneBlock, "BloodBoneBlock");
 		GameRegistry.registerBlock(mod_ebm.deadGrass, "DeadGrass");
 		GameRegistry.registerBlock(mod_ebm.deadDirt, "DeadDirt");
 		GameRegistry.registerBlock(mod_ebm.dymusBlock, "DymusBlock");
@@ -60,8 +61,10 @@ public class BlockRegistry {
 		GameRegistry.registerBlock(mod_ebm.beeswax, "beeswax");
 		GameRegistry.registerBlock(mod_ebm.crystalHoneyBlock, "crystalHoneyBlock");
 		GameRegistry.registerBlock(mod_ebm.slimyGrass, "slimeGrass");
-		GameRegistry.registerBlock(mod_ebm.crimsonObsidian, "redObsidian");
+		GameRegistry.registerBlock(mod_ebm.crimsonGrass, "crimsonGrass");
 		GameRegistry.registerBlock(mod_ebm.crimsonStone, "crimsonStone");
+		GameRegistry.registerBlock(mod_ebm.crimsonCobblestone, "crimsonCobble");
+		GameRegistry.registerBlock(mod_ebm.crimsonObsidian, "redObsidian");
 
 		// Fires
 		GameRegistry.registerBlock(mod_ebm.crimsonFire, "crimsonFire");
@@ -135,7 +138,7 @@ public class BlockRegistry {
 		GameRegistry.registerBlock(mod_ebm.beeswaxPillar, "BeeswaxPillar");
 		GameRegistry.registerBlock(mod_ebm.beeswaxChisel, "beeswaxChisel");
 
-		// Stairs
+		// TODO: Stairs
 		// Wooden
 		GameRegistry.registerBlock(mod_ebm.mWoodStairs, "mWoodStairs");
 		GameRegistry.registerBlock(mod_ebm.deadWoodStairs, "deadWoodStairs");
@@ -279,8 +282,10 @@ public class BlockRegistry {
 
 		// TODO: Plants
 		GameRegistry.registerBlock(mod_ebm.beehive, "beehive");
-		GameRegistry.registerBlock(mod_ebm.fireGrass, "fireGrass");
 		GameRegistry.registerBlock(mod_ebm.slimeSpike, ItemSlimeSpike.class, "slimeSpike");
+		GameRegistry.registerBlock(mod_ebm.fireGrass, "fireGrass");
+		GameRegistry.registerBlock(mod_ebm.crimsonTallGrass, "crimsonTallGrass");
+		GameRegistry.registerBlock(mod_ebm.crimsonBush, "crimsonBush");
 
 		// Crops
 		GameRegistry.registerBlock(mod_ebm.pyreFlower, "PyreFlower");

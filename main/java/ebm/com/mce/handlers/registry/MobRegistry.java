@@ -2,17 +2,17 @@ package ebm.com.mce.handlers.registry;
 
 import cpw.mods.fml.common.registry.EntityRegistry;
 import ebm.com.mce.common.mod_ebm;
+import ebm.com.mce.entity.mobs.EntityBloodySkeleton;
 import ebm.com.mce.entity.mobs.EntityErython;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureType;
 
 public class MobRegistry {
-	// public static BiomeGenBase[] erythonBiomes = { BiomeRegistry.AutilField
-	// };
 	private static int entityID = 0;
 
 	public static void preInit() {
 		registerEntity(EntityErython.class, "Erython", 13, 4, 1, 20, 20, 20);
+		registerEntity(EntityBloodySkeleton.class, "BloodySkeleton", 192, 151, 151, 65, 10, 10);
 		spawnEntities();
 	}
 
@@ -33,6 +33,7 @@ public class MobRegistry {
 	}
 
 	public static void spawnEntities() {
-		EntityRegistry.addSpawn(EntityErython.class, 10, 2, 5, EnumCreatureType.creature, BiomeRegistry.AutilField);
+		EntityRegistry.addSpawn(EntityErython.class, 10, 2, 5, EnumCreatureType.monster, BiomeRegistry.AutilField);
+		EntityRegistry.addSpawn(EntityBloodySkeleton.class, 10, 2, 5, EnumCreatureType.monster, BiomeRegistry.Bone);
 	}
 }

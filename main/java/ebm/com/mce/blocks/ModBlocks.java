@@ -401,6 +401,33 @@ public class ModBlocks extends Block {
 		}
 	}
 
+	public static class BloodBoneBlock extends Block {
+		public BloodBoneBlock(Material mat) {
+			super(mat);
+		}
+
+		public boolean isOpaqueCube() {
+			return false;
+		}
+
+		public boolean shouldSideBeRendered(IBlockAccess blockAcc, int x, int y, int z, int side) {
+			return true;
+		}
+
+		public int quantityDropped(Random rand) {
+			return 1 + rand.nextInt(3);
+		}
+
+		public Item getItemDropped(int id, Random rand, int meta) {
+			int i = rand.nextInt(10);
+			if (i >= 5 && i <= 10) {
+				return Items.bone;
+			} else {
+				return null;
+			}
+		}
+	}
+
 	public static class AutilBlock extends Block {
 		public AutilBlock(Material mat) {
 			super(mat);
@@ -620,6 +647,16 @@ public class ModBlocks extends Block {
 		public DeadDirt(Material mat) {
 			super(mat);
 			this.setHarvestLevel("pickaxe", 0);
+		}
+	}
+
+	public static class CrimsonStone extends Block {
+		public CrimsonStone(Material mat) {
+			super(mat);
+		}
+
+		public Item getItemDropped(int id, Random rand, int meta) {
+			return Item.getItemFromBlock(mod_ebm.crimsonCobblestone);
 		}
 	}
 }

@@ -22,9 +22,11 @@ import ebm.com.mce.blocks.ModBlocks.AmethystDirt;
 import ebm.com.mce.blocks.ModBlocks.AutilBlock;
 import ebm.com.mce.blocks.ModBlocks.AutilRod;
 import ebm.com.mce.blocks.ModBlocks.Beeswax;
+import ebm.com.mce.blocks.ModBlocks.BloodBoneBlock;
 import ebm.com.mce.blocks.ModBlocks.BlueDirt;
 import ebm.com.mce.blocks.ModBlocks.BlueFarmland;
 import ebm.com.mce.blocks.ModBlocks.BoneBlock;
+import ebm.com.mce.blocks.ModBlocks.CrimsonStone;
 import ebm.com.mce.blocks.ModBlocks.DeadDirt;
 import ebm.com.mce.blocks.ModBlocks.FlameStone;
 import ebm.com.mce.blocks.ModBlocks.Honeycomb;
@@ -69,6 +71,7 @@ import ebm.com.mce.blocks.chest.ManchineelChest;
 import ebm.com.mce.blocks.chest.MauvewoodChest;
 import ebm.com.mce.blocks.crops.PyreFlower;
 import ebm.com.mce.blocks.dimensional.crimson.CrimsonFire;
+import ebm.com.mce.blocks.dimensional.crimson.CrimsonGrass;
 import ebm.com.mce.blocks.doors.DeadwoodDoor;
 import ebm.com.mce.blocks.doors.ManchineelDoor;
 import ebm.com.mce.blocks.doors.MauvewoodDoor;
@@ -139,7 +142,7 @@ public class mod_ebm {
 
 	public static final String modid = "mod_ebm";
 	public static final String name = "Eccentric Biomes";
-	public static final String version = "1.8";
+	public static final String version = "1.7.1";
 
 	public static final String networkChannelName = "ECB";
 	public static FMLEventChannel channel;
@@ -160,6 +163,7 @@ public class mod_ebm {
 	public static Block flameStoneBurnPlayers;
 	public static Block unstompableFarmland;
 	public static Block boneBlock;
+	public static Block bloodBoneBlock;
 	public static Block deadGrass;
 	public static Block deadDirt;
 	public static Block dymusBlock;
@@ -175,6 +179,8 @@ public class mod_ebm {
 	public static Block slimyGrass;
 	public static Block crimsonObsidian;
 	public static Block crimsonStone;
+	public static Block crimsonCobblestone;
+	public static Block crimsonGrass;
 
 	// Fancy shit
 	public static Block dymusBricks;
@@ -201,6 +207,8 @@ public class mod_ebm {
 	public static Block beehive;
 	public static Block fireGrass;
 	public static Block slimeSpike;
+	public static Block crimsonTallGrass;
+	public static Block crimsonBush;
 
 	// Portals
 	public static Block crimsonPortal;
@@ -403,6 +411,7 @@ public class mod_ebm {
 	public static Item bee;
 	public static Item stinger;
 	public static Item pyreCrystal;
+	public static Item bloodBone;
 
 	// Seeds
 	public static Item fireSeed;
@@ -578,6 +587,10 @@ public class mod_ebm {
 				.setHardness(1f).setResistance(3f).setStepSound(Block.soundTypeStone).setCreativeTab(tab)
 				.setLightOpacity(1);
 
+		bloodBoneBlock = new BloodBoneBlock(Material.rock).setBlockName("BoneBlockBlood")
+				.setBlockTextureName("mod_ebm:bone_block_blood").setHardness(1f).setResistance(3f)
+				.setStepSound(Block.soundTypeStone).setCreativeTab(tab).setLightOpacity(1);
+
 		deadGrass = new DeadGrass().setBlockName("DeadGrass").setBlockTextureName("mod_ebm:dead_grass").setHardness(2f)
 				.setResistance(2f).setStepSound(Block.soundTypeStone).setCreativeTab(tab);
 
@@ -628,9 +641,16 @@ public class mod_ebm {
 				.setBlockTextureName("mod_ebm:crimson_obsidian").setHardness(50f).setResistance(2000f)
 				.setStepSound(Block.soundTypeStone).setCreativeTab(tab);
 
-		crimsonStone = new ModBlocks(Material.rock).setBlockName("crimsonStone")
+		crimsonStone = new CrimsonStone(Material.rock).setBlockName("crimsonStone")
 				.setBlockTextureName("mod_ebm:crimson_stone").setHardness(1.5f).setResistance(10f)
 				.setStepSound(Block.soundTypeStone).setCreativeTab(tab);
+
+		crimsonCobblestone = new ModBlocks(Material.rock).setBlockName("crimsonCobble")
+				.setBlockTextureName("mod_ebm:crimson_cobble").setHardness(2f).setResistance(5f)
+				.setStepSound(Block.soundTypePiston).setCreativeTab(tab);
+
+		crimsonGrass = new CrimsonGrass().setBlockName("crimsonGrass").setBlockTextureName("mod_ebm:crimson_grass")
+				.setHardness(0.6f).setStepSound(Block.soundTypeGrass).setCreativeTab(tab);
 
 		// Fires
 		crimsonFire = new CrimsonFire(Material.ground);
@@ -639,14 +659,20 @@ public class mod_ebm {
 		crimsonPortal = new CrimsonPortal().setBlockName("crimsonPortal").setBlockUnbreakable();
 
 		// TODO: Plants
-		beehive = new Beehive(Material.ground).setBlockName("beehive").setHardness(0.2f).setCreativeTab(tab)
+		beehive = new Beehive(Material.ground).setBlockName("beehive").setHardness(0.15f).setCreativeTab(tab)
 				.setStepSound(Block.soundTypeStone).setBlockTextureName("stone").setLightOpacity(1);
 
-		fireGrass = new ModGrass().setBlockName("fireGrass").setHardness(0.05f).setCreativeTab(tab)
+		fireGrass = new ModGrass().setBlockName("fireGrass").setHardness(0.02f).setCreativeTab(tab)
 				.setStepSound(Block.soundTypeGrass).setBlockTextureName("mod_ebm:grass_fire").setLightLevel(1f);
 
 		slimeSpike = new SlimeSpike(Material.ground).setBlockName("slimeSpike").setHardness(0.1f).setCreativeTab(tab)
-				.setStepSound(Block.soundTypeGravel).setBlockTextureName("mod_ebm:slime_grass").setLightOpacity(1);
+				.setStepSound(Block.soundTypeGravel).setBlockTextureName("mod_ebm:slime_grass_top").setLightOpacity(1);
+
+		crimsonTallGrass = new ModGrass().setBlockName("crimsonTallGrass").setHardness(0f).setCreativeTab(tab)
+				.setStepSound(Block.soundTypeGrass).setBlockTextureName("mod_ebm:grass_crimson_tall");
+
+		crimsonBush = new ModGrass().setBlockName("crimsonBush").setHardness(0f).setCreativeTab(tab)
+				.setStepSound(Block.soundTypeGrass).setBlockTextureName("mod_ebm:grass_crimson_bush");
 
 		// Crops
 		pyreFlower = new PyreFlower().setBlockName("PyreFlower").setBlockTextureName("mod_ebm:flower_pyre")
@@ -1232,6 +1258,9 @@ public class mod_ebm {
 		stinger = new Item().setUnlocalizedName("stinger").setTextureName("mod_ebm:stinger").setCreativeTab(tab);
 
 		pyreCrystal = new Item().setUnlocalizedName("pyreCrystal").setTextureName("mod_ebm:crystal_pyre")
+				.setCreativeTab(tab);
+
+		bloodBone = new Item().setUnlocalizedName("bloodBone").setTextureName("mod_ebm:bloody_bone")
 				.setCreativeTab(tab);
 
 		// Sticks

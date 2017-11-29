@@ -22,7 +22,6 @@ public class Hive extends BiomeGenBase {
 		this.theBiomeDecorator.treesPerChunk = -999;
 		this.theBiomeDecorator.generateLakes = false;
 
-		// this.topBlock = mod_ebm.beeswax;
 		this.fillerBlock = mod_ebm.beeswax;
 		this.biomeName = "Hive";
 		this.waterColorMultiplier = 15313687;
@@ -41,14 +40,14 @@ public class Hive extends BiomeGenBase {
 		return 15313687;
 	}
 
-	public void genTerrainBlocks(World world, Random rand, Block[] block, byte[] b, int x, int y, double z) {
-		if (z > 1.75D) {
+	public void genTerrainBlocks(World world, Random rand, Block[] block, byte[] b, int x, int z, double d) {
+		if (d > 1.75D) {
 			this.topBlock = mod_ebm.beeswax;
-		} else if (z > -0.95D) {
+		} else if (d > -0.95D) {
 			this.topBlock = mod_ebm.honeycomb;
 		}
 
-		this.genBiomeTerrain(world, rand, block, b, x, y, z);
+		this.genBiomeTerrain(world, rand, block, b, x, z, d);
 	}
 
 	public WorldGenerator getRandomWorldGenForGrass(Random ran) {

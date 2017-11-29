@@ -1,7 +1,6 @@
 package ebm.com.mce.blocks.plants;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 import cpw.mods.fml.relauncher.Side;
@@ -11,12 +10,12 @@ import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.ColorizerGrass;
 import net.minecraft.world.IBlockAccess;
@@ -24,7 +23,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
 
 public class ModGrass extends BlockBush implements IGrowable, IShearable {
-	private static final String[] type = new String[] { "fire" };
+	//private static final String[] type = new String[] { "fire", "crimson_tall", "crimson_bush" };
 	private IIcon[] icon;
 
 	public ModGrass() {
@@ -37,15 +36,10 @@ public class ModGrass extends BlockBush implements IGrowable, IShearable {
 		if (world.getBlock(x, y, z) == mod_ebm.fireGrass) {
 			e.setFire(4);
 		}
-	}
 
-	@SideOnly(Side.CLIENT)
-	public IIcon getIcon(int side, int meta) {
-		if (meta >= this.icon.length) {
-			meta = 0;
+		if (world.getBlock(x, y, z) == mod_ebm.crimsonBush) {
+			e.attackEntityFrom(DamageSource.cactus, 1f);
 		}
-
-		return this.icon[meta];
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -86,22 +80,6 @@ public class ModGrass extends BlockBush implements IGrowable, IShearable {
 		return world.getBlockMetadata(x, y, z);
 	}
 
-	@SideOnly(Side.CLIENT)
-	public void getSubBlocks(Item item, CreativeTabs tab, List list) {
-		for (int i = 1; i < 1; ++i) {
-			list.add(new ItemStack(item, 1, i));
-		}
-	}
-
-	@SideOnly(Side.CLIENT)
-	public void registerBlockIcons(IIconRegister iicon) {
-		this.icon = new IIcon[type.length];
-
-		for (int i = 0; i < this.icon.length; ++i) {
-			this.icon[i] = iicon.registerIcon("mod_ebm:grass_" + type[i]);
-		}
-	}
-
 	public boolean func_149851_a(World world, int x, int y, int z, boolean i) {
 		int l = world.getBlockMetadata(x, y, z);
 		return l != 0;
@@ -126,12 +104,14 @@ public class ModGrass extends BlockBush implements IGrowable, IShearable {
 
 	public ArrayList<ItemStack> getDrops(World world, int x, int y, int z, int meta, int fortune) {
 		ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
-		if (world.rand.nextInt(8) != 0)
+		if (world.rand.nextInt(8) != 0){
 			return ret;
-		// ItemStack seed = ForgeHooks.getGrassSeed(world);
-		ItemStack seed = new ItemStack(mod_ebm.fireSeed);
-		if (seed != null)
+		}
+		
+		if (world.getBlock(x, y, z) == mod_ebm.fireGrass) {
+			ItemStack seed = new ItemStack(mod_ebm.fireSeed);
 			ret.add(seed);
+		}
 		return ret;
 	}
 

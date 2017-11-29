@@ -29,6 +29,7 @@ public class ItemRegistry {
 		GameRegistry.registerItem(mod_ebm.bee, "bee");
 		GameRegistry.registerItem(mod_ebm.stinger, "stinger");
 		GameRegistry.registerItem(mod_ebm.pyreCrystal, "pyreCrystal");
+		GameRegistry.registerItem(mod_ebm.bloodBone, "bloodBone");
 
 		// Seeds
 		GameRegistry.registerItem(mod_ebm.fireSeed, "FireSeed");

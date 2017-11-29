@@ -13,6 +13,7 @@ container.mauveChestDouble=Large Mauvewood Chest
 itemGroup.ecb=§5Eccentric Biomes§r
 
 entity.mod_ebm.Erython.name=Erython
+entity.mod_ebm.BloodySkeleton.name=Bloody Skeleton
 
 tile.BlueDirt.name=Blue Dirt
 tile.BlueFarmland.name=Blue Farmland
@@ -22,6 +23,7 @@ tile.FlameStoneMobs.name=Flamestone
 tile.FlameStonePlayers.name=Flamestone
 tile.USFarmland.name=Unstompable Farmland
 tile.BoneBlock.name=Bone Block
+tile.BloodBoneBlock.name=Bloody Bone Block
 tile.DeadGrass.name=Dead Grass
 tile.DeadDirt.name=Dead Dirt
 tile.DymusBlock.name=Dymus Block
@@ -40,6 +42,10 @@ tile.redObsidian.name=Crimson Obsidian
 tile.crimsonStone.name=Crimson Stone
 tile.crimsonFire.name=Crimson Fire
 tile.crimsonPortal.name=Crimson Portal
+tile.crimsonGrass.name=Crimson Grass
+tile.crimsonCobble.name=Crimson Cobblestone
+tile.crimsonTallGrass.name=Crimson Grass
+tile.crimsonBush.name=Crimson Thorns
 
 tile.beehive.name=Beehive
 tile.fireGrass.name=Fire Grass
@@ -365,6 +371,7 @@ item.bee.name=Bee
 item.stinger.name=Stinger
 item.pyreCrystal.name=Pyre Crystal
 item.FireSeed.name=Fire Seed
+item.bloodBone.name=Bloody Bone
 
 item.cd_hskele.name=Music Disc
 

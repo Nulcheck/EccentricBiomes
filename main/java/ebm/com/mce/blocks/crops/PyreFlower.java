@@ -6,20 +6,21 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ebm.com.mce.common.mod_ebm;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockCrops;
+import net.minecraft.block.BlockPotato;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
-public class PyreFlower extends BlockCrops {
+public class PyreFlower extends BlockPotato {
 	private IIcon[] iconArray;
 
 	public PyreFlower() {
 		super();
 		float f = 0.3F;
 		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 3.0F, 0.5F + f);
+		this.disableStats();
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -63,8 +64,5 @@ public class PyreFlower extends BlockCrops {
 		for (int i = 0; i < this.iconArray.length; i++) {
 			this.iconArray[i] = reg.registerIcon("mod_ebm:flower_pyre_stage_" + i);
 		}
-	}
-
-	public void fertilize(World world, int x, int y, int z) {
 	}
 }

@@ -2,7 +2,6 @@ package ebm.com.mce.models.mobs;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import ebm.com.mce.entity.mobs.EntityBloodySkeleton;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.model.ModelZombie;
 import net.minecraft.entity.Entity;

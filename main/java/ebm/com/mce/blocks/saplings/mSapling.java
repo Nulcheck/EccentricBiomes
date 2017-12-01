@@ -5,6 +5,7 @@ import java.util.Random;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import ebm.com.mce.common.mod_ebm;
 import ebm.com.mce.gen.trees.WorldGenMTree;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
@@ -85,7 +86,7 @@ public class mSapling extends BlockSapling implements IGrowable {
 		Block block = world.getBlock(x, y - 1, z);
 		switch (metadata) {
 		default:
-			return block == Blocks.grass || block == Blocks.dirt;
+			return block == Blocks.grass || block == Blocks.dirt || block == mod_ebm.crimsonGrass;
 		}
 	}
 
@@ -97,10 +98,10 @@ public class mSapling extends BlockSapling implements IGrowable {
 		Block soil = world.getBlock(x, y - 1, z);
 		if (world.getBlockMetadata(x, y, z) != 7)
 			return (world.getFullBlockLightValue(x, y, z) >= 8 || world.canBlockSeeTheSky(x, y, z))
-					&& (soil != null && soil == Blocks.grass || soil == Blocks.dirt);
+					&& (soil != null && soil == Blocks.grass || soil == Blocks.dirt || soil == mod_ebm.crimsonGrass);
 		else
 			return (world.getFullBlockLightValue(x, y, z) >= 8 || world.canBlockSeeTheSky(x, y, z))
-					&& (soil != null && soil == Blocks.grass || soil == Blocks.dirt);
+					&& (soil != null && soil == Blocks.grass || soil == Blocks.dirt || soil == mod_ebm.crimsonGrass);
 	}
 
 	public void updateTick(World world, int x, int y, int z, Random random) {
@@ -134,7 +135,8 @@ public class mSapling extends BlockSapling implements IGrowable {
 
 	public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction,
 			IPlantable plantable) {
-		if (world.getBlock(x, y, z) == Blocks.grass || world.getBlock(x, y, z) == Blocks.dirt) {
+		if (world.getBlock(x, y, z) == Blocks.grass || world.getBlock(x, y, z) == Blocks.dirt
+				|| world.getBlock(x, y, z) == mod_ebm.crimsonGrass) {
 			return true;
 		} else {
 			return false;
@@ -142,7 +144,7 @@ public class mSapling extends BlockSapling implements IGrowable {
 	}
 
 	public void onPlantGrow(World world, int x, int y, int z, int sourceX, int sourceY, int sourceZ) {
-		if (this == Blocks.dirt) {
+		if (this == Blocks.dirt || this == mod_ebm.crimsonGrass) {
 			world.setBlock(x, y, z, Blocks.dirt, 0, 0);
 		}
 	}

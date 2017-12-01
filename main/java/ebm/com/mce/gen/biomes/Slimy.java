@@ -3,10 +3,10 @@ package ebm.com.mce.gen.biomes;
 import java.util.Random;
 
 import ebm.com.mce.common.mod_ebm;
-import ebm.com.mce.gen.biomes.dec.WorldGenGrass;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.gen.feature.WorldGenTallGrass;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class Slimy extends BiomeGenBase {
@@ -44,7 +44,7 @@ public class Slimy extends BiomeGenBase {
 	}
 
 	public WorldGenerator getRandomWorldGenForGrass(Random ran) {
-		return ran.nextInt(4) == 0 ? new WorldGenGrass(mod_ebm.slimeSpike, 1)
-				: new WorldGenGrass(mod_ebm.slimeSpike, 0);
+		return ran.nextInt(4) == 0 ? new WorldGenTallGrass(mod_ebm.slimeSpike, 1)
+				: new WorldGenTallGrass(mod_ebm.slimeSpike, 0);
 	}
 }

@@ -26,6 +26,7 @@ import ebm.com.mce.blocks.ModBlocks.BloodBoneBlock;
 import ebm.com.mce.blocks.ModBlocks.BlueDirt;
 import ebm.com.mce.blocks.ModBlocks.BlueFarmland;
 import ebm.com.mce.blocks.ModBlocks.BoneBlock;
+import ebm.com.mce.blocks.ModBlocks.CrimsonDirt;
 import ebm.com.mce.blocks.ModBlocks.CrimsonStone;
 import ebm.com.mce.blocks.ModBlocks.DeadDirt;
 import ebm.com.mce.blocks.ModBlocks.FlameStone;
@@ -181,6 +182,7 @@ public class mod_ebm {
 	public static Block crimsonStone;
 	public static Block crimsonCobblestone;
 	public static Block crimsonGrass;
+	public static Block crimsonDirt;
 
 	// Fancy shit
 	public static Block dymusBricks;
@@ -651,6 +653,9 @@ public class mod_ebm {
 
 		crimsonGrass = new CrimsonGrass().setBlockName("crimsonGrass").setBlockTextureName("mod_ebm:crimson_grass")
 				.setHardness(0.6f).setStepSound(Block.soundTypeGrass).setCreativeTab(tab);
+
+		crimsonDirt = new CrimsonDirt(Material.ground).setBlockName("crimsonDirt").setBlockTextureName("dirt")
+				.setHardness(0.5f).setStepSound(Block.soundTypeGravel).setCreativeTab(tab);
 
 		// Fires
 		crimsonFire = new CrimsonFire(Material.ground);

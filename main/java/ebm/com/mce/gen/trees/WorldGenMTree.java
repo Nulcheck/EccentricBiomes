@@ -20,7 +20,7 @@ public class WorldGenMTree extends WorldGenAbstractTree {
 
 		Block block = world.getBlock(x, y, z);
 
-		if (block != Blocks.grass) {
+		if (block != Blocks.grass || block != mod_ebm.crimsonGrass) {
 			return false;
 		} else {
 			for (int i = -2; i <= 2; i++) {

@@ -57,7 +57,6 @@ public class CrimsonBiomes extends BiomeGenBase {
 	 */
 	public void genBiomeModdedTerrain(World world, Random rand, Block[] replacableBlock, byte[] aByte, int x,
 			int y, double z) {
-		boolean flag = true;
 		Block block = this.topBlock;
 		byte b0 = (byte) (this.field_150604_aj & 255);
 		Block block1 = this.fillerBlock;

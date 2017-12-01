@@ -62,6 +62,7 @@ public class BlockRegistry {
 		GameRegistry.registerBlock(mod_ebm.crystalHoneyBlock, "crystalHoneyBlock");
 		GameRegistry.registerBlock(mod_ebm.slimyGrass, "slimeGrass");
 		GameRegistry.registerBlock(mod_ebm.crimsonGrass, "crimsonGrass");
+		GameRegistry.registerBlock(mod_ebm.crimsonDirt, "crimsonDirt");
 		GameRegistry.registerBlock(mod_ebm.crimsonStone, "crimsonStone");
 		GameRegistry.registerBlock(mod_ebm.crimsonCobblestone, "crimsonCobble");
 		GameRegistry.registerBlock(mod_ebm.crimsonObsidian, "redObsidian");

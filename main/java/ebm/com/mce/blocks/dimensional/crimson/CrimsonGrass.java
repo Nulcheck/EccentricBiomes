@@ -18,6 +18,8 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.ColorizerGrass;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.common.IPlantable;
+import net.minecraftforge.common.util.ForgeDirection;
 
 public class CrimsonGrass extends Block implements IGrowable {
 	public static final Logger logger = LogManager.getLogger();
@@ -39,7 +41,16 @@ public class CrimsonGrass extends Block implements IGrowable {
 	 */
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta) {
-		return side == 1 ? this.top : (side == 0 ? Blocks.dirt.getBlockTextureFromSide(side) : this.blockIcon);
+		return side == 1 ? this.top : (side == 0 ? mod_ebm.crimsonDirt.getBlockTextureFromSide(side) : this.blockIcon);
+	}
+
+	public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction,
+			IPlantable plantable) {
+		Block plant = plantable.getPlant(world, x, y + 1, z);
+		if (plant == mod_ebm.crimsonTallGrass || plant == mod_ebm.mSapling || plant == mod_ebm.crimsonBush) {
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -48,15 +59,14 @@ public class CrimsonGrass extends Block implements IGrowable {
 	public void updateTick(World world, int x, int y, int z, Random rand) {
 		if (!world.isRemote) {
 			if (world.getBlockLightValue(x, y + 1, z) < 4 && world.getBlockLightOpacity(x, y + 1, z) > 2) {
-				world.setBlock(x, y, z, Blocks.dirt);
+				world.setBlock(x, y, z, mod_ebm.crimsonDirt);
 			} else if (world.getBlockLightValue(x, y + 1, z) >= 9) {
 				for (int l = 0; l < 4; ++l) {
 					int i1 = x + rand.nextInt(3) - 1;
 					int j1 = y + rand.nextInt(5) - 3;
 					int k1 = z + rand.nextInt(3) - 1;
-					// Block block = world.getBlock(i1, j1 + 1, k1);
 
-					if (world.getBlock(i1, j1, k1) == Blocks.dirt && world.getBlockMetadata(i1, j1, k1) == 0
+					if (world.getBlock(i1, j1, k1) == mod_ebm.crimsonDirt && world.getBlockMetadata(i1, j1, k1) == 0
 							&& world.getBlockLightValue(i1, j1 + 1, k1) >= 4
 							&& world.getBlockLightOpacity(i1, j1 + 1, k1) <= 2) {
 						world.setBlock(i1, j1, k1, mod_ebm.crimsonGrass);
@@ -67,7 +77,7 @@ public class CrimsonGrass extends Block implements IGrowable {
 	}
 
 	public Item getItemDropped(int id, Random rand, int meta) {
-		return Blocks.dirt.getItemDropped(0, rand, meta);
+		return mod_ebm.crimsonDirt.getItemDropped(0, rand, meta);
 	}
 
 	public boolean func_149851_a(World world, int x, int y, int z, boolean spread) {
@@ -83,7 +93,7 @@ public class CrimsonGrass extends Block implements IGrowable {
 		if (side == 1) {
 			return this.top;
 		} else if (side == 0) {
-			return Blocks.dirt.getBlockTextureFromSide(side);
+			return mod_ebm.crimsonDirt.getBlockTextureFromSide(side);
 		} else {
 			Material material = blockacc.getBlock(x, y + 1, z).getMaterial();
 			return material != Material.snow && material != Material.craftedSnow ? this.blockIcon : this.sideSnow;

@@ -9,23 +9,18 @@ import ebm.com.mce.common.mod_ebm;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.IIcon;
 import net.minecraft.world.ColorizerGrass;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
 
 public class ModGrass extends BlockBush implements IGrowable, IShearable {
-	//private static final String[] type = new String[] { "fire", "crimson_tall", "crimson_bush" };
-	private IIcon[] icon;
-
 	public ModGrass() {
 		super(Material.plants);
 		float f = 0.4F;
@@ -104,10 +99,10 @@ public class ModGrass extends BlockBush implements IGrowable, IShearable {
 
 	public ArrayList<ItemStack> getDrops(World world, int x, int y, int z, int meta, int fortune) {
 		ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
-		if (world.rand.nextInt(8) != 0){
+		if (world.rand.nextInt(8) != 0) {
 			return ret;
 		}
-		
+
 		if (world.getBlock(x, y, z) == mod_ebm.fireGrass) {
 			ItemStack seed = new ItemStack(mod_ebm.fireSeed);
 			ret.add(seed);

@@ -5,7 +5,6 @@ import static net.minecraftforge.common.util.ForgeDirection.NORTH;
 import static net.minecraftforge.common.util.ForgeDirection.SOUTH;
 import static net.minecraftforge.common.util.ForgeDirection.WEST;
 
-import java.util.List;
 import java.util.Random;
 
 import cpw.mods.fml.relauncher.Side;
@@ -27,13 +26,11 @@ import net.minecraft.block.BlockStem;
 import net.minecraft.block.BlockTallGrass;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.ColorizerGrass;
@@ -50,10 +47,6 @@ public class ModBlocks extends Block {
 	public static class BlueDirt extends Block {
 		public BlueDirt(Material mat) {
 			super(mat);
-		}
-
-		public void getSubBlocks(Item item, CreativeTabs tab, List list) {
-			list.add(new ItemStack(this, 1, 0));
 		}
 
 		public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction,
@@ -230,23 +223,6 @@ public class ModBlocks extends Block {
 
 				world.setBlock(x, y, z, mod_ebm.unstompableFarmland);
 			}
-		}
-
-		private boolean plant(World world, int x, int y, int z) {
-			byte b0 = 0;
-
-			for (int l = x - b0; l <= x + b0; ++l) {
-				for (int i1 = z - b0; i1 <= z + b0; ++i1) {
-					Block block = world.getBlock(l, y + 1, i1);
-
-					if (block instanceof IPlantable
-							&& canSustainPlant(world, x, y, z, ForgeDirection.UP, (IPlantable) block)) {
-						return true;
-					}
-				}
-			}
-
-			return false;
 		}
 
 		private boolean hydrate(World world, int x, int y, int z) {

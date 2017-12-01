@@ -2,9 +2,6 @@ package ebm.com.mce.blocks.dimensional.crimson;
 
 import java.util.Random;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ebm.com.mce.common.mod_ebm;
@@ -12,7 +9,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.ColorizerGrass;
@@ -22,7 +18,6 @@ import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.util.ForgeDirection;
 
 public class CrimsonGrass extends Block implements IGrowable {
-	public static final Logger logger = LogManager.getLogger();
 	@SideOnly(Side.CLIENT)
 	public IIcon top;
 	@SideOnly(Side.CLIENT)
@@ -49,8 +44,9 @@ public class CrimsonGrass extends Block implements IGrowable {
 		Block plant = plantable.getPlant(world, x, y + 1, z);
 		if (plant == mod_ebm.crimsonTallGrass || plant == mod_ebm.mSapling || plant == mod_ebm.crimsonBush) {
 			return true;
+		} else {
+			return false;
 		}
-		return false;
 	}
 
 	/**

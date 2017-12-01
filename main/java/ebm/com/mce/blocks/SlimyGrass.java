@@ -2,11 +2,9 @@ package ebm.com.mce.blocks;
 
 import java.util.Random;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import ebm.com.mce.common.mod_ebm;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.material.Material;
@@ -21,7 +19,6 @@ import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.util.ForgeDirection;
 
 public class SlimyGrass extends Block implements IGrowable {
-	public static final Logger logger = LogManager.getLogger();
 	@SideOnly(Side.CLIENT)
 	public IIcon top;
 	@SideOnly(Side.CLIENT)
@@ -133,8 +130,8 @@ public class SlimyGrass extends Block implements IGrowable {
 					}
 				} else if (world.getBlock(i1, j1, k1).getMaterial() == Material.air) {
 					if (rand.nextInt(8) != 0) {
-						if (Blocks.tallgrass.canBlockStay(world, i1, j1, k1)) {
-							world.setBlock(i1, j1, k1, Blocks.tallgrass, 1, 3);
+						if (mod_ebm.slimeSpike.canBlockStay(world, i1, j1, k1)) {
+							world.setBlock(i1, j1, k1, mod_ebm.slimeSpike, 0, 3);
 						}
 					} else {
 						world.getBiomeGenForCoords(i1, k1).plantFlower(world, rand, i1, j1, k1);

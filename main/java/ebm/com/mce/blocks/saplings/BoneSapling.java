@@ -24,15 +24,12 @@ import net.minecraftforge.common.util.ForgeDirection;
 public class BoneSapling extends BlockSapling implements IGrowable {
 	private IIcon[] textures;
 	public static final String[] SAPLINGNAMES = new String[] { "bone" };
-	private static final IIcon[] SAPLINGICONS = new IIcon[SAPLINGNAMES.length];
 	private static final int TYPES = 1;
 
 	private static WorldGenerator tree;
-	private static WorldGenerator tree1;
 
 	public BoneSapling() {
 		tree = new WorldGenBoneTree();
-		tree1 = new WorldGenBoneTree();
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -121,7 +118,7 @@ public class BoneSapling extends BlockSapling implements IGrowable {
 				obj = tree;
 			}
 			if (rnd >= 5) {
-				obj = tree1;
+				obj = tree;
 			}
 		}
 		if (obj != null) {

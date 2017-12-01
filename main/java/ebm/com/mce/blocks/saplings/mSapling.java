@@ -5,7 +5,6 @@ import java.util.Random;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import ebm.com.mce.common.mod_ebm;
 import ebm.com.mce.gen.trees.WorldGenMTree;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
@@ -25,15 +24,12 @@ import net.minecraftforge.common.util.ForgeDirection;
 public class mSapling extends BlockSapling implements IGrowable {
 	private IIcon[] textures;
 	public static final String[] SAPLINGNAMES = new String[] { "m" };
-	private static final IIcon[] SAPLINGICONS = new IIcon[SAPLINGNAMES.length];
 	private static final int TYPES = 1;
 
 	private static WorldGenerator tree;
-	private static WorldGenerator tree1;
 
 	public mSapling() {
 		tree = new WorldGenMTree();
-		tree1 = new WorldGenMTree();
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -86,7 +82,7 @@ public class mSapling extends BlockSapling implements IGrowable {
 		Block block = world.getBlock(x, y - 1, z);
 		switch (metadata) {
 		default:
-			return block == Blocks.grass || block == Blocks.dirt || block == mod_ebm.crimsonGrass;
+			return block == Blocks.grass || block == Blocks.dirt;
 		}
 	}
 
@@ -98,10 +94,10 @@ public class mSapling extends BlockSapling implements IGrowable {
 		Block soil = world.getBlock(x, y - 1, z);
 		if (world.getBlockMetadata(x, y, z) != 7)
 			return (world.getFullBlockLightValue(x, y, z) >= 8 || world.canBlockSeeTheSky(x, y, z))
-					&& (soil != null && soil == Blocks.grass || soil == Blocks.dirt || soil == mod_ebm.crimsonGrass);
+					&& (soil != null && soil == Blocks.grass || soil == Blocks.dirt);
 		else
 			return (world.getFullBlockLightValue(x, y, z) >= 8 || world.canBlockSeeTheSky(x, y, z))
-					&& (soil != null && soil == Blocks.grass || soil == Blocks.dirt || soil == mod_ebm.crimsonGrass);
+					&& (soil != null && soil == Blocks.grass || soil == Blocks.dirt);
 	}
 
 	public void updateTick(World world, int x, int y, int z, Random random) {
@@ -122,7 +118,7 @@ public class mSapling extends BlockSapling implements IGrowable {
 				obj = tree;
 			}
 			if (rnd >= 5) {
-				obj = tree1;
+				obj = tree;
 			}
 		}
 		if (obj != null) {
@@ -135,8 +131,7 @@ public class mSapling extends BlockSapling implements IGrowable {
 
 	public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction,
 			IPlantable plantable) {
-		if (world.getBlock(x, y, z) == Blocks.grass || world.getBlock(x, y, z) == Blocks.dirt
-				|| world.getBlock(x, y, z) == mod_ebm.crimsonGrass) {
+		if (world.getBlock(x, y, z) == Blocks.grass || world.getBlock(x, y, z) == Blocks.dirt) {
 			return true;
 		} else {
 			return false;
@@ -144,7 +139,7 @@ public class mSapling extends BlockSapling implements IGrowable {
 	}
 
 	public void onPlantGrow(World world, int x, int y, int z, int sourceX, int sourceY, int sourceZ) {
-		if (this == Blocks.dirt || this == mod_ebm.crimsonGrass) {
+		if (this == Blocks.dirt) {
 			world.setBlock(x, y, z, Blocks.dirt, 0, 0);
 		}
 	}

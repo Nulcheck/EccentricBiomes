@@ -684,4 +684,11 @@ public class ModBlocks extends Block {
 			return (l / 9 & 255) << 16 | (i1 / 9 & 255) << 8 | j1 / 9 & 255;
 		}
 	}
+	
+	public static class CrimsonObsidian extends Block{
+		public CrimsonObsidian(Material mat){
+			super(mat);
+			this.setHarvestLevel("pickaxe", 3);
+		}
+	}
 }

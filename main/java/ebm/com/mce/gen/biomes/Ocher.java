@@ -3,11 +3,11 @@ package ebm.com.mce.gen.biomes;
 import java.util.Random;
 
 import ebm.com.mce.common.mod_ebm;
-import ebm.com.mce.gen.biomes.dec.WorldGenGrass;
 import ebm.com.mce.gen.feature.WorldGenBlockBlob;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.gen.feature.WorldGenTallGrass;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class Ocher extends BiomeGenBase {
@@ -43,7 +43,8 @@ public class Ocher extends BiomeGenBase {
 	}
 
 	public WorldGenerator getRandomWorldGenForGrass(Random ran) {
-		return ran.nextInt(4) == 0 ? new WorldGenGrass(mod_ebm.fireGrass, 0) : new WorldGenGrass(mod_ebm.fireGrass, 0);
+		return ran.nextInt(4) == 0 ? new WorldGenTallGrass(mod_ebm.fireGrass, 0)
+				: new WorldGenTallGrass(mod_ebm.fireGrass, 0);
 	}
 
 	public void decorate(World world, Random rand, int i, int j) {

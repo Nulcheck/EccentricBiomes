@@ -27,6 +27,7 @@ import ebm.com.mce.blocks.ModBlocks.BlueDirt;
 import ebm.com.mce.blocks.ModBlocks.BlueFarmland;
 import ebm.com.mce.blocks.ModBlocks.BoneBlock;
 import ebm.com.mce.blocks.ModBlocks.CrimsonDirt;
+import ebm.com.mce.blocks.ModBlocks.CrimsonObsidian;
 import ebm.com.mce.blocks.ModBlocks.CrimsonStone;
 import ebm.com.mce.blocks.ModBlocks.DeadDirt;
 import ebm.com.mce.blocks.ModBlocks.FlameStone;
@@ -639,12 +640,12 @@ public class mod_ebm {
 		slimyGrass = new SlimyGrass().setBlockName("slimeGrass").setBlockTextureName("mod_ebm:slime_grass")
 				.setHardness(0.6f).setStepSound(Block.soundTypeGrass).setCreativeTab(tab);
 
-		crimsonObsidian = new ModBlocks(Material.ground).setBlockName("redObsidian")
+		crimsonObsidian = new CrimsonObsidian(Material.ground).setBlockName("redObsidian")
 				.setBlockTextureName("mod_ebm:crimson_obsidian").setHardness(50f).setResistance(2000f)
 				.setStepSound(Block.soundTypeStone).setCreativeTab(tab);
 
 		crimsonStone = new CrimsonStone(Material.rock).setBlockName("crimsonStone")
-				.setBlockTextureName("mod_ebm:crimson_stone").setHardness(1.5f).setResistance(10f)
+				.setBlockTextureName("mod_ebm:crimson_stone").setHardness(1.2f).setResistance(10f)
 				.setStepSound(Block.soundTypeStone).setCreativeTab(tab);
 
 		crimsonCobblestone = new ModBlocks(Material.rock).setBlockName("crimsonCobble")

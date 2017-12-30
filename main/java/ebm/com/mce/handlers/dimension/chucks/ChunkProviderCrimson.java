@@ -2,6 +2,7 @@ package ebm.com.mce.handlers.dimension.chucks;
 
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.CAVE;
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.RAVINE;
+import static net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.CUSTOM;
 import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ANIMALS;
 import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAKE;
 import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAVA;
@@ -32,7 +33,7 @@ import net.minecraft.world.gen.MapGenRavine;
 import net.minecraft.world.gen.NoiseGenerator;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
-import net.minecraft.world.gen.feature.WorldGenLakes;
+import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
 import net.minecraft.world.gen.structure.MapGenScatteredFeature;
 import net.minecraft.world.gen.structure.MapGenStronghold;
@@ -169,7 +170,7 @@ public class ChunkProviderCrimson implements IChunkProvider {
 								} else if (k2 * 8 + l2 < b0) {
 									block[j3 += short1] = Blocks.lava; // Water
 								} else {
-									block[j3 += short1] = Blocks.air; // Air
+									block[j3 += short1] = null; // Air
 								}
 							}
 
@@ -403,6 +404,18 @@ public class ChunkProviderCrimson implements IChunkProvider {
 		}
 		k += 8;
 		l += 8;
+
+		// Custom Ore Generation
+		WorldGenMinable agate = new WorldGenMinable(mod_ebm.crimsonStone, 8, mod_ebm.crimsonStone);
+		int j2;
+
+		boolean doGen = TerrainGen.generateOre(worldObj, rand, agate, k, 1, CUSTOM);
+		for (k1 = 0; doGen && k1 < 10; ++k1) {
+			l1 = k + this.rand.nextInt(16);
+			i2 = this.rand.nextInt(75);
+			j2 = l + this.rand.nextInt(16);
+			//agate.generate(worldObj, rand, l1, i2, j2);
+		}
 
 		MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Post(chunk, worldObj, rand, x, z, flag));
 		BlockFalling.fallInstantly = false;

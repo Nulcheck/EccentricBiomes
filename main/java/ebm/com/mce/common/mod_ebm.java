@@ -52,6 +52,7 @@ import ebm.com.mce.blocks.ModLogs.DeadLog;
 import ebm.com.mce.blocks.ModLogs.GlassLog;
 import ebm.com.mce.blocks.ModLogs.MLog;
 import ebm.com.mce.blocks.ModLogs.MauvewoodLog;
+import ebm.com.mce.blocks.ModOre.CrimsoniteOre;
 import ebm.com.mce.blocks.ModPillar.AmethystPillar;
 import ebm.com.mce.blocks.ModPillar.AutilPillar;
 import ebm.com.mce.blocks.ModPillar.BeeswaxPillar;
@@ -184,6 +185,9 @@ public class mod_ebm {
 	public static Block crimsonCobblestone;
 	public static Block crimsonGrass;
 	public static Block crimsonDirt;
+
+	// Ores
+	public static Block crimsoniteOre;
 
 	// Fancy shit
 	public static Block dymusBricks;
@@ -415,6 +419,9 @@ public class mod_ebm {
 	public static Item stinger;
 	public static Item pyreCrystal;
 	public static Item bloodBone;
+
+	// Ingots
+	public static Item CrimticIngot;
 
 	// Seeds
 	public static Item fireSeed;
@@ -658,13 +665,17 @@ public class mod_ebm {
 		crimsonDirt = new CrimsonDirt(Material.ground).setBlockName("crimsonDirt").setBlockTextureName("dirt")
 				.setHardness(0.5f).setStepSound(Block.soundTypeGravel).setCreativeTab(tab);
 
+		// TODO: Ores
+		crimsoniteOre = new CrimsoniteOre().setBlockName("crimsoniteOre").setBlockTextureName("mod_ebm:ore_crimsonite")
+				.setHardness(2.8f).setStepSound(Block.soundTypeStone).setCreativeTab(tab);
+
 		// Fires
 		crimsonFire = new CrimsonFire(Material.ground);
 
 		// Portals
 		crimsonPortal = new CrimsonPortal().setBlockName("crimsonPortal").setBlockUnbreakable();
 
-		// TODO: Plants
+		// Plants
 		beehive = new Beehive(Material.ground).setBlockName("beehive").setHardness(0.15f).setCreativeTab(tab)
 				.setStepSound(Block.soundTypeStone).setBlockTextureName("stone").setLightOpacity(1);
 

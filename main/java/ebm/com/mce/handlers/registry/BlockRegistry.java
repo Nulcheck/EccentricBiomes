@@ -66,6 +66,9 @@ public class BlockRegistry {
 		GameRegistry.registerBlock(mod_ebm.crimsonStone, "crimsonStone");
 		GameRegistry.registerBlock(mod_ebm.crimsonCobblestone, "crimsonCobble");
 		GameRegistry.registerBlock(mod_ebm.crimsonObsidian, "redObsidian");
+		
+		// Ores
+		GameRegistry.registerBlock(mod_ebm.crimsoniteOre, "crimsoniteOre");
 
 		// Fires
 		GameRegistry.registerBlock(mod_ebm.crimsonFire, "crimsonFire");

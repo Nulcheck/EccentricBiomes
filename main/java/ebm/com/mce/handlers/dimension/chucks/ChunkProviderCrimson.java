@@ -406,15 +406,15 @@ public class ChunkProviderCrimson implements IChunkProvider {
 		l += 8;
 
 		// Custom Ore Generation
-		WorldGenMinable agate = new WorldGenMinable(mod_ebm.crimsonStone, 8, mod_ebm.crimsonStone);
+		WorldGenMinable crimsonore = new WorldGenMinable(mod_ebm.crimsoniteOre, 8, mod_ebm.crimsonStone);
 		int j2;
 
-		boolean doGen = TerrainGen.generateOre(worldObj, rand, agate, k, 1, CUSTOM);
+		boolean doGen = TerrainGen.generateOre(worldObj, rand, crimsonore, k, 1, CUSTOM);
 		for (k1 = 0; doGen && k1 < 10; ++k1) {
 			l1 = k + this.rand.nextInt(16);
 			i2 = this.rand.nextInt(75);
 			j2 = l + this.rand.nextInt(16);
-			//agate.generate(worldObj, rand, l1, i2, j2);
+			crimsonore.generate(worldObj, rand, l1, i2, j2);
 		}
 
 		MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Post(chunk, worldObj, rand, x, z, flag));

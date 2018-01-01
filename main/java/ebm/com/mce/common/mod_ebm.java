@@ -421,7 +421,13 @@ public class mod_ebm {
 	public static Item bloodBone;
 
 	// Ingots
-	public static Item CrimticIngot;
+	public static Item crimticIngot;
+	
+	// Nuggets
+	public static Item crimticNugget;
+	
+	// Dusts
+	public static Item crimticDust;
 
 	// Seeds
 	public static Item fireSeed;

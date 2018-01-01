@@ -6,6 +6,17 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class OreDictionaryRegistry {
 	public static void oreDictionary() {
+		// Ores
+		OreDictionary.registerOre("oreCrimsonite", new ItemStack(mod_ebm.crimsoniteOre));
+
+		// Ingots
+		OreDictionary.registerOre("ingotDymus", new ItemStack(mod_ebm.dymusBar));
+
+		// Dusts
+		OreDictionary.registerOre("dustDymus", new ItemStack(mod_ebm.dymusPowder));
+		OreDictionary.registerOre("dust", new ItemStack(mod_ebm.dust));
+		OreDictionary.registerOre("dustAutil", new ItemStack(mod_ebm.autil));
+
 		// Flamestone
 		OreDictionary.registerOre("flameStone", new ItemStack(mod_ebm.flameStone));
 		OreDictionary.registerOre("flameStone", new ItemStack(mod_ebm.flameStoneDeactivated));
@@ -108,14 +119,6 @@ public class OreDictionaryRegistry {
 		OreDictionary.registerOre("stickWood", new ItemStack(mod_ebm.mStick));
 		OreDictionary.registerOre("stickWood", new ItemStack(mod_ebm.deadStick));
 		OreDictionary.registerOre("stickWood", new ItemStack(mod_ebm.mauveStick));
-
-		// Ingots
-		OreDictionary.registerOre("ingotDymus", new ItemStack(mod_ebm.dymusBar));
-
-		// Dusts
-		OreDictionary.registerOre("dustDymus", new ItemStack(mod_ebm.dymusPowder));
-		OreDictionary.registerOre("dust", new ItemStack(mod_ebm.dust));
-		OreDictionary.registerOre("dustAutil", new ItemStack(mod_ebm.autil));
 
 		// Foods
 		OreDictionary.registerOre("foodHoney", new ItemStack(mod_ebm.honey));

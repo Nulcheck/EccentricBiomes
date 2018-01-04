@@ -97,6 +97,8 @@ public class BiomeRegistry {
 			BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(DeathForest, 10));
 		if (mod_ebm.spawnObsidianForest == true)
 			BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(ObsidianForest, 10));
+		if (mod_ebm.spawnGlassland == true)
+			BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(GlassLand, 10));
 		if (mod_ebm.spawnArctic == true)
 			BiomeManager.addBiome(BiomeType.ICY, new BiomeEntry(Arctic, 10));
 		if (mod_ebm.spawnSnowyDesert == true)

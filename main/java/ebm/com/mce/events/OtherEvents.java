@@ -3,10 +3,8 @@ package ebm.com.mce.events;
 import java.util.Random;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.TickEvent.PlayerTickEvent;
 import ebm.com.mce.common.mod_ebm;
 import net.minecraft.block.Block;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
@@ -14,7 +12,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ChatComponentText;
-import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -36,6 +33,11 @@ public class OtherEvents {
 		else if (e.entityPlayer.getHeldItem() != null && e.entityPlayer.getHeldItem().getItem() == mod_ebm.pyreCrystal
 				&& e.target instanceof EntityLiving) {
 			e.target.setFire(4);
+		}
+		
+		else if (e.entityPlayer.getHeldItem() != null && e.entityPlayer.getHeldItem().getItem() == mod_ebm.crimticSword
+				&& e.target instanceof EntityLiving) {
+			((EntityLivingBase) e.target).addPotionEffect(new PotionEffect(mod_ebm.carminicPoison.id, 120, 0, false));
 		}
 	}
 

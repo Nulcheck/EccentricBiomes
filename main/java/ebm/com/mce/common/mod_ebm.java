@@ -15,6 +15,7 @@ import cpw.mods.fml.common.network.FMLEventChannel;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import ebm.com.mce.api.CraftingPillarEBMAPI;
+import ebm.com.mce.armor.CrimticArmor;
 import ebm.com.mce.blocks.DeadGrass;
 import ebm.com.mce.blocks.ModBlocks;
 import ebm.com.mce.blocks.ModBlocks.AmethystCrust;
@@ -93,6 +94,7 @@ import ebm.com.mce.commands.Bug;
 import ebm.com.mce.commands.News;
 import ebm.com.mce.commands.Support;
 import ebm.com.mce.commands.Wiki;
+import ebm.com.mce.effects.CarminicPoison;
 import ebm.com.mce.events.ChatEvent;
 import ebm.com.mce.events.ChiselEvent;
 import ebm.com.mce.events.HoeEvent;
@@ -114,14 +116,18 @@ import ebm.com.mce.handlers.registry.MobRegistry;
 import ebm.com.mce.handlers.registry.OreDictionaryRegistry;
 import ebm.com.mce.handlers.registry.TileEntityRegistry;
 import ebm.com.mce.items.FireSeeds;
+import ebm.com.mce.items.ItemTool.Axe;
 import ebm.com.mce.items.ItemTool.GlassShard;
+import ebm.com.mce.items.ItemTool.Hoe;
+import ebm.com.mce.items.ItemTool.Pick;
+import ebm.com.mce.items.ItemTool.Shovel;
 import ebm.com.mce.items.ItemTool.Sword;
 import ebm.com.mce.items.ModItems.ErythonCube;
 import ebm.com.mce.items.doors.DeadwoodDoorItem;
 import ebm.com.mce.items.doors.ManchineelDoorItem;
 import ebm.com.mce.items.doors.MauvewoodDoorItem;
 import ebm.com.mce.items.records.DiscHskele;
-import ebm.com.mce.other.ECBTab;
+import ebm.com.mce.util.ModCreativeTabs;
 import ebm.com.mce.util.updater.CheckVersion;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPressurePlate.Sensitivity;
@@ -131,7 +137,9 @@ import net.minecraft.command.ServerCommandManager;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemFood;
+import net.minecraft.potion.Potion;
 import net.minecraft.server.MinecraftServer;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
@@ -422,10 +430,10 @@ public class mod_ebm {
 
 	// Ingots
 	public static Item crimticIngot;
-	
+
 	// Nuggets
 	public static Item crimticNugget;
-	
+
 	// Dusts
 	public static Item crimticDust;
 
@@ -450,6 +458,20 @@ public class mod_ebm {
 	public static Item stingerSword;
 	public static Item fireSword;
 
+	// Crimtic
+	public static Item crimticPick;
+	public static Item crimticShovel;
+	public static Item crimticAxe;
+	public static Item crimticSword;
+	public static Item crimticHoe;
+
+	// Armor
+	// Crimtic
+	public static Item crimticHelmet;
+	public static Item crimticChest;
+	public static Item crimticLegs;
+	public static Item crimticBoots;
+
 	public static Item invsItem;
 
 	// GUIs
@@ -459,6 +481,11 @@ public class mod_ebm {
 
 	public static final int PACKET_TYPE_C2S_TEST = 628;
 	public static final int PACKET_TYPE_ENTITY_SYNC = 629;
+
+	public static Potion carminicPoison;
+
+	// public static DamageSource cPoison = new
+	// DamageSource("carminicPoison").setDamageBypassesArmor();
 
 	// TODO: Config Shit
 	// Spawnage
@@ -1249,7 +1276,7 @@ public class mod_ebm {
 		mauvewoodSapling = new MauvewoodSapling().setBlockName("MauvewoodSapling")
 				.setBlockTextureName("sapling_mauvewood").setHardness(0f).setStepSound(Block.soundTypeGrass)
 				.setCreativeTab(tab).setLightOpacity(1);
-		log.info("Loaded blocks.");
+		// log.info("Loaded blocks.");
 
 		// TODO: Items
 		// Other
@@ -1286,6 +1313,18 @@ public class mod_ebm {
 		bloodBone = new Item().setUnlocalizedName("bloodBone").setTextureName("mod_ebm:bloody_bone")
 				.setCreativeTab(tab);
 
+		// Ingots
+		crimticIngot = new Item().setUnlocalizedName("crimticIngot").setTextureName("mod_ebm:ingot_crimtic")
+				.setCreativeTab(tab);
+
+		// Nuggets
+		crimticNugget = new Item().setUnlocalizedName("crimticNugget").setTextureName("mod_ebm:nugget_crimtic")
+				.setCreativeTab(tab);
+
+		// Dusts
+		crimticDust = new Item().setUnlocalizedName("crimticDust").setTextureName("mod_ebm:dust_crimtic")
+				.setCreativeTab(tab);
+
 		// Sticks
 		mStick = new Item().setUnlocalizedName("mStick").setTextureName("mod_ebm:stick_m").setCreativeTab(tab);
 
@@ -1316,6 +1355,7 @@ public class mod_ebm {
 		ToolMaterial tool_erython = EnumHelper.addToolMaterial("tool_erython", 2, 500, 4F, 4F, 15);
 		ToolMaterial tool_stinger = EnumHelper.addToolMaterial("tool_stinger", 2, 550, 3.5f, 4.5f, 15);
 		ToolMaterial tool_fire = EnumHelper.addToolMaterial("tool_fire", 2, 520, 3.5f, 4.3f, 15);
+		ToolMaterial tool_crimtic = EnumHelper.addToolMaterial("tool_crimtic", 3, 750, 8f, 5f, 30);
 
 		erythonBattleAxe = new Sword(tool_erython).setTextureName("mod_ebm:axe_battle_erython").setCreativeTab(tab)
 				.setUnlocalizedName("ErythonBattleAxe");
@@ -1329,13 +1369,48 @@ public class mod_ebm {
 		fireSword = new Sword(tool_fire).setTextureName("mod_ebm:sword_fire").setCreativeTab(tab)
 				.setUnlocalizedName("fireSword");
 
+		// Crimtic
+		crimticPick = new Pick(tool_crimtic).setUnlocalizedName("crimticPick").setTextureName("mod_ebm:pickaxe_crimtic")
+				.setCreativeTab(tab);
+
+		crimticShovel = new Shovel(tool_crimtic).setUnlocalizedName("crimticShovel")
+				.setTextureName("mod_ebm:shovel_crimtic").setCreativeTab(tab);
+
+		crimticAxe = new Axe(tool_crimtic).setUnlocalizedName("crimticAxe").setTextureName("mod_ebm:axe_crimtic")
+				.setCreativeTab(tab);
+
+		crimticSword = new Sword(tool_crimtic).setUnlocalizedName("crimticSword")
+				.setTextureName("mod_ebm:sword_crimtic").setCreativeTab(tab);
+
+		crimticHoe = new Hoe(tool_crimtic).setUnlocalizedName("crimticHoe").setTextureName("mod_ebm:hoe_crimtic")
+				.setCreativeTab(tab);
+
+		// Armor
+		ArmorMaterial armor_crimtic = EnumHelper.addArmorMaterial("armor_crimtic", 20, new int[] { 4, 6, 5, 3 }, 30);
+
+		// Crimtic
+		crimticHelmet = new CrimticArmor(armor_crimtic, 5, 0).setUnlocalizedName("crimticHelmet")
+				.setTextureName("mod_ebm:elmet_crimtic").setCreativeTab(tab);
+
+		crimticChest = new CrimticArmor(armor_crimtic, 5, 1).setUnlocalizedName("crimticChest")
+				.setTextureName("mod_ebm:chestplate_crimtic").setCreativeTab(tab);
+
+		crimticLegs = new CrimticArmor(armor_crimtic, 5, 2).setUnlocalizedName("crimticLegs")
+				.setTextureName("mod_ebm:leggings_crimtic").setCreativeTab(tab);
+
+		crimticBoots = new CrimticArmor(armor_crimtic, 5, 3).setUnlocalizedName("crimticBoots")
+				.setTextureName("mod_ebm:boots_crimtic").setCreativeTab(tab);
+
 		// Technical
 		invsItem = new Item().setTextureName("mod_ebm:invs").setUnlocalizedName("InvsItem");
-		log.info("Loaded items.");
+		// log.info("Loaded items.");
+
+		// Status Effects
+		carminicPoison = new CarminicPoison(30, true, 0).setIconIndex(0, 0).setPotionName("potion.carminicPoison");
 
 		// Biomes
 		new BiomeRegistry().main();
-		log.info("Loaded biomes.");
+		// log.info("Loaded biomes.");
 
 		MinecraftForge.EVENT_BUS.register(new OtherEvents());
 		MinecraftForge.EVENT_BUS.register(new ChatEvent());
@@ -1356,7 +1431,7 @@ public class mod_ebm {
 		channel = NetworkRegistry.INSTANCE.newEventDrivenChannel(networkChannelName);
 		channel.register(new ServerPacketHandler());
 		channel.register(new ClientPacketHandler());
-		log.info("Registered event busses.");
+		// log.info("Registered event busses.");
 	}
 
 	// TODO: Everything Else
@@ -1368,7 +1443,7 @@ public class mod_ebm {
 		proxy.registerRenders();
 	}
 
-	public static CreativeTabs tab = new ECBTab("ecb");
+	public static CreativeTabs tab = new ModCreativeTabs("ecb");
 	public static SimpleNetworkWrapper networkWrapper;
 
 	public static void gameRegistry() {

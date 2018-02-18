@@ -6,7 +6,7 @@ import java.util.Random;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ebm.com.mce.common.mod_ebm;
-import ebm.com.mce.other.ModFoliageColor;
+import ebm.com.mce.util.ModFoliageColor;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.material.Material;

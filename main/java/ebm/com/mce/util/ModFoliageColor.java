@@ -1,4 +1,4 @@
-package ebm.com.mce.other;
+package ebm.com.mce.util;
 
 import net.minecraft.world.ColorizerFoliage;
 

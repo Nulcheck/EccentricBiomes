@@ -11,11 +11,16 @@ public class OreDictionaryRegistry {
 
 		// Ingots
 		OreDictionary.registerOre("ingotDymus", new ItemStack(mod_ebm.dymusBar));
+		OreDictionary.registerOre("ingotCrimtic", new ItemStack(mod_ebm.crimticIngot));
+
+		// Nuggets
+		OreDictionary.registerOre("nuggetCrimtic", new ItemStack(mod_ebm.crimticNugget));
 
 		// Dusts
 		OreDictionary.registerOre("dustDymus", new ItemStack(mod_ebm.dymusPowder));
 		OreDictionary.registerOre("dust", new ItemStack(mod_ebm.dust));
 		OreDictionary.registerOre("dustAutil", new ItemStack(mod_ebm.autil));
+		OreDictionary.registerOre("dustCrimtic", new ItemStack(mod_ebm.crimticDust));
 
 		// Flamestone
 		OreDictionary.registerOre("flameStone", new ItemStack(mod_ebm.flameStone));

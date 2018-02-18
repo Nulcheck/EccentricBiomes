@@ -1,13 +1,13 @@
-package ebm.com.mce.other;
+package ebm.com.mce.util;
 
 import ebm.com.mce.common.mod_ebm;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-public class ECBTab extends CreativeTabs {
+public class ModCreativeTabs extends CreativeTabs {
 	public final String gui_ebm = "ebm.png";
 
-	public ECBTab(String name) {
+	public ModCreativeTabs(String name) {
 		super(name);
 		setBackgroundImageName(gui_ebm);
 	}

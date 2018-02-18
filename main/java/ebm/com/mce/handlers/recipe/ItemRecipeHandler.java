@@ -67,5 +67,7 @@ public class ItemRecipeHandler {
 		GameRegistry.addSmelting(new ItemStack(mod_ebm.deadLog), new ItemStack(Items.coal, 1, 1), .5f);
 
 		GameRegistry.addSmelting(new ItemStack(mod_ebm.mauvewoodLog), new ItemStack(Items.coal, 1, 1), .5f);
+
+		GameRegistry.addSmelting(new ItemStack(mod_ebm.crimsoniteOre), new ItemStack(mod_ebm.crimticIngot), 1f);
 	}
 }

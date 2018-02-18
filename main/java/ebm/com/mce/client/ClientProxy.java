@@ -39,6 +39,8 @@ import net.minecraftforge.client.MinecraftForgeClient;
 
 public class ClientProxy extends CommonProxy {
 	public void registerRenders() {
+		RenderingRegistry.addNewArmourRendererPrefix("5");
+		
 		// Mobs
 		RenderingRegistry.registerEntityRenderingHandler(EntityErython.class, new RenderErython(new ModelErython(), 0));
 

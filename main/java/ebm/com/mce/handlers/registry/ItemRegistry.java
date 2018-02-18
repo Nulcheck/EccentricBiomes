@@ -5,16 +5,6 @@ import ebm.com.mce.common.mod_ebm;
 
 public class ItemRegistry {
 	public static void registerItems() {
-		// Sticks
-		GameRegistry.registerItem(mod_ebm.mStick, "mStick");
-		GameRegistry.registerItem(mod_ebm.deadStick, "deadStick");
-		GameRegistry.registerItem(mod_ebm.mauveStick, "mauveStick");
-
-		// Door Items
-		GameRegistry.registerItem(mod_ebm.mDoorItem, "mDoorItem");
-		GameRegistry.registerItem(mod_ebm.deadDoorItem, "deadDoorItem");
-		GameRegistry.registerItem(mod_ebm.mauvewoodDoorItem, "mauveDoorItem");
-
 		// Other
 		GameRegistry.registerItem(mod_ebm.ebmWrench, "EBMWrench");
 		GameRegistry.registerItem(mod_ebm.dymusPowder, "DymusPowder");
@@ -31,6 +21,25 @@ public class ItemRegistry {
 		GameRegistry.registerItem(mod_ebm.pyreCrystal, "pyreCrystal");
 		GameRegistry.registerItem(mod_ebm.bloodBone, "bloodBone");
 
+		// Ingots
+		GameRegistry.registerItem(mod_ebm.crimticIngot, "crimticIngot");
+
+		// Nuggets
+		GameRegistry.registerItem(mod_ebm.crimticNugget, "crimticNugget");
+
+		// Dusts
+		GameRegistry.registerItem(mod_ebm.crimticDust, "crimticDust");
+
+		// Sticks
+		GameRegistry.registerItem(mod_ebm.mStick, "mStick");
+		GameRegistry.registerItem(mod_ebm.deadStick, "deadStick");
+		GameRegistry.registerItem(mod_ebm.mauveStick, "mauveStick");
+
+		// Door Items
+		GameRegistry.registerItem(mod_ebm.mDoorItem, "mDoorItem");
+		GameRegistry.registerItem(mod_ebm.deadDoorItem, "deadDoorItem");
+		GameRegistry.registerItem(mod_ebm.mauvewoodDoorItem, "mauveDoorItem");
+
 		// Seeds
 		GameRegistry.registerItem(mod_ebm.fireSeed, "FireSeed");
 
@@ -41,6 +50,19 @@ public class ItemRegistry {
 		GameRegistry.registerItem(mod_ebm.erythonBattleAxe, "ErythonBattleAxe");
 		GameRegistry.registerItem(mod_ebm.stingerSword, "stingerSword");
 		GameRegistry.registerItem(mod_ebm.fireSword, "fireSword");
+
+		// Crimtic
+		GameRegistry.registerItem(mod_ebm.crimticPick, "crimticPick");
+		GameRegistry.registerItem(mod_ebm.crimticShovel, "cimticShovel");
+		GameRegistry.registerItem(mod_ebm.crimticAxe, "cimticAxe");
+		GameRegistry.registerItem(mod_ebm.crimticSword, "cimticSword");
+		GameRegistry.registerItem(mod_ebm.crimticHoe, "cimticHoe");
+
+		// Armor
+		GameRegistry.registerItem(mod_ebm.crimticHelmet, "crimticHelmet");
+		GameRegistry.registerItem(mod_ebm.crimticChest, "crimticChest");
+		GameRegistry.registerItem(mod_ebm.crimticLegs, "crimticLegs");
+		GameRegistry.registerItem(mod_ebm.crimticBoots, "crimticBoots");
 
 		GameRegistry.registerItem(mod_ebm.invsItem, "InvsItem");
 	}

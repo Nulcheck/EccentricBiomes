@@ -353,14 +353,6 @@ tile.mDoor.name=Manchineel Door
 tile.deadDoor.name=Deadwood Door
 tile.mauveDoor.name=Mauvewood Door
 
-item.mDoorItem.name=Manchineel Door
-item.deadDoorItem.name=Deadwood Door
-item.mauveDoorItem.name=Mauvewood Door
-
-item.mStick.name=Manchineel Stick
-item.deadStick.name=Deadwood Stick
-item.mauveStick.name=Mauvewood Stick
-
 item.DymusPowder.name=Dymus Powder
 item.DymusBar.name=Dymus Bar
 item.Dust.name=Dust
@@ -375,6 +367,20 @@ item.pyreCrystal.name=Pyre Crystal
 item.FireSeed.name=Fire Seed
 item.bloodBone.name=Bloody Bone
 
+item.crimticIngot.name=Crimtic Ingot
+
+item.crimticNugget.name=Crimtic Nugget
+
+item.crimticDust.name=Crimtic Dust
+
+item.mDoorItem.name=Manchineel Door
+item.deadDoorItem.name=Deadwood Door
+item.mauveDoorItem.name=Mauvewood Door
+
+item.mStick.name=Manchineel Stick
+item.deadStick.name=Deadwood Stick
+item.mauveStick.name=Mauvewood Stick
+
 item.cd_hskele.name=Music Disc
 
 item.EBMWrench.name=Eccentric Biomes Wrench
@@ -382,5 +388,16 @@ item.GlassShard.name=Glass Shard
 item.ErythonBattleAxe.name=Erython Battle Axe
 item.stingerSword.name=Sting Sword
 item.fireSword.name=Pyre Sword
+
+item.crimticHelmet.name=Crimtic Helmet
+item.crimticChest.name=Crimtic Chestplate
+item.crimticLegs.name=Crimtic Leggings
+item.crimticBoots.name=Crimtic Boots
+
+item.crimticPick.name=Crimtic Pickaxe
+item.crimticShovel.name=Crimtic Shovel
+item.crimticAxe.name=Crimtic Axe
+item.crimticSword.name=Crimtic Sword
+item.crimticHoe.name=Crimtic Hoe
 
 item.InvsItem.name=Invisible Item (For Void Achievement)

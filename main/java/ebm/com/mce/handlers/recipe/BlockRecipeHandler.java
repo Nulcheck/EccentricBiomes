@@ -314,6 +314,9 @@ public class BlockRecipeHandler {
 		GameRegistry.addRecipe(new ItemStack(mod_ebm.crimsonObsidian, 1), "rpr", " o ", "rer", 'r',
 				new ItemStack(Items.dye, 1, 1), 'o', new ItemStack(Blocks.obsidian), 'e',
 				new ItemStack(mod_ebm.erythonCube), 'p', new ItemStack(mod_ebm.pyreCrystal));
+
+		GameRegistry.addRecipe(new ItemStack(mod_ebm.crimticBlock), "***", "***", "***", '*',
+				new ItemStack(mod_ebm.crimticIngot));
 	}
 
 	public static void registerSmelting() {

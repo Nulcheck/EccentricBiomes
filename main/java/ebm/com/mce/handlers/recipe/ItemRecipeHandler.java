@@ -53,6 +53,8 @@ public class ItemRecipeHandler {
 
 		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(mod_ebm.fireSword), "*",
 				"*", "s", '*', new ItemStack(mod_ebm.pyreCrystal), 's', "stickWood"));
+
+		GameRegistry.addShapelessRecipe(new ItemStack(mod_ebm.crimticIngot, 9), new ItemStack(mod_ebm.crimticBlock));
 	}
 
 	public static void registerSmelting() {

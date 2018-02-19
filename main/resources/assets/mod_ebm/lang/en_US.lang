@@ -15,6 +15,10 @@ itemGroup.ecb=§5Eccentric Biomes§r
 entity.mod_ebm.Erython.name=Erython
 entity.mod_ebm.BloodySkeleton.name=Bloody Skeleton
 
+potion.carminicPoison=Carminic Poison
+
+death.attack.carminicPoison=%1$s died from carminic poison.
+
 tile.BlueDirt.name=Blue Dirt
 tile.BlueFarmland.name=Blue Farmland
 tile.FlameStone.name=Flamestone
@@ -48,6 +52,8 @@ tile.crimsonTallGrass.name=Crimson Grass
 tile.crimsonBush.name=Crimson Thorns
 
 tile.crimsoniteOre.name=Crimsonite Ore
+
+tile.crimticBlock.name=Crimtic Block
 
 tile.beehive.name=Beehive
 tile.fireGrass.name=Fire Grass

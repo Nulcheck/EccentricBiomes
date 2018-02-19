@@ -1,5 +1,6 @@
 package ebm.com.mce.effects;
 
+import ebm.com.mce.common.mod_ebm;
 import ebm.com.mce.util.DamageSources;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLivingBase;
@@ -29,6 +30,7 @@ public class CarminicPoison extends Potion {
 	}
 
 	public void performEffect(EntityLivingBase entity, int i) {
-		entity.attackEntityFrom(DamageSources.carminicPoison, 1.5f);
+		if(this.id == mod_ebm.carminicPoison.id)
+			entity.attackEntityFrom(DamageSources.carminicPoison, 1f);
 	}
 }

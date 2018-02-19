@@ -13,17 +13,18 @@ public class CrimticArmor extends ItemArmor {
 	}
 
 	public void onArmorTick(World world, EntityPlayer player, ItemStack stack) {
+		if (stack.getItem().equals(mod_ebm.crimticHelmet) || stack.getItem().equals(mod_ebm.crimticChest)
+				|| stack.getItem().equals(mod_ebm.crimticLegs) || stack.getItem().equals(mod_ebm.crimticBoots))
+			player.removePotionEffect(mod_ebm.carminicPoison.id);
 	}
 
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String layer) {
 		if (stack.getItem().equals(mod_ebm.crimticHelmet) || stack.getItem().equals(mod_ebm.crimticChest)
-				|| stack.getItem().equals(mod_ebm.crimticBoots)) {
+				|| stack.getItem().equals(mod_ebm.crimticBoots))
 			return "mod_ebm:textures/armor/crimtic_layer_1.png";
-		}
 
-		if (stack.getItem().equals(mod_ebm.crimticLegs)) {
+		if (stack.getItem().equals(mod_ebm.crimticLegs))
 			return "mod_ebm:textures/armor/crimtic_layer_2.png";
-		}
 
 		else {
 			System.out.println("An error has occurred rendering armor!");

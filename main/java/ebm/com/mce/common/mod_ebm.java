@@ -53,6 +53,7 @@ import ebm.com.mce.blocks.ModLogs.DeadLog;
 import ebm.com.mce.blocks.ModLogs.GlassLog;
 import ebm.com.mce.blocks.ModLogs.MLog;
 import ebm.com.mce.blocks.ModLogs.MauvewoodLog;
+import ebm.com.mce.blocks.ModMineral.CrimticBlock;
 import ebm.com.mce.blocks.ModOre.CrimsoniteOre;
 import ebm.com.mce.blocks.ModPillar.AmethystPillar;
 import ebm.com.mce.blocks.ModPillar.AutilPillar;
@@ -97,6 +98,7 @@ import ebm.com.mce.commands.Wiki;
 import ebm.com.mce.effects.CarminicPoison;
 import ebm.com.mce.events.ChatEvent;
 import ebm.com.mce.events.ChiselEvent;
+import ebm.com.mce.events.EffectEvent;
 import ebm.com.mce.events.HoeEvent;
 import ebm.com.mce.events.OtherEvents;
 import ebm.com.mce.handlers.AchievementHandler;
@@ -196,6 +198,9 @@ public class mod_ebm {
 
 	// Ores
 	public static Block crimsoniteOre;
+
+	// Mineral Blocks
+	public static Block crimticBlock;
 
 	// Fancy shit
 	public static Block dymusBricks;
@@ -594,7 +599,7 @@ public class mod_ebm {
 		idCrimsonMountains = config.get("Dimension Biome ids", "CrimsonMountains", 221).getInt();
 
 		config.save();
-		log.info("Loaded config.");
+		//log.info("Loaded config.");
 		new CheckVersion();
 
 		// TODO: Blocks
@@ -701,6 +706,11 @@ public class mod_ebm {
 		// TODO: Ores
 		crimsoniteOre = new CrimsoniteOre().setBlockName("crimsoniteOre").setBlockTextureName("mod_ebm:ore_crimsonite")
 				.setHardness(2.8f).setStepSound(Block.soundTypeStone).setCreativeTab(tab);
+
+		// Mineral Blocks
+		crimticBlock = new CrimticBlock(Material.iron).setBlockName("crimticBlock")
+				.setBlockTextureName("mod_ebm:block_crimtic").setHardness(3f).setStepSound(Block.soundTypeMetal)
+				.setCreativeTab(tab);
 
 		// Fires
 		crimsonFire = new CrimsonFire(Material.ground);
@@ -1390,7 +1400,7 @@ public class mod_ebm {
 
 		// Crimtic
 		crimticHelmet = new CrimticArmor(armor_crimtic, 5, 0).setUnlocalizedName("crimticHelmet")
-				.setTextureName("mod_ebm:elmet_crimtic").setCreativeTab(tab);
+				.setTextureName("mod_ebm:helmet_crimtic").setCreativeTab(tab);
 
 		crimticChest = new CrimticArmor(armor_crimtic, 5, 1).setUnlocalizedName("crimticChest")
 				.setTextureName("mod_ebm:chestplate_crimtic").setCreativeTab(tab);
@@ -1415,6 +1425,7 @@ public class mod_ebm {
 		MinecraftForge.EVENT_BUS.register(new OtherEvents());
 		MinecraftForge.EVENT_BUS.register(new ChatEvent());
 		MinecraftForge.EVENT_BUS.register(new HoeEvent());
+		MinecraftForge.EVENT_BUS.register(new EffectEvent());
 		FMLCommonHandler.instance().bus().register(new OtherEvents());
 		FMLCommonHandler.instance().bus().register(new AchievementHandler());
 		FMLCommonHandler.instance().bus().register(new PlayerHandler());

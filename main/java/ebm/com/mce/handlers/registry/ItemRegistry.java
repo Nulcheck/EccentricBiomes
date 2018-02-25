@@ -23,6 +23,7 @@ public class ItemRegistry {
 
 		// Ingots
 		GameRegistry.registerItem(mod_ebm.crimticIngot, "crimticIngot");
+		GameRegistry.registerItem(mod_ebm.pyreIngot, "pyreIngot");
 
 		// Nuggets
 		GameRegistry.registerItem(mod_ebm.crimticNugget, "crimticNugget");

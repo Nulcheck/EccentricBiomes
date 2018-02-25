@@ -17,7 +17,8 @@ entity.mod_ebm.BloodySkeleton.name=Bloody Skeleton
 
 potion.carminicPoison=Carminic Poison
 
-death.attack.carminicPoison=%1$s died from carminic poison.
+death.attack.carminicPoison=%1$s deteriorated from carminic poison.
+death.attack.carminicPoison.player=%1$s was infected and perished whilst fighting %2$s.
 
 tile.BlueDirt.name=Blue Dirt
 tile.BlueFarmland.name=Blue Farmland
@@ -47,6 +48,7 @@ tile.crimsonStone.name=Crimson Stone
 tile.crimsonFire.name=Crimson Fire
 tile.crimsonPortal.name=Crimson Portal
 tile.crimsonGrass.name=Crimson Grass
+tile.crimsonDirt.name=Crimson Dirt
 tile.crimsonCobble.name=Crimson Cobblestone
 tile.crimsonTallGrass.name=Crimson Grass
 tile.crimsonBush.name=Crimson Thorns
@@ -54,6 +56,7 @@ tile.crimsonBush.name=Crimson Thorns
 tile.crimsoniteOre.name=Crimsonite Ore
 
 tile.crimticBlock.name=Crimtic Block
+tile.pyreBlock.name=Pyre Block
 
 tile.beehive.name=Beehive
 tile.fireGrass.name=Fire Grass
@@ -374,6 +377,7 @@ item.FireSeed.name=Fire Seed
 item.bloodBone.name=Bloody Bone
 
 item.crimticIngot.name=Crimtic Ingot
+item.pyreIngot.name=Pyre Ingot
 
 item.crimticNugget.name=Crimtic Nugget
 

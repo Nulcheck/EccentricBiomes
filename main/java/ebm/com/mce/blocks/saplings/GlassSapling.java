@@ -7,7 +7,9 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ebm.com.mce.gen.trees.WorldGenGlassTree;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockGlass;
 import net.minecraft.block.BlockSapling;
+import net.minecraft.block.BlockStainedGlass;
 import net.minecraft.block.IGrowable;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -29,7 +31,7 @@ public class GlassSapling extends BlockSapling implements IGrowable {
 	private static WorldGenerator tree;
 
 	public GlassSapling() {
-		tree = new WorldGenGlassTree();
+		tree = new WorldGenGlassTree(true);
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -82,7 +84,7 @@ public class GlassSapling extends BlockSapling implements IGrowable {
 		Block block = world.getBlock(x, y - 1, z);
 		switch (metadata) {
 		default:
-			return block == Blocks.glass;
+			return (block instanceof BlockGlass || block instanceof BlockStainedGlass);
 		}
 	}
 
@@ -94,10 +96,10 @@ public class GlassSapling extends BlockSapling implements IGrowable {
 		Block soil = world.getBlock(x, y - 1, z);
 		if (world.getBlockMetadata(x, y, z) != 7)
 			return (world.getFullBlockLightValue(x, y, z) >= 8 || world.canBlockSeeTheSky(x, y, z))
-					&& (soil != null && soil == Blocks.glass);
+					&& (soil != null && (soil instanceof BlockGlass || soil instanceof BlockStainedGlass));
 		else
 			return (world.getFullBlockLightValue(x, y, z) >= 8 || world.canBlockSeeTheSky(x, y, z))
-					&& (soil != null && soil == Blocks.glass);
+					&& (soil != null && (soil instanceof BlockGlass || soil instanceof BlockStainedGlass));
 	}
 
 	public void updateTick(World world, int x, int y, int z, Random random) {
@@ -112,14 +114,8 @@ public class GlassSapling extends BlockSapling implements IGrowable {
 	public void func_149878_d(World world, int x, int y, int z, Random random) {
 		int meta = world.getBlockMetadata(x, y, z) & TYPES;
 		Object obj = null;
-		int rnd = random.nextInt(10);
 		if (obj == null) {
-			if (rnd < 5) {
-				obj = tree;
-			}
-			if (rnd >= 5) {
-				obj = tree;
-			}
+			obj = tree;
 		}
 		if (obj != null) {
 			world.setBlockToAir(x, y, z);
@@ -131,19 +127,10 @@ public class GlassSapling extends BlockSapling implements IGrowable {
 
 	public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction,
 			IPlantable plantable) {
-		if (world.getBlock(x, y, z) == Blocks.glass) {
+		if (world.getBlock(x, y, z) instanceof BlockGlass || world.getBlock(x, y, z) instanceof BlockStainedGlass) {
 			return true;
 		} else {
 			return false;
 		}
-	}
-
-	public void onPlantGrow(World world, int x, int y, int z, int sourceX, int sourceY, int sourceZ) {
-		if (this == Blocks.glass) {
-			world.setBlock(x, y, z, Blocks.glass, 0, 0);
-		}
-	}
-
-	public void growTree(World world, Random rand, int y, int z, int x) {
 	}
 }

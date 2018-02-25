@@ -28,7 +28,7 @@ public class DeathForest extends BiomeGenBase {
 		this.theBiomeDecorator.grassPerChunk = 20;
 		this.theBiomeDecorator.flowersPerChunk = -999;
 		this.theBiomeDecorator.mushroomsPerChunk = 30;
-		this.worldGenMTree = new WorldGenMTree();
+		this.worldGenMTree = new WorldGenMTree(true);
 
 		this.topBlock = Blocks.grass;
 		this.fillerBlock = Blocks.dirt;

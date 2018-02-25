@@ -23,4 +23,14 @@ public class ModMineral {
 			}
 		}
 	}
+
+	public static class PyreBlock extends Block {
+		public PyreBlock(Material mat) {
+			super(mat);
+		}
+
+		public void onEntityWalking(World world, int x, int y, int z, Entity entity) {
+			entity.setFire(8);
+		}
+	}
 }

@@ -3,6 +3,7 @@ package ebm.com.mce.blocks;
 import java.util.List;
 import java.util.Random;
 
+import ebm.com.mce.common.mod_ebm;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.material.Material;
@@ -82,10 +83,6 @@ public class ModLogs extends BlockLog {
 			return false;
 		}
 
-		public void getSubBlocks(Item item, CreativeTabs tab, List list) {
-			list.add(new ItemStack(item, 1, 0));
-		}
-
 		public boolean isWood(IBlockAccess world, int x, int y, int z) {
 			return false;
 		}
@@ -98,6 +95,21 @@ public class ModLogs extends BlockLog {
 			int i = rand.nextInt(10);
 			if (i >= 5 && i <= 10) {
 				return Items.bone;
+			} else {
+				return null;
+			}
+		}
+	}
+
+	public static class BoneLogBlood extends BoneLog {
+		public BoneLogBlood(Material mat) {
+			super(mat);
+		}
+
+		public Item getItemDropped(int id, Random rand, int meta) {
+			int i = rand.nextInt(10);
+			if (i >= 5 && i <= 10) {
+				return mod_ebm.bloodBone;
 			} else {
 				return null;
 			}
@@ -164,7 +176,7 @@ public class ModLogs extends BlockLog {
 		}
 
 		public void setBlockBoundsBasedOnState(IBlockAccess world, int x, int y, int z) {
-			//int meta = world.getBlockMetadata(x, y, z);
+			// int meta = world.getBlockMetadata(x, y, z);
 			boolean flag = (world.getBlockMetadata(x, y, z) & 8) != 0;
 			boolean flag1 = world.getBlockMetadata(x, y, z) == 4;
 

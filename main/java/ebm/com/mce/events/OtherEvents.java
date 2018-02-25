@@ -21,22 +21,22 @@ public class OtherEvents {
 	@SubscribeEvent
 	public void weaponEffects(AttackEntityEvent e) {
 		if (e.entityPlayer.getHeldItem() != null && e.entityPlayer.getHeldItem().getItem() == mod_ebm.stingerSword
-				&& e.target instanceof EntityLiving) {
+				&& e.target instanceof EntityLivingBase) {
 			((EntityLivingBase) e.target).addPotionEffect(new PotionEffect(19, 120, 0, false));
 		}
 
-		else if (e.entityPlayer.getHeldItem() != null && e.entityPlayer.getHeldItem().getItem() == mod_ebm.fireSword
-				&& e.target instanceof EntityLiving) {
+		if (e.entityPlayer.getHeldItem() != null && e.entityPlayer.getHeldItem().getItem() == mod_ebm.fireSword
+				&& e.target instanceof EntityLivingBase) {
 			e.target.setFire(8);
 		}
 
-		else if (e.entityPlayer.getHeldItem() != null && e.entityPlayer.getHeldItem().getItem() == mod_ebm.pyreCrystal
-				&& e.target instanceof EntityLiving) {
+		if (e.entityPlayer.getHeldItem() != null && e.entityPlayer.getHeldItem().getItem() == mod_ebm.pyreCrystal
+				&& e.target instanceof EntityLivingBase) {
 			e.target.setFire(4);
 		}
 		
-		else if (e.entityPlayer.getHeldItem() != null && e.entityPlayer.getHeldItem().getItem() == mod_ebm.crimticSword
-				&& e.target instanceof EntityLiving) {
+		if (e.entityPlayer.getHeldItem() != null && e.entityPlayer.getHeldItem().getItem() == mod_ebm.crimticSword
+				&& e.target instanceof EntityLivingBase) {
 			((EntityLivingBase) e.target).addPotionEffect(new PotionEffect(mod_ebm.carminicPoison.id, 120, 0, false));
 		}
 	}

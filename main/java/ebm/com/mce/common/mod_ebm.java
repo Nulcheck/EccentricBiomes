@@ -54,6 +54,7 @@ import ebm.com.mce.blocks.ModLogs.GlassLog;
 import ebm.com.mce.blocks.ModLogs.MLog;
 import ebm.com.mce.blocks.ModLogs.MauvewoodLog;
 import ebm.com.mce.blocks.ModMineral.CrimticBlock;
+import ebm.com.mce.blocks.ModMineral.PyreBlock;
 import ebm.com.mce.blocks.ModOre.CrimsoniteOre;
 import ebm.com.mce.blocks.ModPillar.AmethystPillar;
 import ebm.com.mce.blocks.ModPillar.AutilPillar;
@@ -110,6 +111,7 @@ import ebm.com.mce.handlers.packets.ClientPacketHandler;
 import ebm.com.mce.handlers.packets.ServerPacketHandler;
 import ebm.com.mce.handlers.recipe.BlockRecipeHandler;
 import ebm.com.mce.handlers.recipe.ItemRecipeHandler;
+import ebm.com.mce.handlers.recipe.ToolRecipeHandler;
 import ebm.com.mce.handlers.registry.AchRegistry;
 import ebm.com.mce.handlers.registry.BiomeRegistry;
 import ebm.com.mce.handlers.registry.BlockRegistry;
@@ -201,6 +203,7 @@ public class mod_ebm {
 
 	// Mineral Blocks
 	public static Block crimticBlock;
+	public static Block pyreBlock;
 
 	// Fancy shit
 	public static Block dymusBricks;
@@ -319,6 +322,7 @@ public class mod_ebm {
 	// Logs
 	public static Block glassLog;
 	public static Block boneLog;
+	public static Block boneLogBlood;
 	public static Block deadLog;
 	public static Block mLog;
 	public static Block mauvewoodLog;
@@ -435,6 +439,7 @@ public class mod_ebm {
 
 	// Ingots
 	public static Item crimticIngot;
+	public static Item pyreIngot;
 
 	// Nuggets
 	public static Item crimticNugget;
@@ -599,7 +604,7 @@ public class mod_ebm {
 		idCrimsonMountains = config.get("Dimension Biome ids", "CrimsonMountains", 221).getInt();
 
 		config.save();
-		//log.info("Loaded config.");
+		// log.info("Loaded config.");
 		new CheckVersion();
 
 		// TODO: Blocks
@@ -711,6 +716,9 @@ public class mod_ebm {
 		crimticBlock = new CrimticBlock(Material.iron).setBlockName("crimticBlock")
 				.setBlockTextureName("mod_ebm:block_crimtic").setHardness(3f).setStepSound(Block.soundTypeMetal)
 				.setCreativeTab(tab);
+
+		pyreBlock = new PyreBlock(Material.iron).setBlockName("pyreBlock").setBlockTextureName("mod_ebm:block_pyre")
+				.setHardness(2f).setStepSound(Block.soundTypeMetal).setCreativeTab(tab);
 
 		// Fires
 		crimsonFire = new CrimsonFire(Material.ground);
@@ -1252,6 +1260,10 @@ public class mod_ebm {
 				.setHardness(1f).setResistance(3.333f).setStepSound(Block.soundTypeStone).setCreativeTab(tab)
 				.setLightOpacity(1);
 
+		boneLogBlood = new BoneLog(Material.ground).setBlockName("boneLogBlood")
+				.setBlockTextureName("mod_ebm:bone_block_blood").setHardness(1f).setResistance(3.333f)
+				.setStepSound(Block.soundTypeStone).setCreativeTab(tab).setLightOpacity(1);
+
 		mLog = new MLog().setBlockName("mLog").setHardness(3f).setResistance(3.333f).setStepSound(Block.soundTypeWood)
 				.setCreativeTab(tab);
 
@@ -1327,6 +1339,8 @@ public class mod_ebm {
 		crimticIngot = new Item().setUnlocalizedName("crimticIngot").setTextureName("mod_ebm:ingot_crimtic")
 				.setCreativeTab(tab);
 
+		pyreIngot = new Item().setUnlocalizedName("pyreIngot").setTextureName("mod_ebm:ingot_pyre").setCreativeTab(tab);
+
 		// Nuggets
 		crimticNugget = new Item().setUnlocalizedName("crimticNugget").setTextureName("mod_ebm:nugget_crimtic")
 				.setCreativeTab(tab);
@@ -1362,10 +1376,10 @@ public class mod_ebm {
 				.setUnlocalizedName("FireSeed").setCreativeTab(tab);
 
 		// Tools / Weapons
-		ToolMaterial tool_erython = EnumHelper.addToolMaterial("tool_erython", 2, 500, 4F, 4F, 15);
-		ToolMaterial tool_stinger = EnumHelper.addToolMaterial("tool_stinger", 2, 550, 3.5f, 4.5f, 15);
-		ToolMaterial tool_fire = EnumHelper.addToolMaterial("tool_fire", 2, 520, 3.5f, 4.3f, 15);
-		ToolMaterial tool_crimtic = EnumHelper.addToolMaterial("tool_crimtic", 3, 750, 8f, 5f, 30);
+		ToolMaterial tool_erython = EnumHelper.addToolMaterial("tool_erython", 2, 300, 4F, 4F, 15);
+		ToolMaterial tool_stinger = EnumHelper.addToolMaterial("tool_stinger", 2, 150, 3.5f, 4.5f, 15);
+		ToolMaterial tool_fire = EnumHelper.addToolMaterial("tool_fire", 2, 350, 3.5f, 4.3f, 15);
+		ToolMaterial tool_crimtic = EnumHelper.addToolMaterial("tool_crimtic", 3, 550, 8f, 5f, 30);
 
 		erythonBattleAxe = new Sword(tool_erython).setTextureName("mod_ebm:axe_battle_erython").setCreativeTab(tab)
 				.setUnlocalizedName("ErythonBattleAxe");
@@ -1422,13 +1436,13 @@ public class mod_ebm {
 		new BiomeRegistry().main();
 		// log.info("Loaded biomes.");
 
+		FMLCommonHandler.instance().bus().register(new OtherEvents());
+		FMLCommonHandler.instance().bus().register(new AchievementHandler());
+		FMLCommonHandler.instance().bus().register(new PlayerHandler());
 		MinecraftForge.EVENT_BUS.register(new OtherEvents());
 		MinecraftForge.EVENT_BUS.register(new ChatEvent());
 		MinecraftForge.EVENT_BUS.register(new HoeEvent());
 		MinecraftForge.EVENT_BUS.register(new EffectEvent());
-		FMLCommonHandler.instance().bus().register(new OtherEvents());
-		FMLCommonHandler.instance().bus().register(new AchievementHandler());
-		FMLCommonHandler.instance().bus().register(new PlayerHandler());
 		NetworkRegistry.INSTANCE.registerGuiHandler(mod_ebm.instance, new GUIHandler());
 
 		if (idt) {
@@ -1470,6 +1484,8 @@ public class mod_ebm {
 
 		ItemRecipeHandler.registerCrafting();
 		ItemRecipeHandler.registerSmelting();
+
+		ToolRecipeHandler.registerRecipes();
 
 		DimensionHandler.mainRegistry();
 

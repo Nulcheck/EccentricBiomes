@@ -72,6 +72,7 @@ public class BlockRegistry {
 
 		// Mineral Blocks
 		GameRegistry.registerBlock(mod_ebm.crimticBlock, "crimticBlock");
+		GameRegistry.registerBlock(mod_ebm.pyreBlock, "pyreBlock");
 
 		// Fires
 		GameRegistry.registerBlock(mod_ebm.crimsonFire, "crimsonFire");
@@ -272,6 +273,7 @@ public class BlockRegistry {
 		// Logs
 		GameRegistry.registerBlock(mod_ebm.glassLog, "GlassLog");
 		GameRegistry.registerBlock(mod_ebm.boneLog, "BoneLog");
+		GameRegistry.registerBlock(mod_ebm.boneLogBlood, "boneLogBlood");
 		GameRegistry.registerBlock(mod_ebm.mLog, "mLog");
 		GameRegistry.registerBlock(mod_ebm.deadLog, "deadLog");
 		GameRegistry.registerBlock(mod_ebm.mauvewoodLog, "MauvewoodLog");

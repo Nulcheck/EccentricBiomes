@@ -26,7 +26,7 @@ public class CrimsonForest extends CrimsonBiomes {
 		this.theBiomeDecorator.flowersPerChunk = -999;
 		this.theBiomeDecorator.mushroomsPerChunk = -999;
 		this.theBiomeDecorator.treesPerChunk = 5;
-		this.worldGenMTree = new WorldGenMTree();
+		this.worldGenMTree = new WorldGenMTree(true);
 
 		this.topBlock = mod_ebm.crimsonGrass;
 		this.fillerBlock = mod_ebm.crimsonDirt;

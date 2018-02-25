@@ -5,6 +5,7 @@ import java.util.Random;
 import ebm.com.mce.common.mod_ebm;
 import ebm.com.mce.entity.mobs.EntityBloodySkeleton;
 import ebm.com.mce.gen.trees.WorldGenBoneTree;
+import ebm.com.mce.gen.trees.WorldGenBoneTree2;
 import net.minecraft.block.Block;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.world.World;
@@ -14,6 +15,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class Bone extends BiomeGenBase {
 	private WorldGenerator worldGenBoneTree;
+	private WorldGenerator worldGenBoneTree2;
 	int idfk = 1;
 
 	public Bone(int id, boolean spawn) {
@@ -32,6 +34,7 @@ public class Bone extends BiomeGenBase {
 		this.theBiomeDecorator.flowersPerChunk = -999;
 		this.theBiomeDecorator.mushroomsPerChunk = -999;
 		this.worldGenBoneTree = new WorldGenBoneTree();
+		this.worldGenBoneTree2 = new WorldGenBoneTree2();
 
 		this.fillerBlock = mod_ebm.boneBlock;
 		this.biomeName = "Bone";
@@ -53,7 +56,7 @@ public class Bone extends BiomeGenBase {
 
 	public WorldGenAbstractTree func_150567_a(Random ran) {
 		return (WorldGenAbstractTree) ((this.idfk == 1) && ran.nextInt(3) == 0
-				? (this.idfk != 2 && ran.nextInt(13) != 0 ? worldGenBoneTree : worldGenBoneTree)
-				: (ran.nextInt(3) == 0 ? worldGenBoneTree : worldGenBoneTree));
+				? (this.idfk != 2 && ran.nextInt(13) != 0 ? worldGenBoneTree : worldGenBoneTree2)
+				: (ran.nextInt(3) == 0 ? worldGenBoneTree : worldGenBoneTree2));
 	}
 }

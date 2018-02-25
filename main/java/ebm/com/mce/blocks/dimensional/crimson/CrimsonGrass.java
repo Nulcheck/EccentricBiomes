@@ -39,10 +39,9 @@ public class CrimsonGrass extends Block implements IGrowable {
 		return side == 1 ? this.top : (side == 0 ? mod_ebm.crimsonDirt.getBlockTextureFromSide(side) : this.blockIcon);
 	}
 
-	public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction,
-			IPlantable plantable) {
-		Block plant = plantable.getPlant(world, x, y + 1, z);
-		if (plant == mod_ebm.crimsonTallGrass || plant == mod_ebm.mSapling || plant == mod_ebm.crimsonBush) {
+	public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction, IPlantable p) {
+		if (p.getPlant(world, x, y, z) == mod_ebm.crimsonTallGrass || p.getPlant(world, x, y, z) == mod_ebm.crimsonBush
+				|| p.getPlant(world, x, y, z) == mod_ebm.mSapling) {
 			return true;
 		} else {
 			return false;

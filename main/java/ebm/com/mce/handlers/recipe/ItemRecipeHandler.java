@@ -12,15 +12,8 @@ public class ItemRecipeHandler {
 	public static void registerCrafting() {
 		GameRegistry.addRecipe(new ItemStack(mod_ebm.dymusBar), "***", '*', new ItemStack(mod_ebm.dymusPowder));
 
-		GameRegistry.addRecipe(new ItemStack(mod_ebm.ebmWrench), "* *", " f ", " * ", '*',
-				new ItemStack(mod_ebm.dymusBar), 'f', new ItemStack(mod_ebm.flameStone));
-
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.clay_ball, 3), new ItemStack(mod_ebm.dust),
 				new ItemStack(mod_ebm.dust), new ItemStack(mod_ebm.dust), new ItemStack(Items.water_bucket));
-
-		CraftingManager.getInstance().getRecipeList()
-				.add(new ShapedOreRecipe(new ItemStack(mod_ebm.erythonBattleAxe), " * ", "*a*", " s ", '*',
-						new ItemStack(mod_ebm.erythonCube), 'a', new ItemStack(Items.iron_axe), 's', "stickWood"));
 
 		GameRegistry.addRecipe(new ItemStack(mod_ebm.mDoorItem), "**", "**", "**", '*', new ItemStack(mod_ebm.mPlanks));
 
@@ -40,9 +33,6 @@ public class ItemRecipeHandler {
 
 		GameRegistry.addShapelessRecipe(new ItemStack(mod_ebm.stinger), new ItemStack(mod_ebm.bee));
 
-		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(mod_ebm.stingerSword), "*",
-				"*", "s", '*', new ItemStack(mod_ebm.stinger), 's', "stickWood"));
-
 		GameRegistry.addRecipe(new ItemStack(mod_ebm.mStick, 4), "*", "*", '*', new ItemStack(mod_ebm.mPlanks));
 
 		GameRegistry.addRecipe(new ItemStack(mod_ebm.deadStick, 4), "*", "*", '*', new ItemStack(mod_ebm.deadPlanks));
@@ -51,10 +41,10 @@ public class ItemRecipeHandler {
 
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.bone, 9), new ItemStack(mod_ebm.boneBlock));
 
-		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(mod_ebm.fireSword), "*",
-				"*", "s", '*', new ItemStack(mod_ebm.pyreCrystal), 's', "stickWood"));
-
 		GameRegistry.addShapelessRecipe(new ItemStack(mod_ebm.crimticIngot, 9), new ItemStack(mod_ebm.crimticBlock));
+
+		GameRegistry.addShapelessRecipe(new ItemStack(mod_ebm.pyreIngot), new ItemStack(mod_ebm.pyreCrystal),
+				new ItemStack(Items.iron_ingot));
 	}
 
 	public static void registerSmelting() {

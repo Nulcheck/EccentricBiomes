@@ -112,15 +112,10 @@ public class BoneSapling extends BlockSapling implements IGrowable {
 	public void func_149878_d(World world, int x, int y, int z, Random random) {
 		int meta = world.getBlockMetadata(x, y, z) & TYPES;
 		Object obj = null;
-		int rnd = random.nextInt(10);
 		if (obj == null) {
-			if (rnd < 5) {
-				obj = tree;
-			}
-			if (rnd >= 5) {
-				obj = tree;
-			}
+			obj = tree;
 		}
+
 		if (obj != null) {
 			world.setBlockToAir(x, y, z);
 			if (!((WorldGenerator) obj).generate(world, random, x, y, z)) {
@@ -136,14 +131,5 @@ public class BoneSapling extends BlockSapling implements IGrowable {
 		} else {
 			return false;
 		}
-	}
-
-	public void onPlantGrow(World world, int x, int y, int z, int sourceX, int sourceY, int sourceZ) {
-		if (this == mod_ebm.boneBlock) {
-			world.setBlock(x, y, z, mod_ebm.boneBlock, 0, 0);
-		}
-	}
-
-	public void growTree(World world, Random rand, int y, int z, int x) {
 	}
 }

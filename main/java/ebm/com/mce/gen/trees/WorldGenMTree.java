@@ -66,7 +66,6 @@ public class WorldGenMTree extends WorldGenAbstractTree {
 				return false;
 			} else {
 				Block block2 = world.getBlock(x, y - 1, z);
-
 				boolean isSoil = block2.canSustainPlant(world, x, y - 1, z, ForgeDirection.UP,
 						(BlockSapling) mod_ebm.mSapling);
 

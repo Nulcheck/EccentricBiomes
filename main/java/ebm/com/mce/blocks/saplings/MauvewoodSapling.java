@@ -137,13 +137,4 @@ public class MauvewoodSapling extends BlockSapling implements IGrowable {
 			return false;
 		}
 	}
-
-	public void onPlantGrow(World world, int x, int y, int z, int sourceX, int sourceY, int sourceZ) {
-		if (this == mod_ebm.amethystCrust) {
-			world.setBlock(x, y, z, mod_ebm.amethystCrust, 0, 0);
-		}
-	}
-
-	public void growTree(World world, Random rand, int y, int z, int x) {
-	}
 }

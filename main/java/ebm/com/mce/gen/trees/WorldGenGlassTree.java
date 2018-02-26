@@ -4,8 +4,7 @@ import java.util.Random;
 
 import ebm.com.mce.common.mod_ebm;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockGlass;
-import net.minecraft.block.BlockStainedGlass;
+import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
@@ -61,13 +60,14 @@ public class WorldGenGlassTree extends WorldGenAbstractTree {
 					}
 				}
 			}
+			Block block2 = world.getBlock(x, y + 1, z);
+			boolean isGlass = (block2 == Blocks.glass || block2 == Blocks.stained_glass);
 
-			if (!flag) {
+			if (!flag && !isGlass) {
 				return false;
 			} else {
-				Block block2 = world.getBlock(x, y - 1, z);
-
-				if ((block2 instanceof BlockGlass || block2 instanceof BlockStainedGlass) && y < 256 - l - 1) {
+				if (isGlass && y < 256 - l + 1) {
+					// block2.onPlantGrow(world, x, y - 1, z, x, y, z);
 					b0 = 3;
 					byte b1 = 0;
 					int l1;
@@ -88,7 +88,7 @@ public class WorldGenGlassTree extends WorldGenAbstractTree {
 								if (Math.abs(j2) != l1 || Math.abs(l2) != l1 || rand.nextInt(2) != 0 && i3 != 0) {
 									Block block1 = world.getBlock(i2, k1, k2);
 
-									if (block1.isAir(world, i2, k1, k2) || block1 == mod_ebm.glassLeaves) {
+									if (block1.isAir(world, i2, k1, k2) || block1.isLeaves(world, i2, k1, k2)) {
 										this.setBlockAndNotifyAdequately(world, i2, k1, k2, mod_ebm.glassLeaves,
 												this.metaLeaves);
 									}
@@ -100,7 +100,7 @@ public class WorldGenGlassTree extends WorldGenAbstractTree {
 					for (k1 = 0; k1 < l; ++k1) {
 						block = world.getBlock(x, y + k1, z);
 
-						if (block.isAir(world, x, y + k1, z) || block == mod_ebm.glassLeaves) {
+						if (block.isAir(world, x, y + k1, z) || block.isLeaves(world, x, y + k1, z)) {
 							this.setBlockAndNotifyAdequately(world, x, y + k1, z, mod_ebm.glassLog, this.metaWood);
 						}
 					}

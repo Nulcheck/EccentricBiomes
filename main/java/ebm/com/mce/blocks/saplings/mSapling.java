@@ -138,13 +138,8 @@ public class mSapling extends BlockSapling implements IGrowable {
 	}
 
 	public void onPlantGrow(World world, int x, int y, int z, int sourceX, int sourceY, int sourceZ) {
-		if (this == Blocks.dirt) {
-			world.setBlock(x, y, z, Blocks.dirt, 0, 0);
-		}
-
-		else if (this == mod_ebm.crimsonDirt) {
+		if (this == mod_ebm.crimsonGrass) {
 			world.setBlock(x, y, z, mod_ebm.crimsonDirt, 0, 0);
 		}
 	}
-
 }

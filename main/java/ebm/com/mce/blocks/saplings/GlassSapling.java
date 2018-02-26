@@ -20,8 +20,6 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import net.minecraftforge.common.IPlantable;
-import net.minecraftforge.common.util.ForgeDirection;
 
 public class GlassSapling extends BlockSapling implements IGrowable {
 	private IIcon[] textures;
@@ -84,7 +82,7 @@ public class GlassSapling extends BlockSapling implements IGrowable {
 		Block block = world.getBlock(x, y - 1, z);
 		switch (metadata) {
 		default:
-			return (block instanceof BlockGlass || block instanceof BlockStainedGlass);
+			return (block == Blocks.glass || block == Blocks.stained_glass);
 		}
 	}
 
@@ -122,15 +120,6 @@ public class GlassSapling extends BlockSapling implements IGrowable {
 			if (!((WorldGenerator) obj).generate(world, random, x, y, z)) {
 				world.setBlock(x, y, z, this, meta, 2);
 			}
-		}
-	}
-
-	public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction,
-			IPlantable plantable) {
-		if (world.getBlock(x, y, z) instanceof BlockGlass || world.getBlock(x, y, z) instanceof BlockStainedGlass) {
-			return true;
-		} else {
-			return false;
 		}
 	}
 }

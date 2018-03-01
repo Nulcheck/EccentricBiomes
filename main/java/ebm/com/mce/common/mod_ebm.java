@@ -78,10 +78,12 @@ import ebm.com.mce.blocks.chest.MauvewoodChest;
 import ebm.com.mce.blocks.crops.PyreFlower;
 import ebm.com.mce.blocks.dimensional.crimson.CrimsonFire;
 import ebm.com.mce.blocks.dimensional.crimson.CrimsonGrass;
+import ebm.com.mce.blocks.dimensional.crimson.CrimsonSand;
 import ebm.com.mce.blocks.doors.DeadwoodDoor;
 import ebm.com.mce.blocks.doors.ManchineelDoor;
 import ebm.com.mce.blocks.doors.MauvewoodDoor;
 import ebm.com.mce.blocks.plants.Beehive;
+import ebm.com.mce.blocks.plants.CrimsonCactus;
 import ebm.com.mce.blocks.plants.ModGrass;
 import ebm.com.mce.blocks.plants.SlimeSpike;
 import ebm.com.mce.blocks.portals.CrimsonPortal;
@@ -109,6 +111,7 @@ import ebm.com.mce.handlers.GUIHandler;
 import ebm.com.mce.handlers.PlayerHandler;
 import ebm.com.mce.handlers.packets.ClientPacketHandler;
 import ebm.com.mce.handlers.packets.ServerPacketHandler;
+import ebm.com.mce.handlers.recipe.ArmorRecipeHandler;
 import ebm.com.mce.handlers.recipe.BlockRecipeHandler;
 import ebm.com.mce.handlers.recipe.ItemRecipeHandler;
 import ebm.com.mce.handlers.recipe.ToolRecipeHandler;
@@ -197,6 +200,7 @@ public class mod_ebm {
 	public static Block crimsonCobblestone;
 	public static Block crimsonGrass;
 	public static Block crimsonDirt;
+	public static Block crimsonSand;
 
 	// Ores
 	public static Block crimsoniteOre;
@@ -226,12 +230,13 @@ public class mod_ebm {
 	public static Block beeswaxPillar;
 	public static Block beeswaxChisel;
 
-	// Flowers?
+	// Plants
 	public static Block beehive;
 	public static Block fireGrass;
 	public static Block slimeSpike;
 	public static Block crimsonTallGrass;
 	public static Block crimsonBush;
+	public static Block crimsonCactus;
 
 	// Portals
 	public static Block crimsonPortal;
@@ -543,6 +548,7 @@ public class mod_ebm {
 	public static int idCrimsonPlains;
 	public static int idCrimsonForest;
 	public static int idCrimsonMountains;
+	public static int idCrimsonDesert;
 
 	// Dimension IDs
 	public static int crimsonId;
@@ -602,6 +608,7 @@ public class mod_ebm {
 		idCrimsonPlains = config.get("Dimension Biome ids", "CrimsonPlains", 219).getInt();
 		idCrimsonForest = config.get("Dimension Biome ids", "CrimsonForest", 220).getInt();
 		idCrimsonMountains = config.get("Dimension Biome ids", "CrimsonMountains", 221).getInt();
+		idCrimsonDesert = config.get("Deminsion Biome ids", "CrimsonDesert", 222).getInt();
 
 		config.save();
 		// log.info("Loaded config.");
@@ -708,6 +715,9 @@ public class mod_ebm {
 		crimsonDirt = new CrimsonDirt(Material.ground).setBlockName("crimsonDirt").setBlockTextureName("dirt")
 				.setHardness(0.5f).setStepSound(Block.soundTypeGravel).setCreativeTab(tab);
 
+		crimsonSand = new CrimsonSand().setBlockName("crimsonSand").setBlockTextureName("mod_ebm:crimson_sand")
+				.setHardness(0.5f).setStepSound(Block.soundTypeSand).setCreativeTab(tab);
+
 		// TODO: Ores
 		crimsoniteOre = new CrimsoniteOre().setBlockName("crimsoniteOre").setBlockTextureName("mod_ebm:ore_crimsonite")
 				.setHardness(2.8f).setStepSound(Block.soundTypeStone).setCreativeTab(tab);
@@ -741,6 +751,9 @@ public class mod_ebm {
 
 		crimsonBush = new ModGrass().setBlockName("crimsonBush").setHardness(0f).setCreativeTab(tab)
 				.setStepSound(Block.soundTypeGrass).setBlockTextureName("mod_ebm:grass_crimson_bush");
+
+		crimsonCactus = new CrimsonCactus().setBlockName("crimsonCactus").setHardness(0.4f).setCreativeTab(tab)
+				.setStepSound(Block.soundTypeCloth).setBlockTextureName("mod_ebm:crimson_cactus_side");
 
 		// Crops
 		pyreFlower = new PyreFlower().setBlockName("PyreFlower").setBlockTextureName("mod_ebm:flower_pyre")
@@ -1485,6 +1498,7 @@ public class mod_ebm {
 		ItemRecipeHandler.registerCrafting();
 		ItemRecipeHandler.registerSmelting();
 
+		ArmorRecipeHandler.registerRecipes();
 		ToolRecipeHandler.registerRecipes();
 
 		DimensionHandler.mainRegistry();

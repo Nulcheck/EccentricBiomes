@@ -65,6 +65,7 @@ public class BlockRegistry {
 		GameRegistry.registerBlock(mod_ebm.crimsonDirt, "crimsonDirt");
 		GameRegistry.registerBlock(mod_ebm.crimsonStone, "crimsonStone");
 		GameRegistry.registerBlock(mod_ebm.crimsonCobblestone, "crimsonCobble");
+		GameRegistry.registerBlock(mod_ebm.crimsonSand, "crimsonSand");
 		GameRegistry.registerBlock(mod_ebm.crimsonObsidian, "redObsidian");
 
 		// Ores
@@ -295,6 +296,7 @@ public class BlockRegistry {
 		GameRegistry.registerBlock(mod_ebm.fireGrass, "fireGrass");
 		GameRegistry.registerBlock(mod_ebm.crimsonTallGrass, "crimsonTallGrass");
 		GameRegistry.registerBlock(mod_ebm.crimsonBush, "crimsonBush");
+		GameRegistry.registerBlock(mod_ebm.crimsonCactus, "crimsonCactus");
 
 		// Crops
 		GameRegistry.registerBlock(mod_ebm.pyreFlower, "PyreFlower");

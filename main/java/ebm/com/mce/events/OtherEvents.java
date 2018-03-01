@@ -5,13 +5,16 @@ import java.util.Random;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import ebm.com.mce.common.mod_ebm;
 import net.minecraft.block.Block;
-import net.minecraft.entity.EntityLiving;
+import net.minecraft.block.BlockSapling;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ChatComponentText;
+import net.minecraft.world.IBlockAccess;
+import net.minecraftforge.common.IPlantable;
+import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -34,7 +37,7 @@ public class OtherEvents {
 				&& e.target instanceof EntityLivingBase) {
 			e.target.setFire(4);
 		}
-		
+
 		if (e.entityPlayer.getHeldItem() != null && e.entityPlayer.getHeldItem().getItem() == mod_ebm.crimticSword
 				&& e.target instanceof EntityLivingBase) {
 			((EntityLivingBase) e.target).addPotionEffect(new PotionEffect(mod_ebm.carminicPoison.id, 120, 0, false));
@@ -51,7 +54,7 @@ public class OtherEvents {
 				e.world.markBlockForUpdate(e.x, e.y, e.z);
 				e.entityPlayer.inventory.consumeInventoryItem(mod_ebm.pyreCrystal);
 			}
-			
+
 			if (e.entityPlayer.getHeldItem() != null && e.entityPlayer.getHeldItem().getItem() == mod_ebm.pyreCrystal
 					&& e.world.getBlock(e.x, e.y, e.z) == mod_ebm.crimsonObsidian) {
 				e.world.setBlock(e.x, e.y + 1, e.z, mod_ebm.crimsonFire);

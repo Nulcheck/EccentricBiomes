@@ -10,8 +10,8 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 public class ToolRecipeHandler {
 	@SuppressWarnings("unchecked")
 	public static void registerRecipes() {
-		GameRegistry.addRecipe(new ItemStack(mod_ebm.ebmWrench), "* *", " f ", " * ", '*',
-				new ItemStack(mod_ebm.dymusBar), 'f', new ItemStack(mod_ebm.flameStone));
+		GameRegistry.addRecipe(new ItemStack(mod_ebm.ebmWrench), "* *", " * ", " * ", '*',
+				new ItemStack(mod_ebm.dymusBar));
 
 		CraftingManager.getInstance().getRecipeList()
 				.add(new ShapedOreRecipe(new ItemStack(mod_ebm.erythonBattleAxe), " * ", "*a*", " s ", '*',

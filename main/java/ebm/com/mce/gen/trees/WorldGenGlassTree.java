@@ -4,9 +4,11 @@ import java.util.Random;
 
 import ebm.com.mce.common.mod_ebm;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockSapling;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import net.minecraftforge.common.util.ForgeDirection;
 
 public class WorldGenGlassTree extends WorldGenAbstractTree {
 	private final int minTreeHeight;
@@ -60,13 +62,19 @@ public class WorldGenGlassTree extends WorldGenAbstractTree {
 					}
 				}
 			}
-			Block block2 = world.getBlock(x, y + 1, z);
+			Block block2 = world.getBlock(x, y, z);
 			boolean isGlass = (block2 == Blocks.glass || block2 == Blocks.stained_glass);
 
 			if (!flag && !isGlass) {
 				return false;
 			} else {
-				if (isGlass && y < 256 - l + 1) {
+				Block block3 = world.getBlock(x, y - 1, z);
+				boolean isSoil = block3.canSustainPlant(world, x, y - 1, z, ForgeDirection.UP,
+						(BlockSapling) mod_ebm.glassSapling);
+				isSoil = true;
+				boolean plant = isSoil && isGlass;
+
+				if (plant && y < 256 - l - 1) {
 					// block2.onPlantGrow(world, x, y - 1, z, x, y, z);
 					b0 = 3;
 					byte b1 = 0;

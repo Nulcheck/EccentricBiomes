@@ -3,6 +3,7 @@ package ebm.com.mce.handlers.dimension.biomes;
 import java.util.Random;
 
 import ebm.com.mce.common.mod_ebm;
+import ebm.com.mce.gen.biomes.dimensional.CrimsonDesert;
 import ebm.com.mce.gen.biomes.dimensional.CrimsonForest;
 import ebm.com.mce.gen.biomes.dimensional.CrimsonMountains;
 import ebm.com.mce.gen.biomes.dimensional.CrimsonObsidian;
@@ -20,6 +21,7 @@ public class CrimsonBiomes extends BiomeGenBase {
 	public static BiomeGenBase crimsonPlains;
 	public static BiomeGenBase crimsonForest;
 	public static BiomeGenBase crimsonMountains;
+	public static BiomeGenBase crimsonDesert;
 
 	public CrimsonBiomes(int id) {
 		super(id);
@@ -30,6 +32,7 @@ public class CrimsonBiomes extends BiomeGenBase {
 		crimsonPlains = (new CrimsonPlains(mod_ebm.idCrimsonPlains).setBiomeName("Crimson Plains"));
 		crimsonForest = (new CrimsonForest(mod_ebm.idCrimsonForest).setBiomeName("Crimson Forest"));
 		crimsonMountains = (new CrimsonMountains(mod_ebm.idCrimsonMountains).setBiomeName("Crimson Mountains"));
+		crimsonDesert = (new CrimsonDesert(mod_ebm.idCrimsonDesert).setBiomeName("Crimson Desert"));
 	}
 
 	public static void registerWithBiomeDictionary() {
@@ -37,6 +40,7 @@ public class CrimsonBiomes extends BiomeGenBase {
 		BiomeDictionary.registerBiomeType(crimsonPlains, Type.HOT);
 		BiomeDictionary.registerBiomeType(crimsonForest, Type.HOT);
 		BiomeDictionary.registerBiomeType(crimsonMountains, Type.HOT);
+		BiomeDictionary.registerBiomeType(crimsonDesert, Type.HOT);
 		BiomeDictionary.registerAllBiomes();
 	}
 

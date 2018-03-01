@@ -29,7 +29,7 @@ public class MauvewoodSapling extends BlockSapling implements IGrowable {
 	private static WorldGenerator tree;
 
 	public MauvewoodSapling() {
-		tree = new WorldGenAmethystTree();
+		tree = new WorldGenAmethystTree(true);
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -112,29 +112,14 @@ public class MauvewoodSapling extends BlockSapling implements IGrowable {
 	public void func_149878_d(World world, int x, int y, int z, Random random) {
 		int meta = world.getBlockMetadata(x, y, z) & TYPES;
 		Object obj = null;
-		int rnd = random.nextInt(10);
 		if (obj == null) {
-			if (rnd < 5) {
-				obj = tree;
-			}
-			if (rnd >= 5) {
-				obj = tree;
-			}
+			obj = tree;
 		}
 		if (obj != null) {
 			world.setBlockToAir(x, y, z);
 			if (!((WorldGenerator) obj).generate(world, random, x, y, z)) {
 				world.setBlock(x, y, z, this, meta, 2);
 			}
-		}
-	}
-
-	public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction,
-			IPlantable plantable) {
-		if (world.getBlock(x, y, z) == mod_ebm.amethystCrust) {
-			return true;
-		} else {
-			return false;
 		}
 	}
 }

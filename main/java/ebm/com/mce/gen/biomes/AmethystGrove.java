@@ -23,7 +23,7 @@ public class AmethystGrove extends BiomeGenBase {
 		this.theBiomeDecorator.mushroomsPerChunk = 3;
 		this.theBiomeDecorator.treesPerChunk = 1;
 		this.theBiomeDecorator.generateLakes = false;
-		this.worldGenAmethystTree = new WorldGenAmethystTree();
+		this.worldGenAmethystTree = new WorldGenAmethystTree(true);
 
 		this.topBlock = mod_ebm.amethystCrust;
 		this.fillerBlock = mod_ebm.amethystDirt;

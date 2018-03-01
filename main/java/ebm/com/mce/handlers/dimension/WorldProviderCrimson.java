@@ -60,7 +60,7 @@ public class WorldProviderCrimson extends WorldProvider {
 	}
 
 	public String getSaveFolder() {
-		return "ECB-DIM" + mod_ebm.crimsonId;
+		return "ECB-CrimsonDim" + mod_ebm.crimsonId;
 	}
 
 	public boolean renderStars() {

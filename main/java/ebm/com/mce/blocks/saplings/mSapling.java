@@ -118,28 +118,11 @@ public class mSapling extends BlockSapling implements IGrowable {
 		if (obj == null) {
 			obj = tree;
 		}
-
 		if (obj != null) {
 			world.setBlockToAir(x, y, z);
 			if (!((WorldGenerator) obj).generate(world, rand, x, y, z)) {
 				world.setBlock(x, y, z, this, meta, 2);
 			}
-		}
-	}
-
-	public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction,
-			IPlantable plantable) {
-		if (world.getBlock(x, y, z) == Blocks.grass || world.getBlock(x, y, z) == Blocks.dirt
-				|| world.getBlock(x, y, z) == mod_ebm.crimsonGrass || world.getBlock(x, y, z) == mod_ebm.crimsonDirt) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	public void onPlantGrow(World world, int x, int y, int z, int sourceX, int sourceY, int sourceZ) {
-		if (this == mod_ebm.crimsonGrass) {
-			world.setBlock(x, y, z, mod_ebm.crimsonDirt, 0, 0);
 		}
 	}
 }

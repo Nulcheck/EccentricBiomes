@@ -560,7 +560,8 @@ public class ModBlocks extends Block {
 		public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction,
 				IPlantable p) {
 			if (p.getPlant(world, x, y, z) == Blocks.tallgrass || p.getPlant(world, x, y, z) == Blocks.brown_mushroom
-					|| p.getPlant(world, x, y, z) == Blocks.red_mushroom_block) {
+					|| p.getPlant(world, x, y, z) == Blocks.red_mushroom_block
+					|| p.getPlant(world, x, y, z) == mod_ebm.mauvewoodSapling) {
 				return true;
 			} else {
 				return false;
@@ -684,9 +685,9 @@ public class ModBlocks extends Block {
 			return (l / 9 & 255) << 16 | (i1 / 9 & 255) << 8 | j1 / 9 & 255;
 		}
 	}
-	
-	public static class CrimsonObsidian extends Block{
-		public CrimsonObsidian(Material mat){
+
+	public static class CrimsonObsidian extends Block {
+		public CrimsonObsidian(Material mat) {
 			super(mat);
 			this.setHarvestLevel("pickaxe", 3);
 		}

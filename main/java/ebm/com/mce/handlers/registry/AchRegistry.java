@@ -33,6 +33,7 @@ public class AchRegistry {
 	public static Achievement crimsonPlains;
 	public static Achievement crimsonForest;
 	public static Achievement crimsonMountains;
+	public static Achievement crimsonDesert;
 
 	// Dimensions
 	public static Achievement crimsonDim;
@@ -111,10 +112,14 @@ public class AchRegistry {
 		crimsonMountains = new Achievement("achievement.crimsonMountains", "crimsonMountains", 4, 2,
 				Item.getItemFromBlock(mod_ebm.crimsonStone), crimsonDim).registerStat();
 
+		crimsonDesert = new Achievement("achievement.crimsonDesert", "crimsonDesert", 5, 2,
+				Item.getItemFromBlock(mod_ebm.crimsonCactus), crimsonDim).registerStat();
+
 		// Reg
 		modPage = new AchievementPage("\u00A75Eccentric Biomes", highLands, deathForest, obsidianForest, glassLand,
 				arctic, snowyDesert, flamage, Void, fertile, bone, deadLand, autilField, amethyst, amethystGrove, hive,
-				ocher, shadowHive, slimy, crimsonDim, crimsonObsidian, crimsonPlains, crimsonForest, crimsonMountains);
+				ocher, shadowHive, slimy, crimsonDim, crimsonObsidian, crimsonPlains, crimsonForest, crimsonMountains,
+				crimsonDesert);
 		AchievementPage.registerAchievementPage(modPage);
 	}
 
@@ -195,6 +200,9 @@ public class AchRegistry {
 
 		addName("crimsonMountains", "en_US", "Crimson Peaks");
 		addDesc("crimsonMountains", "en_US", "No snow up here.. Still red.");
+
+		addName("crimsonDesert", "en_US", "What's for Dessert?");
+		addDesc("crimsonDesert", "en_US", "Death. Death is for dessert.");
 
 		// Dimensions
 		addName("crimsonDim", "en_US", "Welcome to Death!");

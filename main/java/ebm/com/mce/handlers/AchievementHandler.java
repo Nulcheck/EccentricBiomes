@@ -33,6 +33,7 @@ public class AchievementHandler {
 	public static String crimsonPlains = "Crimson Plains";
 	public static String crimsonForest = "Crimson Forest";
 	public static String crimsonMountains = "Crimson Mountains";
+	public static String crimsonDesert = "Crimson Desert";
 
 	// Dimensions
 
@@ -128,6 +129,10 @@ public class AchievementHandler {
 
 		else if (e.player.worldObj.getBiomeGenForCoords(px, pz).biomeName == crimsonMountains) {
 			e.player.addStat(AchRegistry.crimsonMountains, 1);
+		}
+
+		else if (e.player.worldObj.getBiomeGenForCoords(px, pz).biomeName == crimsonDesert) {
+			e.player.addStat(AchRegistry.crimsonDesert, 1);
 		}
 	}
 

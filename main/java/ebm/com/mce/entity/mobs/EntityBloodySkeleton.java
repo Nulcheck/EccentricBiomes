@@ -34,7 +34,6 @@ import net.minecraft.stats.AchievementList;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldProviderHell;
 
 public class EntityBloodySkeleton extends EntityMob implements IRangedAttackMob {
 	private EntityAIArrowAttack aiArrowAttack = new EntityAIArrowAttack(this, 1.0D, 20, 60, 15.0F);
@@ -99,7 +98,7 @@ public class EntityBloodySkeleton extends EntityMob implements IRangedAttackMob 
 		this.playSound("mob.skeleton.step", 0.15F, 1.0F);
 	}
 
-	public boolean attackEntityAsMob(Entity p_70652_1_) {
+	public boolean attackEntityAsMob(Entity e) {
 		return true;
 	}
 
@@ -217,16 +216,9 @@ public class EntityBloodySkeleton extends EntityMob implements IRangedAttackMob 
 
 	public IEntityLivingData onSpawnWithEgg(IEntityLivingData data) {
 		data = super.onSpawnWithEgg(data);
-
-		if (this.worldObj.provider instanceof WorldProviderHell && this.getRNG().nextInt(5) > 0) {
-			this.tasks.addTask(4, this.aiAttackOnCollide);
-			this.setCurrentItemOrArmor(0, new ItemStack(Items.stone_sword));
-			this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(4.0D);
-		} else {
-			this.tasks.addTask(4, this.aiArrowAttack);
-			this.addRandomArmor();
-			this.enchantEquipment();
-		}
+		this.tasks.addTask(4, this.aiArrowAttack);
+		this.addRandomArmor();
+		this.enchantEquipment();
 
 		this.setCanPickUpLoot(
 				this.rand.nextFloat() < 0.55F * this.worldObj.func_147462_b(this.posX, this.posY, this.posZ));
@@ -263,27 +255,27 @@ public class EntityBloodySkeleton extends EntityMob implements IRangedAttackMob 
 	 * Attack the specified entity using a ranged attack.
 	 */
 	public void attackEntityWithRangedAttack(EntityLivingBase entity, float f) {
-		EntityArrow entityarrow = new EntityArrow(this.worldObj, this, entity, 1.6F,
+		EntityArrow arrow = new EntityArrow(this.worldObj, this, entity, 1.6F,
 				(float) (14 - this.worldObj.difficultySetting.getDifficultyId() * 4));
 		int i = EnchantmentHelper.getEnchantmentLevel(Enchantment.power.effectId, this.getHeldItem());
 		int j = EnchantmentHelper.getEnchantmentLevel(Enchantment.punch.effectId, this.getHeldItem());
-		entityarrow.setDamage((double) (f * 2.0F) + this.rand.nextGaussian() * 0.25D
+		arrow.setDamage((double) (f * 2.0F) + this.rand.nextGaussian() * 0.25D
 				+ (double) ((float) this.worldObj.difficultySetting.getDifficultyId() * 0.11F));
 
 		if (i > 0) {
-			entityarrow.setDamage(entityarrow.getDamage() + (double) i * 0.5D + 0.5D);
+			arrow.setDamage(arrow.getDamage() + (double) i * 0.5D + 0.5D);
 		}
 
 		if (j > 0) {
-			entityarrow.setKnockbackStrength(j);
+			arrow.setKnockbackStrength(j);
 		}
 
 		if (EnchantmentHelper.getEnchantmentLevel(Enchantment.flame.effectId, this.getHeldItem()) > 0) {
-			entityarrow.setFire(100);
+			arrow.setFire(100);
 		}
 
 		this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
-		this.worldObj.spawnEntityInWorld(entityarrow);
+		this.worldObj.spawnEntityInWorld(arrow);
 	}
 
 	/**

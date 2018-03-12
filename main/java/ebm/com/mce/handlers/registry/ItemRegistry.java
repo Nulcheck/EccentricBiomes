@@ -20,6 +20,8 @@ public class ItemRegistry {
 		GameRegistry.registerItem(mod_ebm.stinger, "stinger");
 		GameRegistry.registerItem(mod_ebm.pyreCrystal, "pyreCrystal");
 		GameRegistry.registerItem(mod_ebm.bloodBone, "bloodBone");
+		GameRegistry.registerItem(mod_ebm.crimsonFiber, "crimsonFiber");
+		GameRegistry.registerItem(mod_ebm.crimsonString, "crimsonString");
 
 		// Ingots
 		GameRegistry.registerItem(mod_ebm.crimticIngot, "crimticIngot");
@@ -51,6 +53,7 @@ public class ItemRegistry {
 		GameRegistry.registerItem(mod_ebm.erythonBattleAxe, "ErythonBattleAxe");
 		GameRegistry.registerItem(mod_ebm.stingerSword, "stingerSword");
 		GameRegistry.registerItem(mod_ebm.fireSword, "fireSword");
+		GameRegistry.registerItem(mod_ebm.crimsonBow, "crimsonBow");
 
 		// Crimtic
 		GameRegistry.registerItem(mod_ebm.crimticPick, "crimticPick");

@@ -45,6 +45,9 @@ public class ItemRecipeHandler {
 
 		GameRegistry.addShapelessRecipe(new ItemStack(mod_ebm.pyreIngot), new ItemStack(mod_ebm.pyreCrystal),
 				new ItemStack(Items.iron_ingot));
+
+		GameRegistry.addRecipe(new ItemStack(mod_ebm.crimsonString), "***", "***", "***", '*',
+				new ItemStack(mod_ebm.crimsonFiber));
 	}
 
 	public static void registerSmelting() {
@@ -61,5 +64,9 @@ public class ItemRecipeHandler {
 		GameRegistry.addSmelting(new ItemStack(mod_ebm.mauvewoodLog), new ItemStack(Items.coal, 1, 1), .5f);
 
 		GameRegistry.addSmelting(new ItemStack(mod_ebm.crimsoniteOre), new ItemStack(mod_ebm.crimticIngot), 1f);
+
+		GameRegistry.addSmelting(new ItemStack(mod_ebm.crimsonCactus), new ItemStack(mod_ebm.crimsonFiber, 3), 1f);
+
+		GameRegistry.addSmelting(new ItemStack(mod_ebm.crimsonString), new ItemStack(Items.string), 1f);
 	}
 }

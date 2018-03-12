@@ -23,6 +23,9 @@ public class ToolRecipeHandler {
 		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(mod_ebm.fireSword), "*",
 				"*", "s", '*', new ItemStack(mod_ebm.pyreIngot), 's', "stickWood"));
 
+		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(mod_ebm.crimsonBow), " *s",
+				"* s", " *s", 's', new ItemStack(mod_ebm.crimsonString), '*', "stickWood"));
+
 		// Crimtic
 		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(mod_ebm.crimticPick), "***",
 				" s ", " s ", '*', new ItemStack(mod_ebm.crimticIngot), 's', "stickWood"));

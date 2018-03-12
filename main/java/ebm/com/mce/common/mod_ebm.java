@@ -124,6 +124,7 @@ import ebm.com.mce.handlers.registry.OreDictionaryRegistry;
 import ebm.com.mce.handlers.registry.TileEntityRegistry;
 import ebm.com.mce.items.FireSeeds;
 import ebm.com.mce.items.ItemTool.Axe;
+import ebm.com.mce.items.ItemTool.CrimsonBow;
 import ebm.com.mce.items.ItemTool.GlassShard;
 import ebm.com.mce.items.ItemTool.Hoe;
 import ebm.com.mce.items.ItemTool.Pick;
@@ -441,6 +442,8 @@ public class mod_ebm {
 	public static Item stinger;
 	public static Item pyreCrystal;
 	public static Item bloodBone;
+	public static Item crimsonFiber;
+	public static Item crimsonString;
 
 	// Ingots
 	public static Item crimticIngot;
@@ -472,6 +475,7 @@ public class mod_ebm {
 	public static Item erythonBattleAxe;
 	public static Item stingerSword;
 	public static Item fireSword;
+	public static Item crimsonBow;
 
 	// Crimtic
 	public static Item crimticPick;
@@ -1348,6 +1352,12 @@ public class mod_ebm {
 		bloodBone = new Item().setUnlocalizedName("bloodBone").setTextureName("mod_ebm:bloody_bone")
 				.setCreativeTab(tab);
 
+		crimsonFiber = new Item().setUnlocalizedName("crimsonFiber").setTextureName("mod_ebm:crimson_fiber")
+				.setCreativeTab(tab);
+
+		crimsonString = new Item().setUnlocalizedName("crimsonString").setTextureName("mod_ebm:crimson_string")
+				.setCreativeTab(tab);
+
 		// Ingots
 		crimticIngot = new Item().setUnlocalizedName("crimticIngot").setTextureName("mod_ebm:ingot_crimtic")
 				.setCreativeTab(tab);
@@ -1405,6 +1415,9 @@ public class mod_ebm {
 
 		fireSword = new Sword(tool_fire).setTextureName("mod_ebm:sword_fire").setCreativeTab(tab)
 				.setUnlocalizedName("fireSword");
+
+		crimsonBow = new CrimsonBow().setTextureName("mod_ebm.crimson_bow").setCreativeTab(tab)
+				.setUnlocalizedName("crimsonBow");
 
 		// Crimtic
 		crimticPick = new Pick(tool_crimtic).setUnlocalizedName("crimticPick").setTextureName("mod_ebm:pickaxe_crimtic")

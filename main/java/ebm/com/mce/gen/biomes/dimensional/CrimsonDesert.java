@@ -3,14 +3,11 @@ package ebm.com.mce.gen.biomes.dimensional;
 import java.util.Random;
 
 import ebm.com.mce.common.mod_ebm;
-import ebm.com.mce.gen.biomes.dec.WorldGenCactus;
 import ebm.com.mce.handlers.dimension.biomes.CrimsonBiomes;
-import net.minecraft.world.gen.feature.WorldGenDeadBush;
+import net.minecraft.world.gen.feature.WorldGenTallGrass;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class CrimsonDesert extends CrimsonBiomes {
-	public WorldGenerator deadBushGen;;
-
 	public CrimsonDesert(int id) {
 		super(id);
 		this.setHeight(height_LowPlains);
@@ -21,12 +18,8 @@ public class CrimsonDesert extends CrimsonBiomes {
 		this.spawnableMonsterList.clear();
 		this.theBiomeDecorator.generateLakes = false;
 		this.theBiomeDecorator.treesPerChunk = -999;
-		this.theBiomeDecorator.deadBushPerChunk = 2;
-		this.theBiomeDecorator.cactiPerChunk = 10;
-		
-		this.theBiomeDecorator.cactusGen = new WorldGenCactus();
-		this.deadBushGen = new WorldGenDeadBush(mod_ebm.crimsonBush);
-		
+		this.theBiomeDecorator.grassPerChunk = 1;
+
 		this.topBlock = mod_ebm.crimsonSand;
 		this.fillerBlock = mod_ebm.crimsonSand;
 		this.biomeName = "Crimson Desert";
@@ -47,6 +40,7 @@ public class CrimsonDesert extends CrimsonBiomes {
 	}
 
 	public WorldGenerator getRandomWorldGenForGrass(Random ran) {
-		return new WorldGenDeadBush(mod_ebm.crimsonBush);
+		return ran.nextInt(1) == 0 ? new WorldGenTallGrass(mod_ebm.crimsonCactus, 0)
+				: new WorldGenTallGrass(mod_ebm.crimsonCactus, 0);
 	}
 }

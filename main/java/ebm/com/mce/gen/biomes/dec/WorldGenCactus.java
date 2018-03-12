@@ -10,6 +10,11 @@ public class WorldGenCactus extends WorldGenerator {
 	public Block block;
 	public int meta;
 
+	public WorldGenCactus(Block block, int meta) {
+		this.block = block;
+		this.meta = meta;
+	}
+
 	public boolean generate(World world, Random rand, int x, int y, int z) {
 		for (int l = 0; l < 10; ++l) {
 			int i1 = x + rand.nextInt(8) - rand.nextInt(8);

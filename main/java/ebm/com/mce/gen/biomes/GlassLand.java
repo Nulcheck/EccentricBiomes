@@ -2,7 +2,7 @@ package ebm.com.mce.gen.biomes;
 
 import java.util.Random;
 
-import ebm.com.mce.gen.trees.WorldGenGlassTree;
+import ebm.com.mce.gen.trees.WorldGenGlassTree2;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
@@ -21,7 +21,7 @@ public class GlassLand extends BiomeGenBase {
 		this.theBiomeDecorator.treesPerChunk = 5;
 		this.theBiomeDecorator.flowersPerChunk = -999;
 		this.theBiomeDecorator.grassPerChunk = -999;
-		this.worldGenGlassTree = new WorldGenGlassTree(true);
+		this.worldGenGlassTree = new WorldGenGlassTree2(true);
 		this.biomeName = "Glassland";
 		
 		this.fillerBlock = Blocks.glass;

@@ -1352,10 +1352,10 @@ public class mod_ebm {
 		bloodBone = new Item().setUnlocalizedName("bloodBone").setTextureName("mod_ebm:bloody_bone")
 				.setCreativeTab(tab);
 
-		crimsonFiber = new Item().setUnlocalizedName("crimsonFiber").setTextureName("mod_ebm:crimson_fiber")
+		crimsonFiber = new Item().setUnlocalizedName("crimsonFiber").setTextureName("mod_ebm:fiber_crimson")
 				.setCreativeTab(tab);
 
-		crimsonString = new Item().setUnlocalizedName("crimsonString").setTextureName("mod_ebm:crimson_string")
+		crimsonString = new Item().setUnlocalizedName("crimsonString").setTextureName("mod_ebm:string_crimson")
 				.setCreativeTab(tab);
 
 		// Ingots
@@ -1416,8 +1416,7 @@ public class mod_ebm {
 		fireSword = new Sword(tool_fire).setTextureName("mod_ebm:sword_fire").setCreativeTab(tab)
 				.setUnlocalizedName("fireSword");
 
-		crimsonBow = new CrimsonBow().setTextureName("mod_ebm.crimson_bow").setCreativeTab(tab)
-				.setUnlocalizedName("crimsonBow");
+		crimsonBow = new CrimsonBow().setCreativeTab(tab).setUnlocalizedName("crimsonBow");
 
 		// Crimtic
 		crimticPick = new Pick(tool_crimtic).setUnlocalizedName("crimticPick").setTextureName("mod_ebm:pickaxe_crimtic")

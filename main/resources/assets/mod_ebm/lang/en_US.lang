@@ -149,6 +149,7 @@ tile.beeswaxChiselStairs.name=Chiseled Beeswax Stairs
 
 tile.GlassLog.name=Glass Log
 tile.BoneLog.name=Bone Log
+tile.boneLogBlood.name=Bloody Bone Log
 tile.mLog.name=Manchineel Log
 tile.deadLog.name=Deadwood Log
 tile.MauvewoodLog.name=Mauvewood Log
@@ -377,6 +378,8 @@ item.stinger.name=Stinger
 item.pyreCrystal.name=Pyre Crystal
 item.FireSeed.name=Fire Seed
 item.bloodBone.name=Bloody Bone
+item.crimsonFiber.name=Crimson Fiber
+item.crimsonString.name=Crimson String
 
 item.crimticIngot.name=Crimtic Ingot
 item.pyreIngot.name=Pyre Ingot
@@ -400,6 +403,7 @@ item.GlassShard.name=Glass Shard
 item.ErythonBattleAxe.name=Erython Battle Axe
 item.stingerSword.name=Sting Sword
 item.fireSword.name=Pyre Sword
+item.crimsonBow.name=Crimson Bow
 
 item.crimticHelmet.name=Crimtic Helmet
 item.crimticChest.name=Crimtic Chestplate

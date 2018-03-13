@@ -317,6 +317,9 @@ public class BlockRecipeHandler {
 
 		GameRegistry.addRecipe(new ItemStack(mod_ebm.crimticBlock), "***", "***", "***", '*',
 				new ItemStack(mod_ebm.crimticIngot));
+		
+		GameRegistry.addRecipe(new ItemStack(mod_ebm.pyreBlock), "***", "***", "***", '*',
+				new ItemStack(mod_ebm.pyreIngot));
 	}
 
 	public static void registerSmelting() {

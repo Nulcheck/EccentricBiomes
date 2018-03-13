@@ -7,9 +7,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ebm.com.mce.gen.trees.WorldGenGlassTree;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockGlass;
 import net.minecraft.block.BlockSapling;
-import net.minecraft.block.BlockStainedGlass;
 import net.minecraft.block.IGrowable;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -20,8 +18,6 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import net.minecraftforge.common.IPlantable;
-import net.minecraftforge.common.util.ForgeDirection;
 
 public class GlassSapling extends BlockSapling implements IGrowable {
 	private IIcon[] textures;
@@ -96,10 +92,10 @@ public class GlassSapling extends BlockSapling implements IGrowable {
 		Block soil = world.getBlock(x, y - 1, z);
 		if (world.getBlockMetadata(x, y, z) != 7)
 			return (world.getFullBlockLightValue(x, y, z) >= 8 || world.canBlockSeeTheSky(x, y, z))
-					&& (soil != null && (soil instanceof BlockGlass || soil instanceof BlockStainedGlass));
+					&& (soil != null && (soil == Blocks.glass || soil == Blocks.stained_glass));
 		else
 			return (world.getFullBlockLightValue(x, y, z) >= 8 || world.canBlockSeeTheSky(x, y, z))
-					&& (soil != null && (soil instanceof BlockGlass || soil instanceof BlockStainedGlass));
+					&& (soil != null && (soil == Blocks.glass || soil == Blocks.stained_glass));
 	}
 
 	public void updateTick(World world, int x, int y, int z, Random random) {

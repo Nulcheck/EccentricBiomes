@@ -10,17 +10,17 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.common.util.ForgeDirection;
 
-public class WorldGenGlassTree extends WorldGenAbstractTree {
+public class WorldGenGlassTree2 extends WorldGenAbstractTree {
 	private final int minTreeHeight;
 	private final boolean vinesGrow;
 	private final int metaWood;
 	private final int metaLeaves;
 
-	public WorldGenGlassTree(boolean gen) {
+	public WorldGenGlassTree2(boolean gen) {
 		this(gen, 4, 0, 0, false);
 	}
 
-	public WorldGenGlassTree(boolean gen, int height, int wood, int leaves, boolean vines) {
+	public WorldGenGlassTree2(boolean gen, int height, int wood, int leaves, boolean vines) {
 		super(gen);
 		this.minTreeHeight = height;
 		this.metaWood = wood;
@@ -62,7 +62,7 @@ public class WorldGenGlassTree extends WorldGenAbstractTree {
 					}
 				}
 			}
-			Block block2 = world.getBlock(x, y - 1, z);
+			Block block2 = world.getBlock(x, y, z);
 			boolean isGlass = (block2 == Blocks.glass || block2 == Blocks.stained_glass);
 
 			if (!flag && !isGlass) {

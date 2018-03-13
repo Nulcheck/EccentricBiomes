@@ -2,6 +2,7 @@ package ebm.com.mce.items;
 
 import ebm.com.mce.common.mod_ebm;
 import ebm.com.mce.entity.EntityCrimsonArrow;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
@@ -14,6 +15,7 @@ import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
+import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowLooseEvent;
@@ -96,8 +98,39 @@ public class ItemTool {
 	}
 
 	public static class CrimsonBow extends ItemBow {
+		public static final String[] bowPullIcon = new String[] { "pulling_0", "pulling_1", "pulling_2" };
+		private IIcon[] iconArray;
+
 		public CrimsonBow() {
 			super();
+			this.setFull3D();
+		}
+
+		public void registerIcons(IIconRegister icon) {
+			this.itemIcon = icon.registerIcon("mod_ebm:bow_crimson");
+			this.iconArray = new IIcon[bowPullIcon.length];
+
+			for (int i = 0; i < this.iconArray.length; ++i) {
+				this.iconArray[i] = icon.registerIcon("mod_ebm:bow_crimson" + "_" + bowPullIcon[i]);
+			}
+		}
+
+		public IIcon getIcon(ItemStack stack, int renderPass, EntityPlayer player, ItemStack usingItem,
+				int useRemaining) {
+			if (usingItem == null) {
+				return itemIcon;
+			}
+			int ticksInUse = stack.getMaxItemUseDuration() - useRemaining;
+
+			if (ticksInUse > 18) {
+				return iconArray[2];
+			} else if (ticksInUse > 14) {
+				return iconArray[1];
+			} else if (ticksInUse > 0) {
+				return iconArray[0];
+			} else {
+				return itemIcon;
+			}
 		}
 
 		public void onPlayerStoppedUsing(ItemStack stack, World world, EntityPlayer player, int meta) {

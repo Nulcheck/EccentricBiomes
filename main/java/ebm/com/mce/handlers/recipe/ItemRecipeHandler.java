@@ -45,6 +45,8 @@ public class ItemRecipeHandler {
 
 		GameRegistry.addShapelessRecipe(new ItemStack(mod_ebm.pyreIngot), new ItemStack(mod_ebm.pyreCrystal),
 				new ItemStack(Items.iron_ingot));
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(mod_ebm.pyreIngot, 9), new ItemStack(mod_ebm.pyreBlock));
 
 		GameRegistry.addRecipe(new ItemStack(mod_ebm.crimsonString), "***", "***", "***", '*',
 				new ItemStack(mod_ebm.crimsonFiber));

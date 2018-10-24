@@ -1,0 +1,39 @@
+package ebm.com.mce.render.block.chest;
+
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL12;
+
+import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
+import ebm.com.mce.client.render.item.block.chest.ItemMauvewoodChestRender;
+import ebm.com.mce.common.mod_ebm;
+import net.minecraft.block.Block;
+import net.minecraft.client.renderer.RenderBlocks;
+import net.minecraft.world.IBlockAccess;
+
+public class RenderMauvewoodChest implements ISimpleBlockRenderingHandler {
+	public void renderInventoryBlock(Block var1, int var2, int var3, RenderBlocks var4) {
+		if (var3 == this.getRenderId()) {
+			GL11.glRotatef(90.0F, 0.0F, 1.0F, 0.0F);
+			GL11.glTranslatef(-0.5F, -0.5F, -0.5F);
+			ItemMauvewoodChestRender.instance.renderChest(var1, var2, 0.0F);
+			GL11.glEnable(GL12.GL_RESCALE_NORMAL);
+		}
+	}
+
+	public boolean renderWorldBlock(IBlockAccess var1, int var2, int var3, int var4, Block var5, int var6,
+			RenderBlocks var7) {
+		return false;
+	}
+
+	public boolean shouldRender3DInInventory() {
+		return false;
+	}
+
+	public int getRenderId() {
+		return mod_ebm.renderId;
+	}
+
+	public boolean shouldRender3DInInventory(int modelId) {
+		return true;
+	}
+}

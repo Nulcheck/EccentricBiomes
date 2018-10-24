@@ -1,0 +1,6 @@
+{
+"esay": {"category": "master","sounds": ["mob/erython/esay1","mob/erython/esay2","mob/erython/esay3"]},
+"ehurt": {"category": "master","sounds": ["mob/erython/ehurt1","mob/erython/ehurt2","mob/erython/ehurt3"]},
+"edeath": {"category": "master","sounds": ["mob/erython/edeath"]},
+"records.Happy Skeleton": {"category": "record","sounds": [{"name": "records/Happy Skeleton","stream": true}]}
+}

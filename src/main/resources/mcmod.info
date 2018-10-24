@@ -1,0 +1,16 @@
+[
+{
+  "modid": "mod_ebm",
+  "name": "\u00A75Eccentric Biomes",
+  "description": "Crazy ass biomes. Got the idea when I was doing a modding tutorial.",
+  "version": "1.7.1",
+  "mcversion": "1.7.10",
+  "url": "\u00A76\u00A7o\u00A7nhttp://mce626.enjin.com/ebmnews",
+  "updateUrl": "",
+  "authorList": ["'\u00A7bMCE626\u00A7f'"],
+  "credits": "",
+  "logoFile": "logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]

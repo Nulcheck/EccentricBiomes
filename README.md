@@ -1,7 +1,10 @@
 # EccentricBiomes
-Eccentric Biomes mod. Created by MCE626.
+[![](http://cf.way2muchnoise.eu/versions/eccentric-biomes_all.svg)](https://minecraft.curseforge.com/projects/eccentric-biomes)
+[![](http://cf.way2muchnoise.eu/versions/Latest%20MC%20Version_eccentric-biomes_latest.svg)](https://minecraft.curseforge.com/projects/eccentric-biomes)
+[![](http://cf.way2muchnoise.eu/full_eccentric-biomes_downloads.svg)](https://minecraft.curseforge.com/projects/eccentric-biomes)
+[![Discord](https://img.shields.io/discord/174514721158856704.svg?logo=discord&colorB=7289DA)](http://discord.gg/XyjNtY2)
 
-http://discord.gg/XyjNtY2
+Eccentric biomes adds random, and weird biomes to the game. Created by MCE626.
 
 ------
 # Custom License for this Repository

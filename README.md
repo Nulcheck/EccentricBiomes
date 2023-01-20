@@ -2,10 +2,9 @@
 [![](http://cf.way2muchnoise.eu/versions/eccentric-biomes_all.svg)](https://minecraft.curseforge.com/projects/eccentric-biomes)
 [![](http://cf.way2muchnoise.eu/versions/Latest%20MC%20Version_eccentric-biomes_latest.svg)](https://minecraft.curseforge.com/projects/eccentric-biomes)
 [![](http://cf.way2muchnoise.eu/short_eccentric-biomes_downloads.svg)](https://minecraft.curseforge.com/projects/eccentric-biomes)
-[![Discord](https://img.shields.io/discord/174514721158856704.svg?logo=discord&colorB=7289DA)](http://discord.gg/XyjNtY2)
 [![Trello](https://img.shields.io/badge/Trello_Board-blue.svg?logo=trello&label=+&colorA=2b2b2b)](https://trello.com/b/Q0jTrh01)
 
-Eccentric biomes adds random, and weird biomes to the game. Created by MCE626.
+Eccentric biomes adds random, and weird biomes to the game. Created by MCE626 (Now known as "Nulcheck").
 
 ------
 # Custom License for this Repository
@@ -21,7 +20,7 @@ Contribution to this repository means that you are granting me rights over the c
 ## You CANNOT
 - Redistribute this in its entirety as source or compiled code.
 - Create or distribute code which contains 50% or more Functionally Equivalent Statements* from this repository.
-- Attempt to or intend to claim partial or total ownership of the original or repackaged code and/or attempt to or intend to redistribute the original or repackaged code without prior express written permission from the owner (MCE626). Basically saying, you can't redistribute this code and say you made it.
+- Attempt to or intend to claim partial or total ownership of the original or repackaged code and/or attempt to or intend to redistribute the original or repackaged code without prior express written permission from the owner (Nulcheck). Basically saying, you can't redistribute this code and say you made it.
 
 ## You MUST
 - Maintain a visible repository of your code which is derived from or copied from this code.
@@ -30,4 +29,4 @@ Contribution to this repository means that you are granting me rights over the c
 
 Create addon mods if you want! If you see something that can be improved or a bug that I don't know how to fix, tell me. Submit a Pull Request! One thing: Don't steal please! An enormous amount of effort and time went into this and it's not ok for someone to take this and call it their own.
 
-© 2017-2019 MCE626
+© 2017-2023 Nulcheck
